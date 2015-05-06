@@ -2,24 +2,23 @@
                       
 \chapter{Introdução}\label{CapIntro}
 
-% Resumo opcional. Comentar se não usar.
-%\resumodocapitulo{Este capítulo apresenta a principal motivação do trabalho de graduação. Os objetivos são claramente apresentados, visando assim satisfazer um conjunto de características prescritas para este trabalho. Por fim, o manuscrito é apresentado. (Este resumo é opcional)}
+Durante o desenvolvimento de um software, a legibilidade do código-fonte é um fator importante porque afeta a compreensão do contexto do código e facilita a comunicação e colaboração entre os membros da  equipe, reduzindo o esforço de manutenção do software que esta sendo desenvolvido \cite[págs 156 a 158]{teles2014}.
 
-\section{Contextualização}
+Dentre as técnicas que podem ser empregadas na promoção da legibilidade do código-fonte podemos citar os comentários, modularização, refatoração e adoção de um estilo de codificação.
 
-Em geral, na introdução que é feita a contextualização do trabalho. Aspectos importantes tais como motivação e relevância do tema escolhido devem ficar claros.
+O uso adequado de comentários é uma maneira de compensar a incapacidade dos programadores em se expressar na escrita do código-fonte de um software, porque nem sempre é possível extrair o significado de terminada expressão de forma imediata e direta [TODO: corrigir referência 17]. O Código \ref{compy} ilustra uma situação onde a compreensão da operação pode não ser imediata.
 
-\section{Definição do problema}
+\lstinputlisting[language=Python, caption=Exemplo de comentário, label=compy]{comentario.py}
 
-Aqui o problema é definido.
+À medida que os problemas computacionais vão se tornando maiores e complexos, podemos simplificar a solução dividindo o programa em partes menores, chamadas de módulos, que podem ser definidos como conjuntos de instruções da linguagem que realizam uma tarefa em particular. A divisão de programas em módulos surgiu no final da década de 1960,  seguindo o princípio do paradigma da divisão e conquista, proposto por Descartes [TODO: corrigir 28].
 
-\section{Objetivos do projeto}
+O principal objetivo da modularização é permitir o gerenciamento da complexidade no desenvolvimento de programas, trazendo consigo algumas vantagens como a legibilidade, que torna os trechos de código mais simples, a manutenibilidade, que favorece a detecção e correção de erros, e a produtividade, que facilita a reutilização do software [TODO: corrigir 19].  O Código \ref{modpy} ilustra um exemplo de modularização através do uso de funções.
 
-Nesta seção, deve-se deixar claro quais são os objetivos do projeto.
+\lstinputlisting[language=Python, caption=Exemplo de modularização, label=modpy]{modularizacao.py}
 
-\section{Apresentação do manuscrito}
+Segundo [TODO: corrigir 20], a refatoração fornece técnicas para limpar código de uma maneira eficiente e controlada, que não altera o comportamento observável de um software, evitando a deterioração tão comum durante o ciclo de vida de um código. Os benefícios obtido através desta técnica são a evolução do projeto do software, tornando-o mais fácil de entender;  e a melhora no entendimento do código, o que facilita a manutenção e evita a inclusão de defeitos. Os Códigos \ref{antesref} e \ref{depoisref} ilustram um código antes e após a refatoração, respectivamente.
 
-No capítulo \ref{CapRevisaoBibliografica} é feita uma revisão bibliográfica sobre o tema de estudo. Em seguida, o capítulo \ref{CapDesenvolvimento} descreve a metodologia empregada no desenvolvimento do projeto. Resultados experimentais são discutidos no capítulo \ref{CapExperimentos}, seguido das conclusões no capítulo \ref{CapConclusoes}. Os anexos contém material complementar.
 
- 
+\lstinputlisting[language=Java, caption=Método antes da refatoração, label=antesref]{antesref.java}
 
+\lstinputlisting[language=Java, caption=Método depois da refatoração, label=depoisref]{depoisref.java}

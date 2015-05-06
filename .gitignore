@@ -1,0 +1,11 @@
+*.aux
+*.bbl
+*.blg
+*.swp
+*.idx
+*.lof
+*.lot
+*.thm
+*.toc
+*.log
+*.pdf
