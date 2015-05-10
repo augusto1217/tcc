@@ -10,15 +10,67 @@ O uso adequado de comentários é uma maneira de compensar a incapacidade dos prog
 
 \lstinputlisting[language=Python, caption=Exemplo de comentário, label=compy]{cods/comentario.py}
 
-À medida que os problemas computacionais vão se tornando maiores e complexos, podemos simplificar a solução dividindo o programa em partes menores, chamadas de módulos, que podem ser definidos como conjuntos de instruções da linguagem que realizam uma tarefa em particular. A divisão de programas em módulos surgiu no final da década de 1960,  seguindo o princípio do paradigma da divisão e conquista, proposto por Descartes [TODO: corrigir 28].
+À medida que os problemas computacionais vão se tornando maiores e complexos, podemos simplificar a solução dividindo o programa em partes menores, chamadas de módulos, que podem ser definidos como conjuntos de instruções da linguagem que realizam uma tarefa em particular. A divisão de programas em módulos surgiu no final da década de 1960,  seguindo o princípio do paradigma da divisão e conquista, proposto por Descartes \cite{rene2015}.
 
-O principal objetivo da modularização é permitir o gerenciamento da complexidade no desenvolvimento de programas, trazendo consigo algumas vantagens como a legibilidade, que torna os trechos de código mais simples, a manutenibilidade, que favorece a detecção e correção de erros, e a produtividade, que facilita a reutilização do software [TODO: corrigir 19].  O Código \ref{modpy} ilustra um exemplo de modularização através do uso de funções.
+O principal objetivo da modularização é permitir o gerenciamento da complexidade no desenvolvimento de programas, trazendo consigo algumas vantagens como a legibilidade, que torna os trechos de código mais simples, a manutenibilidade, que favorece a detecção e correção de erros, e a produtividade, que facilita a reutilização do software \cite[pág. 175]{harry2011}.  O Código \ref{modpy} ilustra um exemplo de modularização através do uso de funções.
 
 \lstinputlisting[language=Python, caption=Exemplo de modularização, label=modpy]{cods/modularizacao.py}
 
-Segundo [TODO: corrigir 20], a refatoração fornece técnicas para limpar código de uma maneira eficiente e controlada, que não altera o comportamento observável de um software, evitando a deterioração tão comum durante o ciclo de vida de um código. Os benefícios obtido através desta técnica são a evolução do projeto do software, tornando-o mais fácil de entender;  e a melhora no entendimento do código, o que facilita a manutenção e evita a inclusão de defeitos. Os Códigos \ref{antesref} e \ref{depoisref} ilustram um código antes e após a refatoração, respectivamente.
-
+Segundo \cite{fowler2004}, a refatoração fornece técnicas para limpar código de uma maneira eficiente e controlada, que não altera o comportamento observável de um software, evitando a deterioração tão comum durante o ciclo de vida de um código. Os benefícios obtido através desta técnica são a evolução do projeto do software, tornando-o mais fácil de entender;  e a melhora no entendimento do código, o que facilita a manutenção e evita a inclusão de defeitos. Os Códigos \ref{antesref} e \ref{depoisref} ilustram um código antes e após a refatoração, respectivamente.
 
 \lstinputlisting[language=Java, caption=Método antes da refatoração, label=antesref]{cods/antesref.java}
 
 \lstinputlisting[language=Java, caption=Método depois da refatoração, label=depoisref]{cods/depoisref.java}
+
+De acordo com \cite{kernighanPlauger1978}, um dos precursores do assunto, estilo de programação é um conjunto de regras ou orientações utilizados ao escrever o código-fonte de um programa de computador. Um estilo de programação ajuda programadores a ler e compreender o código-fonte em conformidade com o estilo e a evitar a introdução de erros. 
+
+Segundo \cite{oracle2015}, convenções (ou estilos) de código reduzem em 80\% os custos de manutenção de um software porque, de modo geral, o software não é mantido pela mesma equipe responsável pelo seu desenvolvimento.
+
+Um estilo de codificação descreve como um problema de software está delineado e
+como sua solução foi decomposta. Softwares não podem ser inteiramente implementados na
+mente de um único desenvolvedor, logo um guia de estilo de codificação propicia a divisão de um projeto em partes gerenciáveis, com o paradigma de design usado para expressar a intenção do código-fonte \cite{pete2006}.
+
+Se analisarmos o código de diferentes desenvolvedores, existe a possibilidade de existir diferenças dentre os estilos utilizados no momento de escrever e formatar um código-fonte em uma determinada linguagem. Por exemplo, ao declarar uma função ou método, um desenvolvedor pode utilizar chaves ('\{' e '\}') em linhas separadas ou abrir a chave na mesma linha da declaração \cite{teles2014}. As Tabelas \ref{table:diff2Program} ilustram dois código com diferentes estilos de codificação.
+
+\begin{table}[h]
+	\label{table:diff2Program}
+	\caption{Diferenças de estilo entre dois programadores}
+	\begin{center}
+	\begin{tabular}{|l|l|l|l|l|l|}
+	\hline
+	\rowcolor[HTML]{9B9B9B} 
+	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}
+	\textbf{\hspace{15.2 mm} Programador 1 \hspace{15.2 mm} }}  & 
+	\multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}
+	\textbf{\hspace{15.2 mm} Programador 2 \hspace{15.2 mm} }} \\ 
+	\hline
+	\multicolumn{5}{|l|}{
+		\begin{tabular}[c]{@{}l@{}}
+			\hspace{8 mm} if (i \textgreater= 0) \{\\ 
+			\hspace{16 mm} faça alguma coisa 
+			\hspace{13 mm} \\ 
+			\hspace{8 mm} \}
+		\end{tabular}} & 
+		
+		\begin{tabular}[c]{@{}l@{}}
+			\hspace{8 mm} if (i \textgreater= 0)\\
+			\hspace{8 mm} \{\\ 
+			\hspace{16 mm} faça alguma coisa 
+			\hspace{13 mm} \\
+			\hspace{8 mm} \}
+		\end{tabular} \\ 
+	\hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+Estas diferenças de estilos são comuns entre os desenvolvedores de uma equipe ou projeto colaborativo, dificultando a compreensão e legibilidade do código fonte. Este tipo de dificuldade pode ser mitigada se for adotado um estilo de codificação uniforme para  todos os membros da equipe. Desta forma, qualquer novo integrante poderá ler e assimilar o entendimento das funcionalidades com velocidade, sem a distração decorrente de múltiplos estilos distintos e divergentes nos diferentes arquivos do projeto.
+
+De acordo com \cite{kernighanPlauger1978}, definir um estilo é uma questão subjetiva. No entanto, existem vários elementos entre os diferentes estilos de programação. As questões geralmente consideradas como parte do estilo de programação incluem: o layout do código fonte, incluindo o recuo; o uso do espaço em branco ao redor operadores e palavras-chaves; a capitalização de nomes de variáveis, métodos, classes e constantes; o estilo e a grafia de identificadores definidos pelo usuário, tais como funções e nomes das variáveis; e o uso e estilo dos comentários.
+
+Entretanto adotar um estilo de codificação não é uma tarefa simples. De acordo com o artigo da revista Smashing Magazine \cite{magazine2015},  o estilo de codificação é de natureza pessoal, o que constitui um desafio para a equipe. Muitas vezes, procurando evitar argumentos longos, as equipes adiam a criação ou adoção de guias de estilo, sob o pretexto de não querer "desencorajar a inovação e capacidade de expressão". Alguns programadores entendem o estabelecimento de guias de estilo como uma forma de forçar uma equalização de todos os desenvolvedores, enquanto que outros se rebelam quando submetidos à guias de estilo, acreditando que eles não poderão fazer o seu trabalho corretamente.
+
+O objetivo deste estudo é verificar se houve a adesão, e em qual escala, ao estilo proposto no Python Enhancement Proposal 8 (PEP8) por parte da comunidade de software livre que utiliza a linguagem Python. Para a validação desta hipótese foi desenvolvido um ambiente para a avaliação dos códigos-fontes de aproximadamente quarenta e quatro mil projetos de código livre (disponíveis no Python Package Index - PyPI, o repositório oficial de pacotes de terceiros mantido pela Python Software Foundation1)  e extração das violações das orientações descritas no PEP8. Os resultados desta análise foram então tabulados e analisados, de forma a se determinar o nível da adesão desta amostra em relação ao estilo já citado.
+
+ 
+[TODO VEFIRICAR]1 https://pypi.python.org/pypi
