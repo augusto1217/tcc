@@ -29,6 +29,9 @@
 \usepackage{indentfirst}
 \usepackage{listings}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
 % Setup
 \lstset{numbers=left,
 stepnumber=1,
@@ -44,6 +47,12 @@ showstringspaces=false
 }
 
 \renewcommand{\lstlistingname}{Código}
+
+\newcommand{\listadecodigos}{
+	\renewcommand{\lstlistlistingname}{\setfontarial\mdseries LISTA DE CÓDIGOS}
+	{\renewcommand{\@dotsep}{0.5}\parskip=0pt\lstlistoflistings}
+}
+
 
 % Escolher um dos seguintes formatos:
 %\usepackage{ft1unb} % segue padrão de fonte Times
@@ -166,6 +175,7 @@ showstringspaces=false
 \sumario
 \listadefiguras
 \listadetabelas
+\listadecodigos
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

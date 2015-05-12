@@ -17,40 +17,41 @@ A notação húngara, hoje chamada Apps húngaro, foi inventada por Charles Simonyi,
  
 A notação é uma referência para os estilos de codificação existentes, pois foi a partir dela que teve início o processo de definir um determinado estilo de codificação a ser seguido dentro de um projeto. A notação húngara utiliza prefixos para indicar o tipo de informação que está sendo  armazenada, fazendo com que desenvolvedores decorem nomes de identificadores baseados na informação semântica que eles armazenam \cite{notacao2015}.  Esses prefixos são letras minúsculas associadas ao conteúdo ou tipo da variável ou identificador. A Tabela \ref{tab2} lista os indicadores mais utilizados na notação húngara.
 
-\begin{table}[h]
-       \label{tab2}
+\begin{table}[ht]
         \caption{Indicadores da notação húngara}
+        \label{tab2}
         \begin{center}
-        \begin{tabular}{|l|l|l|l|l|l|}
-        \hline
-        \rowcolor[HTML]{9B9B9B}
-        \multicolumn{1}{|c|}{
-		\cellcolor[HTML]{9B9B9B}
-        	\textbf{Nome}
-	}  &
-        \multicolumn{1}{c|}{
-		\cellcolor[HTML]{9B9B9B}
-        	\textbf{Descrição}
-	} \\
-        \hline
-	       	s & String \\ \hline
-		sz & Aponta o primeiro caracter de uma string terminada em zero \\ \hline
-		st & Ponteiro da string, o primeiro byte é contador dos caracteres \\ \hline
-		h & Handle \\ \hline
-		msg & Mensagem \\ \hline
-		fn & Função (ponteiro) \\ \hline
-		c & char (8 bits) \\ \hline
-		by & unsigned char (byte or uchar ¿ 8 bits) \\ \hline
-		n & Inteiro \\ \hline
-		b & Booleana (verdadeiro ou falso) \\ \hline 
-		f & Flag (boolean, logical) \\ \hline
-		u & Inteiro não sinalizado \\ \hline
-		w & Word (Variável com o tamanho de um registrador da máquina) \\ \hline
-		ch & Char, com texto ASCII \\ \hline
-		l & Inteiro longo (32 bits) \\ \hline
-		dw & Inteiro longo não sinalizado (dword ¿ 32 bits) \\	\hline
-		pX & Ponteiro para X \\ \hline
-        \end{tabular}
+
+        \begin{tabularx}{0.7\textwidth}{lX}
+        \toprule
+        	\textbf{Nome} & \textbf{Descrição} \\
+        \midrule
+	       	s & String \\ 
+        \rowcolor[gray]{0.8}
+		sz & Aponta o primeiro caracter de uma string terminada em zero \\ 
+		st & Ponteiro da string, o primeiro byte é contador dos caracteres \\ 
+        \rowcolor[gray]{0.8}
+		h & Handle \\ 
+		msg & Mensagem \\ 
+        \rowcolor[gray]{0.8}
+		fn & Função (ponteiro) \\ 
+		c & char (8 bits) \\ 
+        \rowcolor[gray]{0.8}
+		by & unsigned char (byte or uchar ¿ 8 bits) \\ 
+		n & Inteiro \\ 
+        \rowcolor[gray]{0.8}
+		b & Booleana (verdadeiro ou falso) \\ 
+		f & Flag (boolean, logical) \\ 
+        \rowcolor[gray]{0.8}
+		u & Inteiro não sinalizado \\ 
+		w & Word (Variável com o tamanho de um registrador da máquina) \\ 
+        \rowcolor[gray]{0.8}
+		ch & Char, com texto ASCII \\ 
+		l & Inteiro longo (32 bits) \\ 
+        \rowcolor[gray]{0.8}
+		dw & Inteiro longo não sinalizado (dword 32 bits) \\	
+		pX & Ponteiro para X \\ \bottomrule
+        \end{tabularx}
         \end{center}
 \end{table}
 
@@ -59,8 +60,8 @@ Um bom desenvolvedor geralmente deve considerar os identificadores como valores 
 A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notação húngara e seus respectivos significados e tipos.
 
 \begin{table}[h]
-       \label{tabVarNtHun}
         \caption{Variáveis utilizando notação húngara}
+        \label{tabVarNtHun}
         \begin{center}
         \begin{tabular}{|l|l|l|l|l|l|}
         \hline
