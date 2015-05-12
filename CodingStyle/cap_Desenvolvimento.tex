@@ -1,59 +1,151 @@
 %TCIDATA{LaTeXparent=0,0,relatorio.tex}
                       
-
 \chapter{Desenvolvimento}\label{CapDesenvolvimento}
 
 % Resumo opcional. Comentar se não usar.
-\resumodocapitulo{Resumo opcional.}
+%\resumodocapitulo{Resumo opcional.}
 
 \section{Introdu\c{c}\~{a}o}
 
-Na introdu\c{c}\~{a}o dever\'{a} ser feita uma descri\c{c}\~{a}o geral da
-metodologia que foi seguida para o desenvolvimento. A seguir, \'{e} feita a
-desci\c{c}\~{a}o do sistema desenvolvido. 
+Neste capítulo será apresentado o histórico dos estilos de codificação, que tiverem origem com a notação húngara, nos anos 70. Em seguida serão apresentados os estilos mais prominentes, como os estilos Gnu/C, Java, C++ e Python.
 
-Deve-se ressaltar que equa\c{c}\~{o}es fazem parte do texto, devendo receber pontua\c{c}\~{a}o apropriada e ser numerada. Alguns exemplos s\~{a}o mostrados na se\c{c}\~{a}o \ref
-{SecClassificador}.
+\section{Histórico dos padrões de codificação}
 
-\section{Arquitetura geral}
+\subsection{Notação Húngara}
 
-\section{Classificador estat\'{i}stico de padr\~{o}es}\label{SecClassificador}
+A notação húngara, hoje chamada Apps húngaro, foi inventada por Charles Simonyi, um programador que trabalhou na Xerox PARC entre1972 e 1981, e que mais tarde se tornou arquiteto-chefe da Microsoft \cite{notacao2015}.
+ 
+A notação é uma referência para os estilos de codificação existentes, pois foi a partir dela que teve início o processo de definir um determinado estilo de codificação a ser seguido dentro de um projeto. A notação húngara utiliza prefixos para indicar o tipo de informação que está sendo  armazenada, fazendo com que desenvolvedores decorem nomes de identificadores baseados na informação semântica que eles armazenam \cite{notacao2015}.  Esses prefixos são letras minúsculas associadas ao conteúdo ou tipo da variável ou identificador. A Tabela \ref{tab2} lista os indicadores mais utilizados na notação húngara.
 
-O classificador autom\'{a}tico de padr\~{o}es utiliza o princ\'{i}pio da
-menor dist\^{a}ncia no processo de associa\c{c}\~{a}o de dados. Assim, sendo 
-$\mathbf{x}$ o vetor de caracter\'{i}sticas extra\'{i}das de uma imagem e $%
-\mathbf{P}_{\mathbf{x}}$ sua matriz de covari\^{a}ncias respectiva,
-utiliza-se 
-\begin{equation}
-d_{i}=(\mathbf{x}-\mathbf{p}_{i})^{T}(\mathbf{P}_{\mathbf{x}}+\mathbf{P}_{%
-\mathbf{p}_{i}})^{-1}(\mathbf{x}-\mathbf{p}_{i})  \label{EqDistMahalanobis}
-\end{equation}
-como m\'{e}trica para a dist\^{a}ncia estat\'{i}stica de  $\mathbf{x}$ e um
-padr\~{a}o de caracter\'{i}sticas $\mathbf{p}_{i}$ e matriz de covari\^{a}%
-ncias $\mathbf{P}_{\mathbf{p}_{i}}$. Esta m\'{e}trica \'{e} conhecida tamb%
-\'{e}m pela denomina\c{c}\~{a}o ``dist\^{a}ncia de Mahalanobis''. A dist\^{a}%
-ncia definida pela Eq. (\ref{EqDistMahalanobis}) segue distribui\c{c}\~{a}o $%
-\chi _{n}^{2}$, em que $n$ \'{e} a dimens\~{a}o da base do vetor $\mathbf{x}$%
-. Assim sendo, no caso espec\'{i}fico de $n=3$, o padr\~{a}o associado ao
-vetor $\mathbf{x}$ \'{e} dito casado com o padr\~{a}o $\mathbf{p}_{i}$ com $%
-5\%$ de margem de erro se 
-\begin{equation}
-d_{i}\leq 7,815.
-\end{equation}
+\begin{table}[h]
+       \label{tab2}
+        \caption{Indicadores da notação húngara}
+        \begin{center}
+        \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        \rowcolor[HTML]{9B9B9B}
+        \multicolumn{1}{|c|}{
+		\cellcolor[HTML]{9B9B9B}
+        	\textbf{Nome}
+	}  &
+        \multicolumn{1}{c|}{
+		\cellcolor[HTML]{9B9B9B}
+        	\textbf{Descrição}
+	} \\
+        \hline
+	       	s & String \\ \hline
+		sz & Aponta o primeiro caracter de uma string terminada em zero \\ \hline
+		st & Ponteiro da string, o primeiro byte é contador dos caracteres \\ \hline
+		h & Handle \\ \hline
+		msg & Mensagem \\ \hline
+		fn & Função (ponteiro) \\ \hline
+		c & char (8 bits) \\ \hline
+		by & unsigned char (byte or uchar ¿ 8 bits) \\ \hline
+		n & Inteiro \\ \hline
+		b & Booleana (verdadeiro ou falso) \\ \hline 
+		f & Flag (boolean, logical) \\ \hline
+		u & Inteiro não sinalizado \\ \hline
+		w & Word (Variável com o tamanho de um registrador da máquina) \\ \hline
+		ch & Char, com texto ASCII \\ \hline
+		l & Inteiro longo (32 bits) \\ \hline
+		dw & Inteiro longo não sinalizado (dword ¿ 32 bits) \\	\hline
+		pX & Ponteiro para X \\ \hline
+        \end{tabular}
+        \end{center}
+\end{table}
 
-A seguir é mostrado como o modelo Latex apresenta os comandos $\backslash$section $\backslash$subsection e $\backslash$subsubsection. Por questão de estilo, o texto deve ser organizado de modo a se evitar o uso de $\backslash$subsubsection. 
+Um bom desenvolvedor geralmente deve considerar os identificadores como valores mnemônicos que facilitem a lembrança do significado do nome da variável criada pelo programador; que sejam sugestivos, facilitando a leitura dos demais desenvolvedor; e que sejam simples de identificar, de modo que o desenvolvedor não perca tempo pensando para que ou em qual contexto aquela variável será utilizada \cite{notacao2015}. 
 
-\section{Seção}
+A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notação húngara e seus respectivos significados e tipos.
 
-Meu texto da seção.
+\begin{table}[h]
+       \label{tabVarNtHun}
+        \caption{Variáveis utilizando notação húngara}
+        \begin{center}
+        \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        \rowcolor[HTML]{9B9B9B}
+        \multicolumn{1}{|c|}{
+                \cellcolor[HTML]{9B9B9B}
+                \textbf{Nome}
+        }  &
+        \multicolumn{1}{c|}{
+                \cellcolor[HTML]{9B9B9B}
+                \textbf{Descrição}
+        } \\
+        \hline
+                bBusy & boolean \\ \hline
+		chInitial & char \\ \hline
+		cApples & count of items \\ \hline
+		dwLightYears & double word \\ \hline
+		fBusy & float \\ \hline
+		nSize & integer or count \\ \hline
+		iSize & integer or index \\ \hline
+		fpPrice & floating-point \\ \hline
+		dbPi & double \\ \hline
+		pFoo & pointer \\ \hline
+		rgStudents  & array, or range \\ \hline
+		szLastName  & zero-terminated string \\	\hline
+		u32Identifier  & unsigned 32-bit integer \\ \hline
+		stTime & clock time structure \\ \hline
+		fnFunction  & function name \\	\hline
+		pszOwner  & pointer to zero-terminated string \\ \hline
+		rgfpBalances  & array of floating-point values \\ \hline
+		aulColors & array of unsigned long \\ \hline
+		hwndFoo  & handle to a window \\ \hline
+		lpszBar  & long pointer to a zero-terminated string \\	\hline
+		g\_nWheels & member of a global namespace, integer \\ \hline
+		m\_nWheels & member of a structure/class, integer \\ \hline
+		m\_wheels,\_wheels  & member of a structure/class \\ \hline
+		s\_wheels  & static member of a class \\ \hline
+		c\_wheels & static member of a function \\ \hline
+        \end{tabular}
+        \end{center}
+\end{table}
 
-\subsection{Sub-seção}
+O sistema húngaro foi adotado como padrão de programação do Windows, e se espalhou amplamente por meio de livros como \cite{charles2002}, a bíblia para aprender programação do Windows . Rapidamente a notação húngara se tornou o estilo de codificação dominante utilizado em códigos escritos em linguagem C \cite{notacao2015}.
 
-Meu texto da sub-seção.
+Mas, por algum motivo não divulgado ao público, com a primeira versão da plataforma .NET, a Microsoft começou a abandonar o uso da notação húngara. A equipe de projetos do Excel e Word ficaram aliviados em não ter que usar uma convenção de nomenclatura estranha, já que nos dias atuais a verificação de declaração dos tipos de variáveis é feita pelo compilador e há o recurso de autocompletar o código digitado que sugere um conjunto de opções ao programador, a depender do contexto \cite{notacao2015}.
 
-\subsubsection{Sub-sub-seção}
+\subsection{GNU C}
 
-Meu texto da sub-sub-seção.
+O estilo de codificação Gnu/C foi proposto e definido por Richard Stallman e outros voluntários do projeto GNU em meados de 1992, pois Stallman acreditava que a adoção de um padrão tornaria os programas e componentes GNU limpos, consistentes e de fácil manutenção.
 
-Se necessário, use notas de rodapé \footnote{Essa é uma nota de rodapé.}
+Para que um novo desenvolvedor possa participar de algum projeto ou criar algo para a comunidade do software livre GNU, é exigido apenas que ele se atente ao  documento oficial de estilos\footnote{http://www.gnu.org/prep/standards/}.  É de suma importância que se utilize a versão atualizada, para que não seja escrito um código formatado sobre regras que possam ter sido revogadas ou substituídas.
+
+Também é possível que o desenvolvedor faça uma contribuição para o documento que descreve o estilo de codificação GNU/C. Caso ele detecte alguma inconsistência ou uma possível evolução em um determinando conteúdo, basta enviar um email para bug-standards@gnu.org  com a descrições das contribuições \cite{stallman2015}.
+
+O estilo GNU proposto para a linguagem C possui características próprias no que se refere à formatação, comentários, convenção de nomes, tabulações, espaços e indentações, dentre outros.
+
+\subsection{Formatação}
+
+O estilo de codificação Gnu/C utiliza 79 caracteres para o comprimento das linhas. Segundo Stallman, esta caraterística facilita a leitura do código nos mais diversos ambientes e editores.
+O estilo também recomenda a utilização de colchetes "{}", para o bloco da função em linha posterior à da declaração da função e ao final do bloco. O Código \ref{formatGnuC}, exemplifica a formatação mencionada.
+
+\lstinputlisting[language=C, caption=Formatação GNU C, label=formatGnuC]{cods/formatgnu.c}
+
+\subsection{Comentário}
+
+Stallman diz que todo programa deve começar com um comentário no topo do código-fonte contendo a função 'principal' do programa. Este comentário deve informar o nome do arquivo e apresentar uma ou duas linhas a respeito do objetivo geral do programa. As estruturas e as funções devem trazer comentários com a descrição sobre sua funcionalidade, quais os tipos de argumentos pode receber e o seu tipo de retorno, quando houver.
+
+É  recomendado que os comentários sejam escritos em inglês. A justificativa é que o inglês é o idioma comum para quase todos os desenvolvedores, tornando possível a um grande número de pessoas entenderem o que foi definido naquela função.
+
+O Código \ref{comentGnuC} exemplifica um programa com comentários no estilo GNU/C.
+
+\lstinputlisting[language=C, caption=Comentários GNU C, label=comentGnuC]{cods/comentgnu.c}
+
+
+%\section{Seção}
+
+%Meu texto da seção.
+
+%\subsection{Sub-seção}
+
+%Meu texto da sub-seção.
+
+%\subsubsection{Sub-sub-seção}
+
+%Meu texto da sub-sub-seção.
+
+%Se necessário, use notas de rodapé \footnote{Essa é uma nota de rodapé.}
 
