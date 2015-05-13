@@ -32,35 +32,21 @@ mente de um único desenvolvedor, logo um guia de estilo de codificação propicia 
 
 Se analisarmos o código de diferentes desenvolvedores, existe a possibilidade de existir diferenças dentre os estilos utilizados no momento de escrever e formatar um código-fonte em uma determinada linguagem. Por exemplo, ao declarar uma função ou método, um desenvolvedor pode utilizar chaves ('\{' e '\}') em linhas separadas ou abrir a chave na mesma linha da declaração \cite{teles2014}. As Tabelas \ref{table:diff2Program} ilustram dois código com diferentes estilos de codificação.
 
-\begin{table}[h]
-	\label{table:diff2Program}
+\begin{table}[ht]
 	\caption{Diferenças de estilo entre dois programadores}
+	\label{table:diff2Program}
 	\begin{center}
-	\begin{tabular}{|l|l|l|l|l|l|}
-	\hline
-	\rowcolor[HTML]{9B9B9B} 
-	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}
-	\textbf{\hspace{15.2 mm} Programador 1 \hspace{15.2 mm} }}  & 
-	\multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}
-	\textbf{\hspace{15.2 mm} Programador 2 \hspace{15.2 mm} }} \\ 
-	\hline
-	\multicolumn{5}{|l|}{
-		\begin{tabular}[c]{@{}l@{}}
-			\hspace{8 mm} if (i \textgreater= 0) \{\\ 
-			\hspace{16 mm} faça alguma coisa 
-			\hspace{13 mm} \\ 
-			\hspace{8 mm} \}
-		\end{tabular}} & 
-		
-		\begin{tabular}[c]{@{}l@{}}
-			\hspace{8 mm} if (i \textgreater= 0)\\
-			\hspace{8 mm} \{\\ 
-			\hspace{16 mm} faça alguma coisa 
-			\hspace{13 mm} \\
-			\hspace{8 mm} \}
-		\end{tabular} \\ 
-	\hline
-	\end{tabular}
+	
+	\begin{tabularx}{0.6\textwidth}{lX}
+	\toprule
+		\hspace{12 mm}\textbf{Programador 1}  & \hspace {12 mm}\textbf{Programador 2} \\
+	\midrule
+	\\
+	\hspace {4 mm} if (i \textgreater= 0) \{ & \hspace{6 mm}if (i \textgreater= 0) \\ 
+	\hspace{12 mm} faça alguma coisa & \hspace{6 mm}\{ \\
+	\hspace {4 mm} \} & \hspace{16 mm} faça alguma coisa
+	\\ & \hspace {6 mm}\}\\ \\ \bottomrule
+	\end{tabularx}
 	\end{center}
 \end{table}
 

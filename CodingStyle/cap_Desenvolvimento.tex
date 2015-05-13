@@ -59,48 +59,52 @@ Um bom desenvolvedor geralmente deve considerar os identificadores como valores 
 
 A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notação húngara e seus respectivos significados e tipos.
 
-\begin{table}[h]
+\begin{table}[ht]
         \caption{Variáveis utilizando notação húngara}
         \label{tabVarNtHun}
         \begin{center}
-        \begin{tabular}{|l|l|l|l|l|l|}
-        \hline
-        \rowcolor[HTML]{9B9B9B}
-        \multicolumn{1}{|c|}{
-                \cellcolor[HTML]{9B9B9B}
-                \textbf{Nome}
-        }  &
-        \multicolumn{1}{c|}{
-                \cellcolor[HTML]{9B9B9B}
-                \textbf{Descrição}
-        } \\
-        \hline
-                bBusy & boolean \\ \hline
-		chInitial & char \\ \hline
-		cApples & count of items \\ \hline
-		dwLightYears & double word \\ \hline
-		fBusy & float \\ \hline
-		nSize & integer or count \\ \hline
-		iSize & integer or index \\ \hline
-		fpPrice & floating-point \\ \hline
-		dbPi & double \\ \hline
-		pFoo & pointer \\ \hline
-		rgStudents  & array, or range \\ \hline
-		szLastName  & zero-terminated string \\	\hline
-		u32Identifier  & unsigned 32-bit integer \\ \hline
-		stTime & clock time structure \\ \hline
-		fnFunction  & function name \\	\hline
-		pszOwner  & pointer to zero-terminated string \\ \hline
-		rgfpBalances  & array of floating-point values \\ \hline
-		aulColors & array of unsigned long \\ \hline
-		hwndFoo  & handle to a window \\ \hline
-		lpszBar  & long pointer to a zero-terminated string \\	\hline
-		g\_nWheels & member of a global namespace, integer \\ \hline
-		m\_nWheels & member of a structure/class, integer \\ \hline
-		m\_wheels,\_wheels  & member of a structure/class \\ \hline
-		s\_wheels  & static member of a class \\ \hline
-		c\_wheels & static member of a function \\ \hline
-        \end{tabular}
+        \begin{tabularx}{0.7\textwidth}{lX}
+        \toprule
+                \textbf{Nome} & \textbf{Descrição} \\
+        \midrule
+                bBusy & boolean \\
+	\rowcolor[gray]{0.8}
+		chInitial & char \\ 
+		cApples & count of items \\ 
+	\rowcolor[gray]{0.8}
+		dwLightYears & double word \\ 
+		fBusy & float \\ 
+	\rowcolor[gray]{0.8}
+		nSize & integer or count \\ 
+		iSize & integer or index \\ 
+	\rowcolor[gray]{0.8}
+		fpPrice & floating-point \\ 
+		dbPi & double \\ 
+	\rowcolor[gray]{0.8}
+		pFoo & pointer \\
+		rgStudents  & array, or range \\ 
+	\rowcolor[gray]{0.8}
+		szLastName  & zero-terminated string \\
+		u32Identifier  & unsigned 32-bit integer \\
+	\rowcolor[gray]{0.8}
+		stTime & clock time structure \\
+		fnFunction  & function name \\
+	\rowcolor[gray]{0.8}
+		pszOwner  & pointer to zero-terminated string \\
+		rgfpBalances  & array of floating-point values \\
+	\rowcolor[gray]{0.8}
+		aulColors & array of unsigned long \\
+		hwndFoo  & handle to a window \\
+	\rowcolor[gray]{0.8}
+		lpszBar  & long pointer to a zero-terminated string \\
+		g\_nWheels & member of a global namespace, integer \\
+	\rowcolor[gray]{0.8}
+		m\_nWheels & member of a structure/class, integer \\
+		m\_wheels,\_wheels  & member of a structure/class \\
+	\rowcolor[gray]{0.8}
+		s\_wheels  & static member of a class \\
+		c\_wheels & static member of a function \\ \bottomrule
+        \end{tabularx}
         \end{center}
 \end{table}
 
@@ -135,6 +139,71 @@ O Código \ref{comentGnuC} exemplifica um programa com comentários no estilo GNU/
 
 \lstinputlisting[language=C, caption=Comentários GNU C, label=comentGnuC]{cods/comentgnu.c}
 
+\subsection{Convenção de nomes}
+
+O nomes de variáveis e funções globais devem ser concisos, trazendo consigo informações úteis sobre o significado da variável ou função. Assim como o comentário, os identificadores devem ser escritos em  inglês. Variáveis locais podem conter nomes mais curto, porque elas são utilizadas apenas dentro de um contexto específico. É recomendado a utilização de sublinhados para separar palavras e nomes, de modo que os comandos possam ser legíveis. O estilo GNU/C sugere o uso apenas de letras minúsculas para identificadores de variáveis e funções, reservando maiúsculas para macros, constantes, enumerações e para prefixos que seguem uma convenção uniforme.
+
+O Código \ref{varGnuC}, exemplifica uma variável cujo identificador segue o padrão GNU/C.
+
+\lstinputlisting[language=C, caption=Variáveis Gnu C, label=varGnuC]{cods/vargnu.c}
+
+\subsection{Indentação}
+
+Segundo \cite{kernelorg2002}, a idéia por trás da indentação é definir claramente onde um bloco de controle começa e onde ele termina. A indentação, em geral, utiliza 8 caracteres, mas existem editores que utilizam apenas 4, ou até mesmo 2 caracteres. Porém, de acordo com \cite{kernelorg2002}, a definição do tamanho de uma indentação é um problema semelhante ao da definição de uma aproximação para o valor da constante $\pi$.
+
+Apesar de algumas pessoas argumentarem que a utilização de 8 caracteres faz com que o código fonte fique muito deslocado à direita, o que como consequência faz com que seja difícil a leitura em uma tela de 80 caracteres, é desaconselhável a utilização de mais de 3 níveis de indentação em um mesmo bloco.
+
+\subsection{Espaçamento}
+
+De acordo com \cite{kernelorg2002}, um dos principais usos de espaços é a separação e destaque de palavras chaves que geralmente são acompanhadas de parênteses.
+
+A Tabela \ref{palchaveGnuC} exemplifica algumas palavras chaves que utilizam espaço após sua declaração.
+
+\lstinputlisting[language=C, caption=Palavras chaves espaços em brancos Gnu C, label=palchaveGnuC]{cods/palchavegnu.c}
+
+Já a Tabela \ref{palchaveExcGnuC} exemplifica algumas palavras chaves que não  utilizam espaço após sua declaração.
+
+\lstinputlisting[language=C, caption=Palavras chaves exceção espaços em brancos Gnu C, label=palchaveExcGnuC]{cods/palchaveexcgnu.c}
+
+\section{Java}
+
+Após ter sua solicitação de padronização negada pelos orgãos ISO/IEC e ECMA a empresa Sun Microsystems criou, em 1998, o Java Community Process (JCP), com o objetivo de ser um processo aberto e participativo para desenvolver e revisar as especificações de suas implementações de referência, das suítes de teste e do estilo de codificação da tecnologia Java.
+ 
+A abertura do JCP permitiu que empresas concorrentes da Sun se tornassem participantes ativas da evolução da Tecnologia Java. Diferentemente da maioria dos processos de padronização existentes, é possível o envolvimento de pessoas físicas sem custos financeiros. Isso fez do JCP um ponto de atração para a discussão e evolução da tecnologia Java.
+ 
+Em 13 de novembro de 2006 foi lançada a maior parte do Java como Software Livre sob os termos da GNU (GPL). Em 8 de maio de 2007 o processo de adoção da nova licença foi finalizado, tornando praticamente todo o código Java como software de código aberto, exceto uma pequena porção da qual a Sun não possui copyright \cite{javamagazine2013}.
+
+[TODO perguntar sobre estas citações]
+
+De acordo com \cite{javamagazinecj2013}, a linguagem Java, em sua criação, teve como base a linguagem C++, que por sua vez teve como base a linguagem C. Com isto a linguagem possui algumas características semelhantes às encontradas em C/C++, dentre elas os tipos de comentários e estruturas de seleção, repetição. Naturalmente há outras características que são únicas do Java, como comentários para documentação e convenção de nomenclatura, dentre outras.
+
+\subsection{Formatação}
+\label{sec:formatacao}
+Segundo \cite{oracle2015}, a linguagem Java deve utilizar quatro espaços como unidade de recuo e evitar linhas com mais de 80 caracteres, uma vez que que recuos maiores ou linhas com mais de 80 caracteres não são bem tratadas por determinados terminais e ferramentas. Quando uma expressão não couber em uma única linha, ela deves ser interrompida de acordo com os seguintes  princípios:
+
+\begin{enumerate}
+\item após uma vírgula; 
+\item antes de um operador;
+\item a nova linha deve estar alinhada com o início de cada expressão, no mesmo nível da linha anterior.
+\end{enumerate}
+
+\subsection{Comentários}
+
+De acordo com \cite{oracle2015}, todos os códigos-fontes devem começar com um comentário semelhante ao estilo GNU/C citado em \ref{sec:formatacao}. No estilo Java é necessário que o comentário contenha o nome da classe, informações sobre a versão, a data de criação e o aviso de direitos autorais.  Os comentários de implementação são delimitados por /*...*/ ou precedidos pelos caracteres //. Os comentários de documentação são conhecidos como "comentários doc" e são delimitadas pelos marcardos "/**" e "*/".
+
+O Código \ref{comentjava} exemplifica o estilo de comentário Java para início de uma classe.
+
+\lstinputlisting[language=Java, caption=Comentário Java ( \cite{oracle2015} com adaptações), label=comentjava]{cods/coment.java}
+
+O Código \ref{comentumalinhajava} exemplifica comentários de linha única.
+
+\lstinputlisting[language=Java, caption=Comentários de linha única em Java, label=comentumalinhajava]{cods/comentumalinha.java}
+
+De acordo com \cite{javadocj2013}, a ferramenta JavaDoc fornece uma linguagem especifica para enriquecer os comentários da linguagem Java, pois baseia-se na inserção de textos explicativos em forma de um comentário especial, que antecedem o escopo de uma classe ou de um método, tendo a responsabilidade de apresentar o elemento que sucede o comentário.
+
+Seu funcionamento  é baseado no uso de marcação de documentos  com doclets, gerando arquivos nos formatos HTML \textit{(HyperText Markup Language)}, SGML \textit{(Standard Generalized Markup Language)}, XML \textit{(EXtensible Markup Language)} ou RTF \textit{(Rich Text Format)}. Tais marcações são feitas através de comentários, contendo tags especiais que especificam quais informações serão inseridas, com objetivo de manter uma massa de conhecimento reutilizável em qualquer projeto que faça uso da classe em questão.
+
+A Tabela 3.1, exibe algumas tags utilizadas pelo javaDoc e seu respectivo significado.
 
 %\section{Seção}
 
