@@ -203,8 +203,291 @@ De acordo com \cite{javadocj2013}, a ferramenta JavaDoc fornece uma linguagem es
 
 Seu funcionamento  é baseado no uso de marcação de documentos  com doclets, gerando arquivos nos formatos HTML \textit{(HyperText Markup Language)}, SGML \textit{(Standard Generalized Markup Language)}, XML \textit{(EXtensible Markup Language)} ou RTF \textit{(Rich Text Format)}. Tais marcações são feitas através de comentários, contendo tags especiais que especificam quais informações serão inseridas, com objetivo de manter uma massa de conhecimento reutilizável em qualquer projeto que faça uso da classe em questão.
 
-A Tabela 3.1, exibe algumas tags utilizadas pelo javaDoc e seu respectivo significado.
+A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu respectivo significado.
 
+\begin{table}[ht]
+        \caption{Tags JavaDoc.}
+        \label{tabtagsJavaDoc}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \toprule
+                \textbf{Tag} & \textbf{Significado} \\
+        \midrule
+		@author & Especifica o autor da classe ou do método em questão. \\
+	\rowcolor[gray]{0.8}
+		@deprecated & Identifica classes ou métodos obsoletos. É interessante \\
+		@link & Possibilita a definição de um link para um outro documento local ou remoto através de um URL.\\
+	\rowcolor[gray]{0.8}
+		@param & Mostra um parâmetro que será passado a um método.\\
+		@return & Mostra qual o tipo de retorno de um método.\\
+	\rowcolor[gray]{0.8}
+		@see & Possibilita a definição de referências de classes ou métodos, que podem ser consultadas para melhor compreender a idéia daqui			lo que está sendo comentado.\\
+		@since & Indica desde quando uma classe ou método foi adicionado\\
+	\rowcolor[gray]{0.8}
+		@throws & Indica os tipos de exceções que podem ser lançadas por um método.\\
+		@version & Informa a versão da classe.\\
+	
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+O Código \ref{utiltagsjava}, exemplifica a utilização de comentário no padrão javaDoc.
+
+\lstinputlisting[language=Java, caption=Utilizando tags JavaDoc, label=utiltagsjava]{cods/utiltags.java}
+
+\subsection{Convenção de nomes}
+
+De acordo com \cite{convencoesjava2013}, as convenções de nomes em Java tem como objetivo tornar os programas mais fáceis e compreensíveis, podendo também fornecer informações sobre a função do identificador.
+
+A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utilizados em Java.
+
+\begin{table}[ht]
+        \caption{Tipos de Identificadores Java ( \cite{convencoesjava2013}, com adaptações ).}
+        \label{tabtpidentJava}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lXX}
+        \toprule
+                \textbf{Tipo de Identificador} & \textbf{Regras Para Nome} & \textbf{Exemplos} \\
+        \midrule
+		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes 		de domínio de nível superior, tal como especificado na norma ISO 3166, 1981. Componentes subseqüentes do nome do pacote varia de acordo 		com uma organização próprias convenções de nomenclatura internos. & com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
+
+		Classes & Os nomes de classe devem ser substantivos, em maiúsculas e minúsculas, com a primeira letra de cada palavra em maiúscula. 			& class Raster; class ImageSprite; \\
+
+		Interfaces & Nomes de interfaces devem ser usadas com as primeiras letras em maiúsculas como nome de classes. & interface 
+		RasterDelegate; interface Storing; \\
+	
+		Métodos & Métodos devem ser verbos, com a letra minúscula em primeiro lugar, com a primeira letra de cada palavra interna em 
+		maiúscula. & run(); runFast(); getBackground(); \\
+
+		Variáveis & Os nomes de variáveis não deve começar com underscore \_ ou sinal de dólar \$, mesmo que ambos sejam permitidos. 
+		Os nomes de variáveis devem ser curtos, mas significativos. A escolha de um nome variável deve ser mnemônico. Os nomes comuns para 
+		variáveis temporárias são i, j, k, m, n para inteiros, c, d, e para caracteres & int i; char c; float myWidth; \\
+
+		Constantes & Os nomes de variáveis declaradas constantes de classes e de constantes ANSI deve ser todo em letras maiúsculas com 
+		palavras separadas por sublinhados ("\_"). & static final int MIN\_WIDTH = 4; static final int MAX\_WIDTH = 999; \\ 
+       \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\subsection{Indentação}
+
+De acordo com \cite{oracle2015}, a indentação na linguagem Java  deve conter 4 espaços ou 1 tabulação cujo tamanho corresponde exatamente à 8 espaços. A construção exata do recuo (espaços ou tabulação) é indeterminado.
+
+\subsection{Espaços em branco em expressões}
+
+De acordo com \cite{oracle2015}, as linhas em branco melhoram a legibilidade ao separar seções de código que são logicamente relacionada.
+Duas linhas em branco deve ser sempre utilizado nas seguintes circunstâncias:
+
+\begin{enumerate}
+\item entre as seções de um arquivo de origem;
+\item entre as definições de classe e de interfaces.
+\end{enumerate}
+
+Uma linha em branco deve ser sempre utilizada:
+
+\begin{enumerate}
+\item entre os métodos de uma classe;
+\item entre as variáveis locais de um método e sua primeira declaração;
+\item antes de um bloco ou de linha única de um comentário;
+\item entre seções lógicas dentro de um método, para melhorar a legibilidade.
+\end{enumerate}
+
+As linguagens Java e C possuem outros tipos estruturas comuns entre si, as quais podem ser consultadas no guia de estilo das linguagem citadas nos itens \footnote{http://www.gnu.org/prep/standards/} e \footnote{http://www.oracle.com/technetwork/java/codeconvtoc-136057.html}.
+
+\section{Python}
+
+De acordo com \cite{histpython1990}, a linguagem Python foi criada no início de 1990 por Guido van Rossum no instituto de pesquisa Stichting Mathematisch Centrum - CWI\footnote{http://www.cwi.nl}, localizado na Holanda. Esta linguagem é considerada uma sucessora da linguagem ABC.
+
+Segundo \cite{guido2011}, Python é uma  linguagem de programação fácil de aprender, poderosa, e que possui eficientes estruturas de dados de alto nível e suporte à programação orientada a objetos. Sua sintaxe é elegante e possui tipagem dinâmica a qual, juntamente com a sua natureza interpretada, torna a linguagem ideal para o desenvolvimento de scripts e eficaz para desenvolvimento de aplicações em diversas áreas, em múltiplas plataformas.
+
+As ferramentas e a documentação da linguagem Python são softwares de código aberto com uma licença compatível com a General Public License (GPL), porém menos restritiva, permitindo que o Python seja inclusive incorporado em produtos proprietários. A especificação da linguagem é mantida pela Python Software Foundation (PSF). Além de ser utilizada como linguagem principal no desenvolvimento de sistemas, o Python também é muito utilizado como linguagem script em vários softwares, permitindo automatizar tarefas e adicionar novas funcionalidades em softwares desenvolvidos primariamente em outras linguagens \cite{guido2011}.
+
+A implementação oficial do Python é mantida pela PSF e escrita em C e, por isso, é também conhecida como CPython. A versão estável mais recente está disponível para download no endereço: \footnote{http://www.python.org/download/}. Para a plataforma Windows, basta executar o instalador. Para outras plataformas, como em distribuições Linux, geralmente o Python já faz parte da distribuição; porém em alguns casos pode ser necessário compilar e instalar o interpretador a partir dos arquivos fonte.
+
+Existem também implementações de Python para .NET (IronPython)\footnote{http://ironpython.net/}, JVM (Jython)\footnote{http://www.jython.org/} e em Python (PyPy)\footnote{http://pypy.org/} \cite{guido2011}.
+
+Todas as versões da linguagem Python são open source\footnote{http://opensource.org}. A maioria das versões de Python são compatíveis com a licença GPL; a Tabela \ref{tabtpidentJava} resume as principais características de cada versão.
+
+\begin{table}[ht]
+        \caption{Versões Python ( \cite{histpython1990}, com adaptações ).}
+        \label{tabtpidentJava}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lXXXX}
+        \toprule
+                \textbf{Versão} & \textbf{Evolução de} & \textbf{Ano} & \textbf{Proprietário} & \textbf{Compatibilidade GPL} \\
+        \midrule
+		0.9thru .0 1.2 & n/a & 1991-1995 & CWI & yes \\
+		1.3 thru 1.5.2 & 1.2 & 1995-1999 & CNRI & yes \\
+		1.6 & 1.5.2 & 2000 & CNRI & no \\
+		2.0 & 1.6 & 2000 & BeOpen.com & no \\
+		1.6.1 & 1.6 & 2001 & CNRI & no \\
+		2.1 & 2.0+1.6.1 & 2001 & PSF & no \\
+		2.0.1 & 2.0+1.6.1 & 2001 & PSF & yes \\
+		2.1.1 & 2.1+2.0.1 & 2001 & PSF & yes \\
+		2.1.2 & 2.1.1 & 2002 & PSF & yes \\
+		2.1.3 & 2.1.2 & 2002 & PSF & yes \\
+		2.2 e acima & 2.1.3 & 2001- atualmente & PSF & yes \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{PEP8}
+
+De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 (Python Enhancement Proposal 8) propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
+
+Assim como os estilos de codificação C e Java, o guia de estilo para Python também possui suas características e particularidades, como formatação, comentários, convenção de nomenclaturas, dentre outras.
+
+\subsection{Codificação de caracteres}
+
+Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII \textit{(American Standard Code for Information Interchange)} ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 \textit{(8-bit Unicode Transformation Format)} \footnote{http://www.python.org/dev/peps/pep-3120}.
+
+\subsection{Formatação}
+
+De acordo com \cite{pep8-2001}, por se tratar de uma linguagem que raizes na linguagem C, o estilo de codificação Python também traz consigo a limitação de 79 caracteres por linha, ainda que muitos dispositivos que sejam limitados a 80 caracteres. Para longos blocos de texto como docstrings ou comentários, a limitação é de 72 caracteres. Para linhas longas deve ser utilizada a continuação implícita entre parênteses, colchetes e chaves.
+
+\subsection{Importações}
+
+Importações ficam sempre no começo do arquivo, após os comentários e a docstring de módulo, e antes da declaração das constantes e variáveis globais. Quando um pacote é importado, são adicionadas funcionalidades criadas por terceiros ou da biblioteca padrão ao código-fonte em desenvolvimento.
+
+Importações devem aparecer na seguinte ordem, de acordo com a origem do pacote:
+
+\begin{enumerate}
+\item biblioteca padrão;
+\item de terceiros;
+\item da aplicação. 
+\end{enumerate}
+
+De acordo com \cite{pep328-2003}, deve ser utilizado o caminho absoluto do pacote na utilização de importações, pois tais linhas são mais portáteis e, geralmente, mais legíveis. 
+
+A Tabela \ref{importpy} exemplifica a utilização de importação de pacotes segundo às recomendações do PEP8.
+
+\lstinputlisting[language=Python, caption=Importação de pacotes conforme o estilo Python., label=importpy]{cods/import.py}
+
+A Tabela \ref{importnotstylepy} exemplifica a utilização de importação de pacotes de forma divergente à proposta no estilo PEP8.
+
+\lstinputlisting[language=Python, caption=Importação pacotes que não segue o estilo PEP8., label=importnotstylepy]{cods/importnotestyle.py}
+
+\subsection{Comentários}
+
+Comentários são frases ou orações relacionadas ao significado e funcionamento de um determinado trecho de código. A primeira letra de um cometário deve ser maiúscula, a não ser que seja um identificador que comece com minúscula. 
+Comentários de bloco normalmente consistem em um ou mais parágrafos, divididos em múltiplas linhas; já os comentários em uma mesma linha devem ter ao menos dois espaços de distância do último caractere e começar com um '\#', um espaço e o texto.
+
+O Código \ref{comentonelinepy}, exemplifica um comentário de uma linha.
+
+\lstinputlisting[language=Python, caption=Comentário de uma linha., label=comentonelinepy]{cods/comentoneline.py}
+
+\subsection{DocStrings}
+
+O manual \cite{pep257-2001} descreve como escrever um comentário em formato docstring, o qual consiste em uma cadeia de caracteres que ocorre como a primeira declaração em um módulo, função, classe ou definição de método. 
+
+A  Tabela \ref{docstringpy} exemplifica um comentário em formato docstrings.
+
+\lstinputlisting[language=Python, caption=Comentário em formato docstrings., label=docstringpy]{cods/docstrig.py}
+
+\subsection{Indentação}
+
+De acordo com \cite{pep8-2001}, não se pode misturar tabulações e espaços para a utilização de indentação: o recomendado é que se utilize 4 espaços para a indentação dos blocos. Para projetos mais antigos  a orientaçao é utilizar uma tabulação (tecla TAB), 
+com tamanho equivalente a 8 espaços. 
+
+\subsection{Espaço em branco em expressões}
+
+De acordo com \cite{pep8-2001}, a utilização de linhas em branco deve seguir as seguintes recomendações:
+
+\begin{enumerate}
+\item separar funções de nível superior e definições de classe com duas linhas em branco;
+\item definições de método dentro de uma classe são separadas por uma linha em branco;
+\item linhas em branco extras podem ser utilizadas com moderação para separar grupos de funções;
+\item usar linhas em branco em funções, com moderação, para indicar seções lógicas.
+\end{enumerate}
+
+ Deve-se evitar espaços em branco nas seguintes situações: 
+
+\begin{enumerate}
+\item dentro de parênteses, colchetes e chaves;
+\item antes de vírgula, ponto e vírgula e dois-pontos; 
+\item antes do parêntese de abertura da lista de argumentos de uma função;
+\item antes do colchete de índices; 
+\item mais de um espaço em torno de um operador para alinhar com outros;
+\item não usar espaços em volta do caractere '=' quando é antecedido por uma palavra-chave de um argumento ou sucedido por um valor padrão para um parâmetro.
+\end{enumerate}
+
+Outra recomendação relativa ao uso de espaços em branco é sempre colocar espaços em torno das operações.
+
+\subsection {Convenção de nomes}
+
+Segundo \cite{pep8-2001} as convenções de nome da biblioteca padrão da linguagem Python são confusas,
+ e inconsistentes. No entanto, são recomendadas as seguintes convenções para a construção de nomes e identificadores, numeradas por ordem de prioridade:
+
+\begin{enumerate}
+\item uma letra minúscula
+\item uma letra maiúscula
+\item minúsculas
+\item minúsculas\_com\_sublinhado
+\item MAIÚSCULAS
+\item MAIÚSCULAS\_COM\_SUBLINHADO
+\item IniciaisMaiúsculas 
+\end{enumerate}
+
+Nunca utilize os caracteres 'l' (ele minúsculo), 'O' (o maiúsculo), ou I, (i maiúsculo) como nome de uma variável de apenas um caractere pois, em determinadas fontes, esses caracteres são indistinguíveis dos numerais 1 (um) e 0 (zero). Quando  for necessário a usar 
+o 'l', usar o caractere 'L' em seu lugar.
+
+Módulos devem ter nome em minúsculas. Sublinhado podem ser usados no nome do módulo se implicar em uma melhora na legibilidade. Pacotes Python devem ter um nome curto, todo em minúsculas, embora nesse caso o uso de sublinhados seja desencorajado.
+
+Uma vez que nomes de módulos são mapeados para nomes de arquivos, e alguns sistemas de arquivos não diferenciam maiúsculas de minúsculas e truncam nomes longos, é importante que o nome do módulo escolhido seja bastante curto. Nomes longos não são um problema em plataformas Unix, mas podem vir a ser em sistemas operacionais Mac OSX mais antigos ou em ambientes Windows e DOS.
+
+Em relação aos métodos e classes, utilize sempre o identificador "self" como primeiro argumento de métodos de instância e usar "cls" como primeiro argumento para métodos de classe. 
+
+O guia de estilos proposto para a linguagem Python no PEP8 é extenso, e pode ser consultado em \cite{pep8-2001}  e no Anexo XYZ.
+
+\subsection{Outros Guias de Estilos}
+
+Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio guia de estilo, que por sua vez possui um conjunto de convenções, por vezes arbitrário, sobre como escrever código para o projeto. A título de exemplo, a Tabela \ref{guiagoogle} contém os endereços de diretrizes de estilo utilizado em projetos da Google.
+
+\begin{table}[ht]
+        \caption{Guias de estilo google.}
+        \label{guiagoogle}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Guia de Estilo} & \textbf{Endereço eletrônico} \\
+        \midrule
+	C++ Style Guide & http://google-styleguide.googlecode.com/svn/trunk/cppguide.html \\
+	Objective-C Style Guide & http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml \\
+	Java Style Guide & http://google-styleguide.googlecode.com/svn/trunk/javaguide.html \\
+	Python Style Guide & http://google-styleguide.googlecode.com/svn/trunk/pyguide.html \\
+	Shell Style Guide & http://google-styleguide.googlecode.com/svn/trunk/shell.xml \\
+	HTML/CSS Style Guide & http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml \\
+	JavaScript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml \\
+	AngularJS Style Guide & https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html \\
+	Common Lisp Style Guide & http://google-styleguide.googlecode.com/svn/trunk/lispguide.xml \\
+	Vimscript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/vimscriptguide.xml \\ 
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section {IDE - \textit{Integrated Development Environments}}
+
+Segundo \cite{learningjava2013},  uma maneira intuitiva e fácil de adotar um estilo de codificação é utilizar uma ferramenta de formatação de código que faça parte ou funcione conjuntamente a um IDE. 
+
+IDEs (Integrated Development Environment) são pacotes de software que integram várias ferramentas de desenvolvimento em um ambiente consistente, com o objetivo de aumentar a produtividade do desenvolvedor. Geralmente, IDEs incluem recursos como syntax highlight (código fonte colorizado conforme a sintaxe da linguagem), navegadores de código, shell integrado e code completion (o editor apresenta, durante a digitação, formas possíveis de completar o texto que ele consegue identificar) \cite{guido2011}.
+
+Entre as IDEs que suportam Python, encontram-se: 
+
+\begin{itemize}
+\item PyScripter5\footnote{https://code.google.com/p/pyscripter/wiki/FAQ};
+\item SPE6 (Stani's Python Editor)\footnote{http://sourceforge.net/p/spe/wiki/Home/};
+\item Eric7\footnote{http://eric-ide.python-projects.org/};
+\item PyDev8 (plug-in para a IDE Eclipse). 
+\end{itemize}
+
+O IDE Eclipse é mantido por uma comunidade cujos projetos estão focados na construção de uma plataforma de desenvolvimento aberta composta por frameworks extensíveis e ferramenta para a construção, implementação e gerenciamento de software em todo o ciclo de vida. 
+\cite{eclipse2015}
+
+%\section{Seção}
 %\section{Seção}
 
 %Meu texto da seção.
