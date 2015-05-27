@@ -250,7 +250,7 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
         \toprule
                 \textbf{Tipo de Identificador} & \textbf{Regras Para Nome} & \textbf{Exemplos} \\
         \midrule
-		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes 		de domínio de nível superior, tal como especificado na norma ISO 3166, 1981. Componentes subseqüentes do nome do pacote varia de acordo 		com uma organização próprias convenções de nomenclatura internos. & com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
+		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes 		de domínio de nível superior, tal como especificado na norma \cite{iso3166-2015}. Componentes subseqüentes do nome do pacote varia de acordo 		com uma organização próprias convenções de nomenclatura internos. & com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
 
 		Classes & Os nomes de classe devem ser substantivos, em maiúsculas e minúsculas, com a primeira letra de cada palavra em maiúscula. 			& class Raster; class ImageSprite; \\
 
@@ -486,6 +486,83 @@ Entre as IDEs que suportam Python, encontram-se:
 
 O IDE Eclipse é mantido por uma comunidade cujos projetos estão focados na construção de uma plataforma de desenvolvimento aberta composta por frameworks extensíveis e ferramenta para a construção, implementação e gerenciamento de software em todo o ciclo de vida. 
 \cite{eclipse2015}
+
+\section{Metodologias (Materiais e Métodos)}
+
+Nesta seção são descritas as metodologias e ferramentas utilizadas para o desenvolvimento de algoritmos para obtenção de arquivos e a extração de métricas para a análise de estilo de códigos escritos em Python.
+
+\subsection{Ferramentas}
+
+Nesta seção são descritas as versões, releases e ferramentas utilizadas no desenvolvimento deste estudo, tais como os sistemas operacionais Windows 8 e Linux Mint 17, o IDE Eclipse, o plugin PyDev e editor de texto Vim.
+
+\subsubsection{Sistema Operacional Windows}
+
+Windows 8 é o mais novo membro da família Windows, projetado para ser utilizado em  dispositivos móveis ou computadores pessoais, com uma interface totalmente nova e adaptada para dispositivos sensíveis ao toque [6]. Neste trabalho foi utilizado o Windows 8.1, versão 6.3.9600, 64 bits, ilustrado na Figura \ref{win8}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/win8.png}
+\caption{Windows 8 \label{win8}}
+\end{figure}
+
+\subsubsection{Sistema Operacional Linux}
+
+O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado para a comunidade. Baseado em Debian e Ubuntu, é a mais popular distribuição Linux e o terceiro sistema operacional mais utilizado em computadores pessoais, atrás somente de Microsoft Windows e Mac OSX da Apple [7]. A versão utilizada  neste trabalho foi Linux Mint 17, 64 bits,  ilustrado na Figura \ref{mint}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/mint.png}
+\caption{Linux Mint 17 \label{mint}}
+\end{figure}
+
+\subsubsection{IDE's - Eclipse}
+
+O Eclipse é o IDE utilizado neste projeto, por ser de fácil aprendizagem e possuir um núcleo extremamente adaptável às necessidades do projeto. A versão utilizada  neste trabalho é 
+Eclipse Luna Release (4.4.0), build id: 20140612-0600.
+
+As versões utilizadas podem ser obtidas no em \footnote{http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-jee-luna-R-win32.zip\&mirror\_id=575} e \footnote{http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-jee-luna-R-linux-gtk-x86\_64.tar.gz\&mirror\_id=575}
+
+A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/eclipse.png}
+\caption{IDE Eclipse \label{eclipse}}
+\end{figure}
+
+\subsubsection{IDE's - PyDev}
+
+PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython [5]. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0 que pode ser obtida através do seguinte link: \footnote{http://pydev.org/updates}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/pydev.png}
+\caption{IDE Eclipse com plugin PyDev \label{pydev}}
+\end{figure}
+
+\subsubsection{Editores de texto - VIM}
+
+Segundo [26], a sigla VIM significa "vi melhorado." O VIM é um editor de texto que foi escrito e é mantido por Bram Moolenaar. Atualmente, Vim é talvez o clone do vi mais amplamente utilizados, e existe um domínio da Internet \footnote{http://vim.org} dedicado a ele. A versão atual é  a 7.1. Irrestrito por normas ou comitês, o Vim continua a crescer em termos de funcionalidade. Uma comunidade inteira cresceu em torno dele. Coletivamente,  os membros da comunidade decidem os novos recursos a serem adicionados e as funcionalidades existentes a serem modificadas através da nomeação e votação para sugestões durante os ciclos de desenvolvimento.
+
+Vim é um editor modal no sentido de que as teclas do teclado têm diferentes funções em cada modo de operação; possui suporte a expressões regulares em buscas, com várias extensões à sintaxe padrão de expressões regulares, mapeamento de qualquer tecla do teclado e corretor ortográfico a partir da versão 7.0; funciona tanto no console/terminal quanto em ambiente gráfico (que neste caso utiliza o aplicativo gVim); é absolutamente programável, via interfaces com interpretadores (Perl, Python, Ruby) ou via seu próprio interpretador; contém vários temas de cores e tem licença GPL. [8]
+
+A tela do editor modo texto Vim pode ser vista na Figura \ref{vim}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/vim.png}
+\caption{Editor Vim em modo texto \label{vim}}
+\end{figure}
+
+A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do repositório oficial do sistema operacional Linux Mint 17.
+
+\subsubsection{PEP8 Tools}
+
+É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 [9]. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. [32]
+
+Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela 6.1.
+
+
 
 %\section{Seção}
 %\section{Seção}
