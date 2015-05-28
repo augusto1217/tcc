@@ -560,8 +560,198 @@ A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do reposit
 
 É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 [9]. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. [32]
 
-Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela 6.1.
+Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela \ref{instpep8}
 
+\begin{table}[ht]
+        \caption{Instalação e desinstalação pep8.}
+        \label{instpep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+                \$ pip install pep8 \\
+                \$ pip install --upgrade pep8 \\
+                \$ pip uninstall pep8 \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A ajuda rápida está disponível através da linha de comando "pep8 -h", que tem como resposta as opções listadas na Tabela \ref{helpPep8}.
+
+\begin{table}[ht]
+        \caption{Pep8 Ajuda.}
+        \label{helpPep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Opções} & \textbf{Descrição} \\
+        \midrule
+	        --version & Exibe o número da versão e finaliza o programa.\\
+		-h, --help & Exibe esta tabela de parâmetros de comandos e finaliza o programa.\\
+		-v, --verbose & Exibe mensagens de status imprimindo o conteúdo do comando ou depuração com o parâmetro -vv.\\
+		-q, --quiet & Relatório apenas com os nomes dos arquivos, ou arquivo vazio com o paramêtro -qq. \\
+		--first & Exibe a primeira ocorrência de cada erro.\\
+		--exclude=patterns & Excluir arquivos ou diretórios que correspondem aos itens separados por vírgula por padrão é separado as seguintes extensões (.svn, CVS, .bzr, .hg, .git).\\
+		--filename=patterns & Analisa diretório e verificar nomes de arquivos que contém extensão (* .py).\\
+		--select=errors & Selecione os erros e avisos (por exemplo, E, W6).\\
+		--ignore=errors & Ignorar os erros e avisos (por exemplo, E4, W).\\
+		--show-source & Exibe o código-fonte para cada erro.\\
+		--show-pep8 & Exibe texto do PEP 8 para cada erro.\\
+		--statistics & Calcula a quantidade de erros e alertas.\\
+		--count & Imprimir o número total de erros e alertas para o padrão de erro e definir o código de saída para 1 se o total não é nulo.\\
+		--max-line-length=n & Define o comprimento máximo permitido por cada linha (padrão: 79). \\
+		--hang-closing & Formatação para abrir e fechar colchetes, utilizando recuo como endentação. \\
+		--format=format & definir o formato de erro [ pylint | <custom>], o padrão é o pylint. \\
+		--diff & Exibe um relatório apenas com as linhas alteradas de acordo com a comparação unificada recebido por parâmetros entrada. \\
+		--benchmark & Mede a velocidade de processamento. \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
+
+\begin{table}[ht]
+        \caption{Pep8 estatísticas.}
+        \label{statistpep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+        \$ pep8 --statistics -qq Python-2.5/Lib\\
+        232     E201 Espaços em branco depois de '[' \\
+        631     E203 Espaços em branco antes de ',' \\
+        842     E211 Espaços em branco antes de '(' \\
+        2531    E221 mútliplos espaços antes de operador \\
+        4473    E301 esperado 1 linha em branco, encontrada 0 \\
+        4006    E302 esperado 2 linha em brancos, encontrada 1 \\
+        165     E303, muita linha em brancos (4) \\
+        325     E401 mútliplosimports on one line \\
+        3615    E501 linha muito longa (82 characters) \\
+        612     W601 .has\_key() is deprecated, usar 'in' \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é "/etc/config/arquivo", quando o sistema operacional é Linux; caso seja Windows, o caminho é "%userprofile%/pep8".
+
+O Código \ref{configPep8} contém um modelo de configuração encontrada ao abrir o arquivo de comportamento.
+
+\lstinputlisting[language=Bash, caption=Arquivo de configuração., label=configPep8]{cods/confPep8.sh}
+
+O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a ser exibidos após uma analise de um código-fonte.
+
+\begin{table}[ht]
+        \caption{Código de erros PEP8}
+        \label{88}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Códigos} & \textbf{Significado} \\
+        \midrule
+                \textbf{E1} & Indentação \\
+                E101 & Indentação contendo espaços e tabulações mistas\\
+                E111 & indentação não é um múltiplo de quatro\\
+                E112 & espera-se um bloco indentado\\
+                E113 & indentação inesperada\\
+                E114 & indentação não é um múltiplo de quatro ( comentário )\\
+                E115 & espera-se um bloco indentado (comentário)\\
+                E116 & indentação inesperada (comentário)\\
+                \\
+                E121  & linha continua embaixo da indentação para a suspensão da indentação\\
+                E122  & linha continua faltando indentação.\\
+                E123  & colchete de fechamento não coincide com a indentação da linha do colchete de abertura.\\
+                E124  & colchete de fechamento não coincide com indentação visual\\
+                E125  & linha de continuidade com a mesma indentação da próxima linha lógica.\\
+                E126  & linha contínua sobre a indentação para alinhamento deslocado.\\
+                E127  & linha contínua sobre a indentação para indentação visual.\\
+                E128  & linha contínua abaixo da indentação para indentação visual.\\
+                E129  & linha visualmente indentada com a mesma indentação da próxima linha lógica.\\
+                E131  & linha contínua desalinhada para a suspensão da indentação.\\
+                E133  & colchete de fechamento está faltando indenta\\
+                \\
+                \textbf{E2} & Espaços em branco \\
+                E201 & Espaços em branco depois de '(' \\
+                E202 & Espaços em branco antes de ')' \\
+                E203 & Espaços em branco antes de ':' \\
+                \\
+                E211 & Espaços em branco antes de '(' \\
+                \\
+                E221 & múltiplos espaços antes de operador\\
+                E222 & múltiplos espaços depois de operador\\
+                E223 & tabulação antes de operador\\
+                E224 & tabulação depois de operador\\
+                E225 & faltando espaços em branco ao redor do operador\\
+                E226 & faltando espaços em branco ao redor do operador aritmético\\
+                E227 & faltando espaços em branco  ao redor de bit a bit ou mudança de operador\\
+                E228 & faltando espaços em branco  ao redor do modulo operador\\
+                \\
+                E231 & faltando espaços em branco depois de ',' \\
+                \\
+                E241 & múltiplos espaços depois de ','\\
+                E242 & tabulação depois de ','\\
+                \\
+                E251 & espaços não esperado ao redor de palavra chave / parâmetros igual \\
+                \\
+                E261 & pelo menos dois espaços antes de em linha de comentário \\
+                E262 & linha de comentários deve ser  iniciada com '\# ' \\
+                E265 & blocos de comentários deve ser iniciada com '\# ' \\
+                E266 & para bloco de comentário muito importante '\#' \\
+                \\
+                E271 & múltiplos espaços depois de palavra chave \\
+                E272 & múltiplos espaços antes de palavra chave \\
+                E273 & tabulação depois de palavra chave \\
+                E274 & tabulação antes de palavra chave \\
+		\\
+                \textbf{E3} & Linha em Branco \\
+                E301 & esperado 1 linha em branco, encontrada 0 \\
+                E302 & esperado 2 linha em brancos, encontrada 0 \\
+                E303 & muitas linhas em brancos (3)  \\
+                E304 & linha em brancos encontrada depois de função decorador \\
+		\\
+		\textbf{E4} & Importação \\
+		E401 & múltiplos importes em uma linha \\
+		\\
+		E5 & Tamanho de Linha \\
+		E501 & linha muito longa (82 > 79 caracteres) \\
+		E502 & a barra invertida é redundante entre parênteses \\
+		\\
+		\textbf{E7} & Declaração \\
+		E701 & múltiplos declaração em uma linha (dois pontos) \\
+		E702 & múltiplos declaração em uma linha (ponto e vírgula) \\
+		E703 & declaração termina com um ponto e vírgula \\
+		E704 & múltiplos declaração em uma linha (def) \\
+		E711 & comparação para Nenhum deveria ser "if cond é None: " \\
+		E712 & comparação  de operação Verdadeira deve ser 'if cond is True:' or 'if cond: ' \\
+		E713 & teste para a adesão deve ser 'not in' \\
+		E714 & teste para a identidade do objeto deve ser 'is not' \\
+		E721 & para não se comparar os tipos, usar 'isinstance()' \\
+		E731 & não atribuir uma expressão lambda, usar a def \\
+		\\
+		\textbf{E9} & Runtime \\
+		E901 &  Sintaxe com erro ou indentação com error \\
+		E902 & Entrada ou Saída com error \\
+		\\
+		\textbf{W1} & Alerta de Indentação \\
+		W191 & indentação contém tabulações\\
+		\\
+		\textbf{W2} & Alertas de espaços em branco \\
+		W291 &  espaços em branco à direita \\
+		W292 & nenhuma nova linha no final do arquivo \\
+		W293 & linha em branco contém espaços em branco \\
+		\\
+		\textbf{W3} & Alerta de linha em branco  \\
+		W391 & linha em branco no final do arquivo \\
+		\\
+		\textbf{W6} & Alerta de depreciação \\
+		W601 & .has\_key() is deprecated, usar 'in' \\
+		W602 & deprecated forma de aumentar a exceção \\
+		W603 & '<>' is deprecated, usar '!=' \\
+		W604 & backticks são deprecated, usar 'repr()' \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
 
 
 %\section{Seção}
