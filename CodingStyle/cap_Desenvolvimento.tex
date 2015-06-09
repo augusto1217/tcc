@@ -250,13 +250,15 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
         \toprule
                 \textbf{Tipo de Identificador} & \textbf{Regras Para Nome} & \textbf{Exemplos} \\
         \midrule
-		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes 		de domínio de nível superior, tal como especificado na norma \cite{iso3166-2015}. Componentes subseqüentes do nome do pacote varia de acordo 		com uma organização próprias convenções de nomenclatura internos. & com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
-
-		Classes & Os nomes de classe devem ser substantivos, em maiúsculas e minúsculas, com a primeira letra de cada palavra em maiúscula. 			& class Raster; class ImageSprite; \\
+		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes de domínio de nível superior, tal como especificado na norma \cite{iso3166-2015}. 
+		Componentes subseqüentes do nome do pacote varia de acordo com uma organização próprias convenções de nomenclatura internos. & com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
+	\rowcolor[gray]{0.8}
+		Classes & Os nomes de classe devem ser substantivos, em maiúsculas e minúsculas, com a primeira letra de cada palavra em maiúscula. & class Raster; class ImageSprite; \\
 
 		Interfaces & Nomes de interfaces devem ser usadas com as primeiras letras em maiúsculas como nome de classes. & interface 
 		RasterDelegate; interface Storing; \\
 	
+	\rowcolor[gray]{0.8}
 		Métodos & Métodos devem ser verbos, com a letra minúscula em primeiro lugar, com a primeira letra de cada palavra interna em 
 		maiúscula. & run(); runFast(); getBackground(); \\
 
@@ -264,6 +266,7 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
 		Os nomes de variáveis devem ser curtos, mas significativos. A escolha de um nome variável deve ser mnemônico. Os nomes comuns para 
 		variáveis temporárias são i, j, k, m, n para inteiros, c, d, e para caracteres & int i; char c; float myWidth; \\
 
+	\rowcolor[gray]{0.8}
 		Constantes & Os nomes de variáveis declaradas constantes de classes e de constantes ANSI deve ser todo em letras maiúsculas com 
 		palavras separadas por sublinhados ("\_"). & static final int MIN\_WIDTH = 4; static final int MAX\_WIDTH = 999; \\ 
        \bottomrule
@@ -319,14 +322,19 @@ Todas as versões da linguagem Python são open source\footnote{http://opensource.
                 \textbf{Versão} & \textbf{Evolução de} & \textbf{Ano} & \textbf{Proprietário} & \textbf{Compatibilidade GPL} \\
         \midrule
 		0.9thru .0 1.2 & n/a & 1991-1995 & CWI & yes \\
+	\rowcolor[gray]{0.8}
 		1.3 thru 1.5.2 & 1.2 & 1995-1999 & CNRI & yes \\
 		1.6 & 1.5.2 & 2000 & CNRI & no \\
+	\rowcolor[gray]{0.8}
 		2.0 & 1.6 & 2000 & BeOpen.com & no \\
 		1.6.1 & 1.6 & 2001 & CNRI & no \\
+	\rowcolor[gray]{0.8}
 		2.1 & 2.0+1.6.1 & 2001 & PSF & no \\
 		2.0.1 & 2.0+1.6.1 & 2001 & PSF & yes \\
+	\rowcolor[gray]{0.8}
 		2.1.1 & 2.1+2.0.1 & 2001 & PSF & yes \\
 		2.1.2 & 2.1.1 & 2002 & PSF & yes \\
+	\rowcolor[gray]{0.8}
 		2.1.3 & 2.1.2 & 2002 & PSF & yes \\
 		2.2 e acima & 2.1.3 & 2001- atualmente & PSF & yes \\
 	\bottomrule
@@ -335,6 +343,7 @@ Todas as versões da linguagem Python são open source\footnote{http://opensource.
 \end{table}
 
 \section{PEP8}
+\label{pep8}
 
 De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 (Python Enhancement Proposal 8) propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
 
@@ -362,11 +371,11 @@ Importações devem aparecer na seguinte ordem, de acordo com a origem do pacote:
 
 De acordo com \cite{pep328-2003}, deve ser utilizado o caminho absoluto do pacote na utilização de importações, pois tais linhas são mais portáteis e, geralmente, mais legíveis. 
 
-A Tabela \ref{importpy} exemplifica a utilização de importação de pacotes segundo às recomendações do PEP8.
+A Tabela \ref{importpy} exemplifica a utilização de importação de pacotes segundo às recomendações citada na seção \ref{pep8}.
 
 \lstinputlisting[language=Python, caption=Importação de pacotes conforme o estilo Python., label=importpy]{cods/import.py}
 
-A Tabela \ref{importnotstylepy} exemplifica a utilização de importação de pacotes de forma divergente à proposta no estilo PEP8.
+A Tabela \ref{importnotstylepy} exemplifica a utilização de importação de pacotes de forma divergente à proposta no estilo citado na seção \ref{pep8}.
 
 \lstinputlisting[language=Python, caption=Importação pacotes que não segue o estilo PEP8., label=importnotstylepy]{cods/importnotestyle.py}
 
@@ -440,7 +449,7 @@ Uma vez que nomes de módulos são mapeados para nomes de arquivos, e alguns siste
 
 Em relação aos métodos e classes, utilize sempre o identificador "self" como primeiro argumento de métodos de instância e usar "cls" como primeiro argumento para métodos de classe. 
 
-O guia de estilos proposto para a linguagem Python no PEP8 é extenso, e pode ser consultado em \cite{pep8-2001}  e no Anexo XYZ.
+O guia de estilos proposto para a linguagem Python no item citado na seção \ref{pep8} é extenso, e pode ser consultado em \cite{pep8-2001}  e no Anexo B.
 
 \subsection{Outros Guias de Estilos}
 
@@ -454,16 +463,21 @@ Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio
         \toprule
                 \textbf{Guia de Estilo} & \textbf{Endereço eletrônico} \\
         \midrule
-	C++ Style Guide & http://google-styleguide.googlecode.com/svn/trunk/cppguide.html \\
-	Objective-C Style Guide & http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml \\
-	Java Style Guide & http://google-styleguide.googlecode.com/svn/trunk/javaguide.html \\
-	Python Style Guide & http://google-styleguide.googlecode.com/svn/trunk/pyguide.html \\
-	Shell Style Guide & http://google-styleguide.googlecode.com/svn/trunk/shell.xml \\
-	HTML/CSS Style Guide & http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml \\
-	JavaScript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml \\
-	AngularJS Style Guide & https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html \\
-	Common Lisp Style Guide & http://google-styleguide.googlecode.com/svn/trunk/lispguide.xml \\
-	Vimscript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/vimscriptguide.xml \\ 
+		C++ Style Guide & http://google-styleguide.googlecode.com/svn/trunk/cppguide.html \\
+	\rowcolor[gray]{0.8}
+		Objective-C Style Guide & http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml \\
+		Java Style Guide & http://google-styleguide.googlecode.com/svn/trunk/javaguide.html \\
+	\rowcolor[gray]{0.8}
+		Python Style Guide & http://google-styleguide.googlecode.com/svn/trunk/pyguide.html \\
+		Shell Style Guide & http://google-styleguide.googlecode.com/svn/trunk/shell.xml \\
+	\rowcolor[gray]{0.8}
+		HTML/CSS Style Guide & http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml \\
+		JavaScript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml \\
+	\rowcolor[gray]{0.8}
+		AngularJS Style Guide & https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html \\
+		Common Lisp Style Guide & http://google-styleguide.googlecode.com/svn/trunk/lispguide.xml \\
+	\rowcolor[gray]{0.8}
+		Vimscript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/vimscriptguide.xml \\ 
 	\bottomrule
         \end{tabularx}
         \end{center}
@@ -506,12 +520,12 @@ Windows 8 é o mais novo membro da família Windows, projetado para ser utilizado 
 \end{figure}
 
 \subsubsection{Sistema Operacional Linux}
-
+\label{linux_mint}
 O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado para a comunidade. Baseado em Debian e Ubuntu, é a mais popular distribuição Linux e o terceiro sistema operacional mais utilizado em computadores pessoais, atrás somente de Microsoft Windows e Mac OSX da Apple [7]. A versão utilizada  neste trabalho foi Linux Mint 17, 64 bits,  ilustrado na Figura \ref{mint}.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=140mm]{figs/mint.png}
+\includegraphics[scale=0.4]{figs/mint.png}
 \caption{Linux Mint 17 \label{mint}}
 \end{figure}
 
@@ -520,7 +534,7 @@ O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado par
 O Eclipse é o IDE utilizado neste projeto, por ser de fácil aprendizagem e possuir um núcleo extremamente adaptável às necessidades do projeto. A versão utilizada  neste trabalho é 
 Eclipse Luna Release (4.4.0), build id: 20140612-0600.
 
-As versões utilizadas podem ser obtidas no em \footnote{http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-jee-luna-R-win32.zip\&mirror\_id=575} e \footnote{http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-jee-luna-R-linux-gtk-x86\_64.tar.gz\&mirror\_id=575}
+As versões utilizadas podem ser obtidas no em \footnote{http://bit.ly/1EPcAGg} e \footnote{http://bit.ly/1KY7Zqh}
 
 A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
 
@@ -558,7 +572,7 @@ A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do reposit
 
 \subsubsection{PEP8 Tools}
 
-É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 [9]. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. [32]
+É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo \ref{pep8}. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. [32]
 
 Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela \ref{instpep8}
 
@@ -587,29 +601,38 @@ A ajuda rápida está disponível através da linha de comando "pep8 -h", que tem co
                 \textbf{Opções} & \textbf{Descrição} \\
         \midrule
 	        --version & Exibe o número da versão e finaliza o programa.\\
+	\rowcolor[gray]{0.8}
 		-h, --help & Exibe esta tabela de parâmetros de comandos e finaliza o programa.\\
 		-v, --verbose & Exibe mensagens de status imprimindo o conteúdo do comando ou depuração com o parâmetro -vv.\\
+	\rowcolor[gray]{0.8}
 		-q, --quiet & Relatório apenas com os nomes dos arquivos, ou arquivo vazio com o paramêtro -qq. \\
 		--first & Exibe a primeira ocorrência de cada erro.\\
+	\rowcolor[gray]{0.8}
 		--exclude=patterns & Excluir arquivos ou diretórios que correspondem aos itens separados por vírgula por padrão é separado as seguintes extensões (.svn, CVS, .bzr, .hg, .git).\\
 		--filename=patterns & Analisa diretório e verificar nomes de arquivos que contém extensão (* .py).\\
+	\rowcolor[gray]{0.8}
 		--select=errors & Selecione os erros e avisos (por exemplo, E, W6).\\
 		--ignore=errors & Ignorar os erros e avisos (por exemplo, E4, W).\\
+	\rowcolor[gray]{0.8}
 		--show-source & Exibe o código-fonte para cada erro.\\
 		--show-pep8 & Exibe texto do PEP 8 para cada erro.\\
+	\rowcolor[gray]{0.8}
 		--statistics & Calcula a quantidade de erros e alertas.\\
 		--count & Imprimir o número total de erros e alertas para o padrão de erro e definir o código de saída para 1 se o total não é nulo.\\
+	\rowcolor[gray]{0.8}
 		--max-line-length=n & Define o comprimento máximo permitido por cada linha (padrão: 79). \\
 		--hang-closing & Formatação para abrir e fechar colchetes, utilizando recuo como endentação. \\
+	\rowcolor[gray]{0.8}
 		--format=format & definir o formato de erro [ pylint | <custom>], o padrão é o pylint. \\
 		--diff & Exibe um relatório apenas com as linhas alteradas de acordo com a comparação unificada recebido por parâmetros entrada. \\
+	\rowcolor[gray]{0.8}
 		--benchmark & Mede a velocidade de processamento. \\
 	\bottomrule
         \end{tabularx}
         \end{center}
 \end{table}
 
-A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
+O Código \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
 
 \begin{table}[ht]
         \caption{Pep8 estatísticas.}
@@ -618,19 +641,19 @@ A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros 
         \begin{tabularx}{0.99\textwidth}{lX}
         \midrule
         \$ pep8 --statistics -qq Python-2.5/Lib\\
-        232     E201 Espaços em branco depois de '[' \\
-        631     E203 Espaços em branco antes de ',' \\
-        842     E211 Espaços em branco antes de '(' \\
-        2531    E221 mútliplos espaços antes de operador \\
-        4473    E301 esperado 1 linha em branco, encontrada 0 \\
-        4006    E302 esperado 2 linha em brancos, encontrada 1 \\
-        165     E303, muita linha em brancos (4) \\
-        325     E401 mútliplosimports on one line \\
-        3615    E501 linha muito longa (82 characters) \\
-        612     W601 .has\_key() is deprecated, usar 'in' \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
+	232     E201 Espaços em branco depois de '[' \\
+	631     E203 Espaços em branco antes de ',' \\
+	842     E211 Espaços em branco antes de '(' \\
+	2531    E221 mútliplos espaços antes de operador \\
+	4473    E301 esperado 1 linha em branco, encontrada 0 \\
+	4006    E302 esperado 2 linha em brancos, encontrada 1 \\
+	165     E303, muita linha em brancos (4) \\
+	325     E401 mútliplosimports on one line \\
+	3615    E501 linha muito longa (82 characters) \\
+	612     W601 .has\_key() is deprecated, usar 'in' \\
+	\bottomrule
+	\end{tabularx}
+	\end{center}
 \end{table}
 
 O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é "/etc/config/arquivo", quando o sistema operacional é Linux; caso seja Windows, o caminho é "%userprofile%/pep8".
@@ -640,4 +663,70 @@ O Código \ref{configPep8} contém um modelo de configuração encontrada ao abrir o
 \lstinputlisting[language=Bash, caption=Arquivo de configuração., label=configPep8]{cods/confPep8.sh}
 
 O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a ser exibidos após uma analise de um código-fonte.
+
+\subsubsection{Flake 8}
+
+É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python. [4] A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
+ 
+A sua instalação pode ser realizada através da linha de comando exemplificado na Tabela \ref{instflak8}
+
+\begin{table}[ht]
+        \caption{Instalação Flake8.}
+        \label{instflak8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+         pip install flake8 \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um determinado projeto, e com seus respectivos resultados, na qual apresenta a estrutura de uma letra do alfabeto, seguida  de um número e uma mensagem descrevendo a violação ao estilo descrito na seção \ref{pep8} detectada.
+
+\begin{table}[ht]
+        \caption{Sintaxe de uso do Flake8.}
+        \label{sintxflak8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+		\$ flake8 coolproject \\
+		coolproject/mod.py:97:1: F401 'shutil' imported but unused \\
+		coolproject/mod.py:625:17: E225 faltandoEspaços em branco around operato \\
+		coolproject/mod.py:729:1: F811 redefinition of function 'readlines' from line 723 \\
+		coolproject/mod.py:1028:1: F841 local variable 'errors' is assigned to but never use \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\subsection{Linguagens de Programação}
+
+\subsubsection{Java}
+
+A linguagem de programação Java foi utilizada para criar o algorítimo que captura arquivos compactados e o armazenamento localmente para a realização da validação deste trabalho.
+A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 (Java SE Development Kit) release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{http://bit.ly/1mTJaPC}.
+
+\subsubsection{Python}
+
+A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o endereço eletrônico \footnote{https://www.python.org/downloads/}
+
+\subsection{Extrator de métricas}
+
+Neste capítulo detalharemos os procedimentos efetuados para verificar se os projetos contidos  no repositório de software livre PyPI [10] escritos em  Python estão aderentes ao padrão descrito na seção \ref{pep8}, e qual o nível de adoção de cada projeto.
+
+\subsubsection{Rotinas e Scripts}
+
+O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e  transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessários para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python [3] e a quatificação das métricas avaliadas.
+
+\subsubsection{Rotinas Java}
+
+A primeira etapa se da na leitura de uma página web do endereço eletrônico \ref{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
+
+O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura dos endereços eletrônicos dos arquivos compactados a serem salvos localmente. 
+
+\lstinputlisting[language=Java, caption=Código para obter endereços dos pacotes., label=obtLinksPac]{cods/ObterLinkPacotes.java}
+
+O resultado do procedimento acima, gerou um arquivo texto denomiado ¿write.txt¿, contendo 63.313.00 mil linhas. A tabela xxx, exemplifica um trecho do arquivo de texto que foi criado.
+
 
