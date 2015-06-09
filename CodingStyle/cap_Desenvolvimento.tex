@@ -727,6 +727,45 @@ O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura 
 
 \lstinputlisting[language=Java, caption=Código para obter endereços dos pacotes., label=obtLinksPac]{cods/ObterLinkPacotes.java}
 
-O resultado do procedimento acima, gerou um arquivo texto denomiado ¿write.txt¿, contendo 63.313.00 mil linhas. A tabela xxx, exemplifica um trecho do arquivo de texto que foi criado.
+O resultado do procedimento acima, gerou um arquivo texto denomiado ¿write.txt¿, contendo 63.313.00 mil linhas. A tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
 
+\begin{table}[ht]
+        \caption{Links obtidos pelo código.}
+        \label{linksobt}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+                https://pypi.python.org/pypi/02exercicio/1.0.0\\
+		https://pypi.python.org/pypi/0x10c-asm/0.0.2\\
+		https://pypi.python.org/pypi/115wangpan/0.5.0\\
+		https://pypi.python.org/pypi/131228\_pytest\_1/1.0.0\\
+		https://pypi.python.org/pypi/1337/1.0.0\\
+		https://pypi.python.org/pypi/17MonIP/0.2.4\\
+		https://pypi.python.org/pypi/18-e/final\\
+		https://pypi.python.org/pypi/1ee/1.0.0\\
+		https://pypi.python.org/pypi/1pass/0.2.1\\
+		https://pypi.python.org/pypi/1to001/0.3.0\\
+		https://pypi.python.org/pypi/2013007\_pyh/1.0.0\\
+		...... \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
 
+Na segunda etapa foi escrito outro procedimento, também em linguagem Java, o qual recebe como parâmetro os endereços obtido na etapa anterior e a partir de cada endereço é executada uma análise baseada em padrões da construção da página para encontrar o link que aponta para o arquivo compactado. Assim que a rotina encontrava o link dava-se iniciava a transferência e o armazenamento do arquivo em um diretório local.
+
+O Código \ref{downFile}, apresenta a rotina de análise da estrutura das páginas web para a descoberta dos links que contém os arquivos compactados.
+
+\lstinputlisting[language=Java, caption=Obter link dos arquivos compactados., label=downFile]{cods/UrlContent.java}
+
+O Código \ref{downFile2} apresenta o método utilizado para realizar a transferência e o armazenamento dos arquivos compactados. 
+
+\lstinputlisting[language=Java, caption=Obter arquivos compactados., label=downFile2]{cods/UrlContent2.java}
+
+As etapas anteriores foram adotadas a linguagem de programação Java [2] por se tratar de uma linguagem que possui maior desempenho e menor consumo de processamento segundo o comparativo de acordo com a ilustração \ref{compjp}, que exibe um comparativo entre as linguagens Java e Python.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.5]{figs/comparePJ.png}
+\caption{Comparação entre Java e Python \footnote{http://bit.ly/1MGeRXl}, com adaptações.\label{compjp}}
+\end{figure}
