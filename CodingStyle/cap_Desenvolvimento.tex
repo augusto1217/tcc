@@ -529,7 +529,7 @@ O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado par
 \caption{Linux Mint 17 \label{mint}}
 \end{figure}
 
-\subsubsection{IDE's - Eclipse}
+\subsection{IDE's - Eclipse}
 
 O Eclipse é o IDE utilizado neste projeto, por ser de fácil aprendizagem e possuir um núcleo extremamente adaptável às necessidades do projeto. A versão utilizada  neste trabalho é 
 Eclipse Luna Release (4.4.0), build id: 20140612-0600.
@@ -544,7 +544,7 @@ A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
 \caption{IDE Eclipse \label{eclipse}}
 \end{figure}
 
-\subsubsection{IDE's - PyDev}
+\subsection{IDE's - PyDev}
 
 PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython [5]. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0 que pode ser obtida através do seguinte link: \footnote{http://pydev.org/updates}
 
@@ -554,7 +554,7 @@ PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Py
 \caption{IDE Eclipse com plugin PyDev \label{pydev}}
 \end{figure}
 
-\subsubsection{Editores de texto - VIM}
+\subsection{Editores de texto - VIM}
 
 Segundo [26], a sigla VIM significa "vi melhorado." O VIM é um editor de texto que foi escrito e é mantido por Bram Moolenaar. Atualmente, Vim é talvez o clone do vi mais amplamente utilizados, e existe um domínio da Internet \footnote{http://vim.org} dedicado a ele. A versão atual é  a 7.1. Irrestrito por normas ou comitês, o Vim continua a crescer em termos de funcionalidade. Uma comunidade inteira cresceu em torno dele. Coletivamente,  os membros da comunidade decidem os novos recursos a serem adicionados e as funcionalidades existentes a serem modificadas através da nomeação e votação para sugestões durante os ciclos de desenvolvimento.
 
@@ -570,7 +570,7 @@ A tela do editor modo texto Vim pode ser vista na Figura \ref{vim}
 
 A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do repositório oficial do sistema operacional Linux Mint 17.
 
-\subsubsection{PEP8 Tools}
+\subsection{PEP8 Tools}
 
 É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo \ref{pep8}. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. [32]
 
@@ -664,7 +664,8 @@ O Código \ref{configPep8} contém um modelo de configuração encontrada ao abrir o
 
 O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a ser exibidos após uma analise de um código-fonte.
 
-\subsubsection{Flake 8}
+\subsection{Flake 8}
+\label{flake_8}
 
 É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python. [4] A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
  
@@ -702,12 +703,12 @@ Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um 
 
 \section{Linguagens de Programação}
 
-\subsubsection{Java}
+\subsection{Java}
 
 A linguagem de programação Java foi utilizada para criar o algorítimo que captura arquivos compactados e o armazenamento localmente para a realização da validação deste trabalho.
 A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 (Java SE Development Kit) release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{http://bit.ly/1mTJaPC}.
 
-\subsubsection{Python}
+\subsection{Python}
 
 A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o endereço eletrônico \footnote{https://www.python.org/downloads/}
 
@@ -715,11 +716,11 @@ A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz
 
 Neste capítulo detalharemos os procedimentos efetuados para verificar se os projetos contidos  no repositório de software livre PyPI [10] escritos em  Python estão aderentes ao padrão descrito na seção \ref{pep8}, e qual o nível de adoção de cada projeto.
 
-\subsubsection{Rotinas e Scripts}
+\subsection{Rotinas e Scripts}
 
 O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e  transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessários para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python [3] e a quatificação das métricas avaliadas.
 
-\subsubsection{Rotinas Java}
+\subsection{Rotinas Java}
 
 A primeira etapa se da na leitura de uma página web do endereço eletrônico \ref{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
 
@@ -762,728 +763,97 @@ O Código \ref{downFile2} apresenta o método utilizado para realizar a transferên
 
 \lstinputlisting[language=Java, caption=Obter arquivos compactados., label=downFile2]{cods/UrlContent2.java}
 
-As etapas anteriores foram adotadas a linguagem de programação Java [2] por se tratar de uma linguagem que possui maior desempenho e menor consumo de processamento segundo o comparativo de acordo com a ilustração \ref{compjp}, que exibe um comparativo entre as linguagens Java e Python.
+As etapas anteriores foram adotadas a linguagem de programação Java [2] por se tratar de uma linguagem que possui maior desempenho e menor consumo de processamento segundo o comparativo descrito em \cite{BencJavaPython}, neste endereço é exibido um comparativo entre as linguagens Java e Python.
+
+Para a criação e execução dos procedimentos acima mencionados foram encontrados alguns obstáculos a serem superados. A primeira dificuldade foi a de compreender a estrutura do site na qual está localizado o repositório com os arquivos compactados para o download, pois o domínio [10] além de conter vários endereços (o que torna a página pesada e extensa de se carregar e navegar), os mesmos não direcionavam ao arquivo desejado e sim a uma nova página que continha uma outra página com uma determinada estrutura que também necessitava de análise para criar rotinas para a localização do arquivo para que pudesse ser salvo no disco rígido.
+ 
+A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes [10] , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração média de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
+
+\begin{table}[ht]
+        \caption{Exceções na transferência de arquivos.}
+        \label{exctransarq}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+        	00:12:25,713 ERROR UrlContent:237 - http://aha-gae.googlecode.com/files/project.zip \\
+		\%20rel=nofollow \\
+		00:14:12,920 ERROR UrlContent:237 - Software caused connection abort: recv failed \\
+		00:16:54,874 ERROR UrlContent:237 - Server returned HTTP response code: 403 for \\
+				URL: http://jamwt.com/downloads/apricot/apricot-0.2.tar.gz \\
+		00:17:03,524 ERROR UrlContent:237 - https://bitbucket.org/ganymed/araldo/downloads/ \\
+		araldo-redis-latest.tar.gz \\
+		00:17:04,618 ERROR UrlContent:237 - https://bitbucket.org/ganymed/araldo/downloads/ \\
+		araldo-websocket-latest.tar.gz \\
+		00:17:52,369 ERROR UrlContent:237 - http://programmer-art.org/media/releases/ \\
+		arista-transcoder/arista-0.9.7.tar.gz \\
+		00:18:31,121 ERROR UrlContent:237 - Server returned HTTP response code: 400 for \\
+				URL: http://sourceforge.net/project/downloading.php \\
+		00:18:43,788 ERROR UrlContent:237 - https://code.google.com/p/pyswim/downloads/detail \\
+		00:20:07,981 ERROR UrlContent:237 - Unexpected end of file from server \\
+		00:20:53,183 ERROR UrlContent:237 - http://www.wayforward.net/avdata/avdata-0.1.0.tar.gz \\
+		19:19:06,759 ERROR UrlContent:237 - Connection timed out: connect \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\subsection{Scripts Python}
+
+Para o desenvolvimento do script responsável pela a análise e coleta das métricas proposta na seção \ref{pep8}, utilizamos a linguagem Python e o sistema operacional Linux, também é aplicada a técnica de desenvolvimento chamada programação em par.
+ 
+A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador ¿piloto¿ implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca [11].
+ 
+Tal prática foi adotada pelo fato de que  código produzido é visto por, pelo menos, duas pessoas é menor a correção de falhas, com isto possuí menor manutenibilidade aumenta a velocidade de desenvolvimento e há o compartilhamento de  conhecimento.
+
+O Código \ref{extractFile} e \ref{extractFile2}, exibe a rotina desenvolvida para a obtenção dos resultados gerados utilizando as métricas do guia de estilo descritas na seçao \ref{pep8}.
+
+O Código \ref{extractFile} é responsável pela execução da ferramenta descrita na seção 3.1.2.6(ref).
+
+\lstinputlisting[language=Python, caption=Procedimento A responsável pela execução do procedimento execExtractFiles.py., label=extractFile]{cods/extractFiles.py}
+
+Código \ref{extractFile2} - procedimento referenciado no código xxx, que tem como tarefa a extração dos arquivos em um arquivo temporário para sua análise.
+
+\lstinputlisting[language=Python, caption=Procedimento B responsável pela execução do procedimento execExtractFiles.py., label=extractFile2]{cods/extractFiles2.py}
+
+O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
+
+\begin{itemize}
+	\item Acessar um determinado diretório (neste trabalho, chamado /tcc-unb/arquivos);
+	\item Ler arquivo com extensões *.zip, *.tar.gz, *.bz2, *.egg, *.tgz, e *.whl. descompactado em um diretório temporário do sistema operacional (por, exe	mplo, \\tmp);
+	\item Após a extração do arquivo, executar o flake8, ferramenta citada no item \ref{flake_8}, tendo como parâmetros as regras mais relevantes. 
+	Esta ferramenta analisa, linha a linha, cada arquivo dentro de cada projeto. No Código xxx é exemplificado o resultado da análise da execução da 
+	ferramenta mencionada;
+	\item Ao término da análise o script move o arquivo compactado para um outro diretório (denominado "arquivos -orig"), onde contém sub diretórios refente	s a sua extensão (por exemplo, "/arquivos-orig/zip", "/arquivos-orig/tar.gz", "/arquivos-orig/tgz" etc..).
+\end{itemize}
+
+Os procedimentos executados anteriormente deu origem a um arquivo texto denominado resultado-flake8.txt e tem sua estrutura exemplificada no Código \ref{exemScriptPep8} 
+
+\begin{table}[ht]
+        \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
+        \label{exemScriptPep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+		ArangoPy-0.0.9.tar.gz \\ %[]
+		4 modules \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/setup.py \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/arangodb/tests.py \\
+		1       E262 inline comment should start with '\# ' \\
+		1       W292 no newline at end of file \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/arangodb/\_\_init\_\_.py \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/arangodb/api.py \\
+		1       E271 multiple spaces after keyword \\
+		2       E303 too many blank lines (2) \\
+		5       E501 line too long (81 > 79 characters) \\
+		4       F821 undefined name 'QueryFilterStatement' \\ 
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+É criado um terceiro script utilizando a linguagem python, com a finalidade de quantificar os resultados obtidos, este script é exibido no Código \ref{scriptRules}.
+
+\lstinputlisting[language=Python, caption=Script extrator dos resultados das métricas., label=scriptRules]{cods/extractResultRules.py}
+
+Neste estudo foram removida as verificações para os seguintes códigos de erros: E121; E123; E126; E133; E226; E241; E242; E704. Esta remoção ocorreu pois de acordo com a seção \ref{pep8}, estas regras não são aceitas por unanimidade.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale=0.5]{figs/comparePJ.png}
-\caption{Comparação entre Java e Python, com adaptações.\label{compjp}} %\footnote{http://bit.ly/1MGeRXl}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\end{figure}
