@@ -1,6 +1,6 @@
 /*
-* MÃ©todo utilizado para receber um endereÃ§o eletrÃ´nico e  executar o
-* processo de transferÃªncia do mesmo.
+* Método utilizado para receber um endereço eletrônico e  executar o
+* processo de transferência do mesmo.
 */
 
 public class UrlContent implements Runnable {

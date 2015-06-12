@@ -1,5 +1,5 @@
 zado para obter um determinado pacote e salva -lo 
-* em um diretÃ³rio
+* em um diretório
 */
 
 public static boolean downloadFileFromURL(String urlString, File destination) { 

@@ -7,8 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /*
-* MÃ©todo utilizado para obter a url de um determinado pacote e salva - lo 
-* em um arquivo texto em um diretÃ³rio
+* Método utilizado para obter a url de um determinado pacote e salva - lo 
+* em um arquivo texto em um diretório
 */
 
 public class ObterLinkPacotes {

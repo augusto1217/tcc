@@ -142,12 +142,12 @@ class MetricsFiles:
             '[Global] Numero de modulos com erros: {}',
             '[Global] Total de ocorrencias de erros: {}',
             '[Global] Quantidade de erros distintos: {}',
-            '[Projeto] NÃºmero mÃ©dio de mÃ³dulos: {}',
+            '[Projeto] Número médio de módulos: {}',
             '[Projeto] Projeto com maior numero de modulos: {} ({} modulos)',
             '[Projeto] Projeto com maior numero de erros: {} ({} erros)',
-            '[Projeto] Porcentagem de mÃ³dulos com erro: {}',
-            '[Projeto] NÃºmero mÃ©dio de mÃ³dulos com erro: {}',
-            '[Projeto] NÃºmero mÃ©dio de erros distintos: {}',
+            '[Projeto] Porcentagem de módulos com erro: {}',
+            '[Projeto] Número médio de módulos com erro: {}',
+            '[Projeto] Número médio de erros distintos: {}',
         ]
 
         print '\n'.join(messages).format(self.gNumberProjects,
@@ -167,9 +167,9 @@ class MetricsFiles:
 
         messages = [
             '\n[{}] Numero de Projetos: {}',
-            '[{}] NÃºmero de mÃ³dulos: {}',
-            '[{}] Total de ocorrÃªncias: {}',
-            '[{}] Porcentagem em relaÃ§Ã£o ao total de erros: {}',
+            '[{}] Número de módulos: {}',
+            '[{}] Total de ocorrências: {}',
+            '[{}] Porcentagem em relação ao total de erros: {}',
         ]
 
         for k, v in errorCodes.items():

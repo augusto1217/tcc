@@ -1,8 +1,8 @@
 # -*- coding: iso-8859-1 -*-
 '''
 Created on Jan 17, 2015
-Funcionalide para extraÃ§Ã£o de arquivos e execuÃ§Ã£o
-das mÃ©tricas do PEP8
+Funcionalide para extração de arquivos e execução
+das métricas do PEP8
 @author: augusto
 '''
 import fnmatch
