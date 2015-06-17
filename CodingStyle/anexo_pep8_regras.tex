@@ -1,0 +1,124 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+
+\chapter{Códigos de Erros PEP8}\label{anexo:pep8}
+
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Códigos} & \textbf{Significado} \\
+        \midrule
+                \textbf{E1} & Indentação \\
+                E101 & Indentação contendo espaços e tabulações mistas\\
+                E111 & indentação não é um múltiplo de quatro\\
+                E112 & espera-se um bloco indentado\\
+                E113 & indentação inesperada\\
+                E114 & indentação não é um múltiplo de quatro ( comentário )\\
+                E115 & espera-se um bloco indentado (comentário)\\
+                E116 (\^{}) & indentação inesperada (comentário)\\
+                \\
+                E121 (\^{}) & linha continua embaixo da indentação para a suspensão da indentação\\
+                E122 (\^{}) & linha continua faltando indentação.\\
+                E123 (*) & colchete de fechamento não coincide com a indentação da linha do colchete de abertura.\\
+                E124 (\^{}) & colchete de fechamento não coincide com indentação visual\\
+                E125 (\^{}) & linha de continuidade com a mesma indentação da próxima linha lógica.\\
+                E126 (\^{}) & linha contínua sobre a indentação para alinhamento deslocado.\\
+                E127 (\^{}) & linha contínua sobre a indentação para indentação visual.\\
+                E128 (\^{}) & linha contínua abaixo da indentação para indentação visual.\\
+                E129 (\^{}) & linha visualmente indentada com a mesma indentação da próxima linha lógica.\\
+                E131 (\^{}) & linha contínua desalinhada para a suspensão da indentação.\\
+                E133 (*) & colchete de fechamento está faltando indenta\\
+                \\
+                \textbf{E2} & Espaços em branco \\
+                E201 & Espaços em branco depois de '(' \\
+                E202 & Espaços em branco antes de ')' \\
+                E203 & Espaços em branco antes de ':' \\
+                \\
+                E211 & Espaços em branco antes de '(' \\
+                \\
+                E221 & múltiplos espaços antes de operador\\
+                E222 & múltiplos espaços depois de operador\\
+                E223 & tabulação antes de operador\\
+                E224 & tabulação depois de operador\\
+                E225 & faltando espaços em branco ao redor do operador\\
+                E226 & faltando espaços em branco ao redor do operador aritmético\\
+                E227 & faltando espaços em branco  ao redor de bit a bit ou mudança de operador\\
+                E228 & faltando espaços em branco  ao redor do modulo operador\\
+
+  		\bottomrule
+		\end{tabularx}
+
+		\begin{tabularx}{0.99\textwidth}{lX}
+		\toprule
+		\textbf{Códigos} & \textbf{Significado} \\
+		\midrule
+                \\
+
+                E231 & faltando espaços em branco depois de ',' \\
+                E241 (*) & múltiplos espaços depois de ','\\
+                E242 (*) & tabulação depois de ','\\
+                \\
+                E251 & espaços não esperado ao redor de palavra chave / parâmetros igual \\
+                \\
+                E261 & pelo menos dois espaços antes de em linha de comentário \\
+                E262 & linha de comentários deve ser  iniciada com '\# ' \\
+                E265 & blocos de comentários deve ser iniciada com '\# ' \\
+                E266 & para bloco de comentário muito importante '\#' \\
+                \\
+                E271 & múltiplos espaços depois de palavra chave \\
+                E272 & múltiplos espaços antes de palavra chave \\
+                E273 & tabulação depois de palavra chave \\
+                E274 & tabulação antes de palavra chave \\
+		\\
+                \textbf{E3} & Linha em Branco \\
+                E301 & esperado 1 linha em branco, encontrada 0 \\
+                E302 & esperado 2 linha em brancos, encontrada 0 \\
+                E303 & muitas linhas em brancos (3)  \\
+                E304 & linha em brancos encontrada depois de função decorador \\
+		\\
+		\textbf{E4} & Importação \\
+		E401 & múltiplos importes em uma linha \\
+		\\
+		E5 & Tamanho de Linha \\
+		E501 (\^{}) & linha muito longa (82 > 79 caracteres) \\
+		E502 & a barra invertida é redundante entre parênteses \\
+		\\
+		\textbf{E7} & Declaração \\
+		E701 & múltiplos declaração em uma linha (dois pontos) \\
+		E702 & múltiplos declaração em uma linha (ponto e vírgula) \\
+		E703 & declaração termina com um ponto e vírgula \\
+		E704 & múltiplos declaração em uma linha (def) \\
+		E711 (\^{}) & comparação para Nenhum deveria ser "if cond é None: " \\
+		E712 (\^{}) & comparação  de operação Verdadeira deve ser 'if cond is True:' or 'if cond: ' \\
+		E713 & teste para a adesão deve ser 'not in' \\
+		E714 & teste para a identidade do objeto deve ser 'is not' \\
+		E721 & para não se comparar os tipos, usar 'isinstance()' \\
+		E731 & não atribuir uma expressão lambda, usar a def \\
+		\bottomrule
+		\end{tabularx}
+
+		\begin{tabularx}{0.99\textwidth}{lX}
+		\toprule
+		\textbf{Códigos} & \textbf{Significado} \\
+		\midrule
+                \\
+		\textbf{E9} & Runtime \\
+		E901 &  Sintaxe com erro ou indentação com error \\
+		E902 & Entrada ou Saída com error \\
+		\\
+		\textbf{W1} & Alerta de Indentação \\
+		W191 & indentação contém tabulações\\
+		\\
+		\textbf{W2} & Alertas de espaços em branco \\
+		W291 &  espaços em branco à direita \\
+		W292 & nenhuma nova linha no final do arquivo \\
+		W293 & linha em branco contém espaços em branco \\
+		\\
+		\textbf{W3} & Alerta de linha em branco  \\
+		W391 & linha em branco no final do arquivo \\
+		\\
+		\textbf{W6} & Alerta de depreciação \\
+		W601 & .has\_key() is deprecated, usar 'in' \\
+		W602 & deprecated forma de aumentar a exceção \\
+		W603 & '<>' is deprecated, usar '!=' \\
+		W604 & backticks são deprecated, usar 'repr()' \\
+        \bottomrule
+        \end{tabularx}

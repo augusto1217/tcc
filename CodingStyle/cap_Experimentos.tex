@@ -1,35 +1,998 @@
 %TCIDATA{LaTeXparent=0,0,relatorio.tex}
                       
-\chapter{Resultados Experimentais}\label{CapExperimentos}
+\chapter{Metodologias (Materiais e Métodos)}
 
-% Resumo opcional. Comentar se não usar.
-\resumodocapitulo{Resumo opcional.}
+Nesta seção são descritas as metodologias e ferramentas utilizadas para o desenvolvimento de algoritmos para obtenção de arquivos e a extração de métricas para a análise de estilo de códigos escritos em Python.
 
-\section{Introdução}
+\section{Ferramentas}
 
-Na introdução deverá ser feita uma descrição geral dos experimentos realizados. 
+Nesta seção são descritas as versões, releases e ferramentas utilizadas no desenvolvimento deste estudo, tais como os sistemas operacionais Windows 8 e Linux Mint 17, o IDE Eclipse, o plugin PyDev e editor de texto Vim.
 
-Para cada experimentação apresentada, descrever as condições de experimentação (e.g., instrumentos, ligações específicas, configurações dos programas), os resultados obtidos na forma de tabelas, curvas ou gráficos. Por fim, tão importante quando ter os resultados é a análise que se faz deles. Quando os resultados obtidos não forem como esperados, procurar justificar e/ou propor alteração na teoria de forma a justificá-los.
+\subsection{Sistema Operacional Windows}
 
-\section{Avaliação do algoritmo de resolução da equação algébrica de Riccati}
+Windows 8 é o mais novo membro da família Windows, projetado para ser utilizado em  dispositivos móveis ou computadores pessoais, com uma interface totalmente nova e adaptada para dispositivos sensíveis ao toque \cite{intowindows8-2012}. Neste trabalho foi utilizado o Windows 8.1, versão 6.3.9600, 64 bits, ilustrado na Figura \ref{win8}.
 
-O algoritmo proposto para solução da equação algébrica de Riccati foi avaliado em diferentes máquinas. Os tempos de execução são mostrados na Tabela \ref{TabDesempenho}. Nesta tabela, os algoritmos propostos receberam a denominação $CH$ para Chandrasekhar e $CH+LYAP$ para Chandrasekhar com Lyapunov. As implementações foram feitas em linguagem \textit{script} MATLAB.
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.3]{figs/win8.png}
+\caption{Windows 8 \label{win8}}
+\end{figure}
 
-\begin{table}[tbp]
-\caption{Tempos de execução em segundos para diferentes máquinas}
-\label{TabDesempenho}
-\begin{center}
-\begin{tabular}{c|c|c|c|c}
-\hline
-\textbf{Algoritmo} & \textbf{Laptop} & \textbf{Desktop} & \textbf{Desktop} & 
-\textbf{Laptop} \\ 
-& \textbf{1.8 GHz} & \textbf{PIII 850 MHz} & \textbf{MMX 233} & \textbf{600
-MHz} \\ \hline
-Matlab ARE & 649,96 & 1.857,5 & 7.450,5 & 9.063,9 \\ 
-$CH$ & 259,44 & 606,4 & 2.436,5 & 2.588,5 \\ 
-$CH+LYAP$ & 357,86 & 952,9 & 3.689,2 & 3.875,0 \\ \hline
-\end{tabular}
-\end{center}
+\subsection{Sistema Operacional Linux}
+\label{linux_mint}
+O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado para a comunidade. Baseado em Debian e Ubuntu, é a mais popular distribuição Linux e o terceiro sistema operacional mais utilizado em computadores pessoais, atrás somente de Microsoft Windows e Mac OSX da Apple \cite{linuxmint_2015}. A versão utilizada  neste trabalho foi Linux Mint 17, 64 bits,  ilustrado na Figura \ref{mint}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.4]{figs/mint.png}
+\caption{Linux Mint 17 \label{mint}}
+\end{figure}
+
+\subsection{IDE's - Eclipse}
+
+O Eclipse é o IDE utilizado neste projeto, por ser de fácil aprendizagem e possuir um núcleo extremamente adaptável às necessidades do projeto. A versão utilizada  neste trabalho é 
+Eclipse Luna Release (4.4.0), build id: 20140612-0600.
+
+As versões utilizadas podem ser obtidas no em \footnote{http://bit.ly/1EPcAGg} e \footnote{http://bit.ly/1KY7Zqh}
+
+A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/eclipse.png}
+\caption{IDE Eclipse \label{eclipse}}
+\end{figure}
+
+\subsection{IDE's - PyDev}
+
+PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython \cite{pydev_2015}. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0 que pode ser obtida através do seguinte link: \footnote{http://pydev.org/updates}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/pydev.png}
+\caption{IDE Eclipse com plugin PyDev \label{pydev}}
+\end{figure}
+
+\subsection{Editores de texto - VIM}
+
+Segundo \cite{learning-vim-2008}, a sigla VIM significa "vi melhorado." O VIM é um editor de texto que foi escrito e é mantido por Bram Moolenaar. Atualmente, Vim é talvez o clone do vi mais amplamente utilizados, e existe um domínio da Internet \footnote{http://vim.org} dedicado a ele. A versão atual é  a 7.1. Irrestrito por normas ou comitês, o Vim continua a crescer em termos de funcionalidade. Uma comunidade inteira cresceu em torno dele. Coletivamente,  os membros da comunidade decidem os novos recursos a serem adicionados e as funcionalidades existentes a serem modificadas através da nomeação e votação para sugestões durante os ciclos de desenvolvimento.
+
+Vim é um editor modal no sentido de que as teclas do teclado têm diferentes funções em cada modo de operação; possui suporte a expressões regulares em buscas, com várias extensões à sintaxe padrão de expressões regulares, mapeamento de qualquer tecla do teclado e corretor ortográfico a partir da versão 7.0; funciona tanto no console/terminal quanto em ambiente gráfico (que neste caso utiliza o aplicativo gVim); é absolutamente programável, via interfaces com interpretadores (Perl, Python, Ruby) ou via seu próprio interpretador; contém vários temas de cores e tem licença GPL. \cite{vim_2015}
+
+A tela do editor modo texto Vim pode ser vista na Figura \ref{vim}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=140mm]{figs/vim.png}
+\caption{Editor Vim em modo texto \label{vim}}
+\end{figure}
+
+A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do repositório oficial do sistema operacional Linux Mint 17.
+
+\subsection{PEP8 Tools}
+
+É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo \ref{pep8}. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. \cite{peptools_2015}
+
+Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela \ref{instpep8}
+
+\begin{table}[ht]
+        \caption{Instalação e desinstalação pep8.}
+        \label{instpep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+                \$ pip install pep8 \\
+                \$ pip install --upgrade pep8 \\
+                \$ pip uninstall pep8 \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
 \end{table}
 
-Observa-se que o algoritmo $CH+LYAP$ apresenta tempos de execução superiores com relação ao algoritmo $CH$. Entretanto, era esperado que o algoritmo $CH$ fosse mais rápido. Este resultado se justifica pelo fato de o algoritmo $CH$ fazer uso de funções embutidas do MATLAB. Já o aloritmo $CH+LYAP$ faz uso também de funções \textit{script} externas, aumentando bastante seu tempo computacional.
+A ajuda rápida está disponível através da linha de comando "pep8 -h", que tem como resposta as opções listadas na Tabela \ref{helpPep8}.
+
+\begin{table}[ht]
+        \caption{Pep8 Ajuda.}
+        \label{helpPep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Opções} & \textbf{Descrição} \\
+        \midrule
+	        --version & Exibe o número da versão e finaliza o programa.\\
+	\rowcolor[gray]{0.8}
+		-h, --help & Exibe esta tabela de parâmetros de comandos e finaliza o programa.\\
+		-v, --verbose & Exibe mensagens de status imprimindo o conteúdo do comando ou depuração com o parâmetro -vv.\\
+	\rowcolor[gray]{0.8}
+		-q, --quiet & Relatório apenas com os nomes dos arquivos, ou arquivo vazio com o paramêtro -qq. \\
+		--first & Exibe a primeira ocorrência de cada erro.\\
+	\rowcolor[gray]{0.8}
+		--exclude=patterns & Excluir arquivos ou diretórios que correspondem aos itens separados por vírgula por padrão é separado as seguintes extensões (.svn, CVS, .bzr, .hg, .git).\\
+		--filename=patterns & Analisa diretório e verificar nomes de arquivos que contém extensão (* .py).\\
+	\rowcolor[gray]{0.8}
+		--select=errors & Selecione os erros e avisos (por exemplo, E, W6).\\
+		--ignore=errors & Ignorar os erros e avisos (por exemplo, E4, W).\\
+	\rowcolor[gray]{0.8}
+		--show-source & Exibe o código-fonte para cada erro.\\
+		--show-pep8 & Exibe texto do PEP 8 para cada erro.\\
+	\rowcolor[gray]{0.8}
+		--statistics & Calcula a quantidade de erros e alertas.\\
+		--count & Imprimir o número total de erros e alertas para o padrão de erro e definir o código de saída para 1 se o total não é nulo.\\
+	\rowcolor[gray]{0.8}
+		--max-line-length=n & Define o comprimento máximo permitido por cada linha (padrão: 79). \\
+		--hang-closing & Formatação para abrir e fechar colchetes, utilizando recuo como endentação. \\
+	\rowcolor[gray]{0.8}
+		--format=format & definir o formato de erro [ pylint | <custom>], o padrão é o pylint. \\
+		--diff & Exibe um relatório apenas com as linhas alteradas de acordo com a comparação unificada recebido por parâmetros entrada. \\
+	\rowcolor[gray]{0.8}
+		--benchmark & Mede a velocidade de processamento. \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+O Código \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
+
+\begin{table}[ht]
+        \caption{Pep8 estatísticas.}
+        \label{statistpep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+        \$ pep8 --statistics -qq Python-2.5/Lib\\
+	232     E201 Espaços em branco depois de '[' \\
+	631     E203 Espaços em branco antes de ',' \\
+	842     E211 Espaços em branco antes de '(' \\
+	2531    E221 mútliplos espaços antes de operador \\
+	4473    E301 esperado 1 linha em branco, encontrada 0 \\
+	4006    E302 esperado 2 linha em brancos, encontrada 1 \\
+	165     E303, muita linha em brancos (4) \\
+	325     E401 mútliplosimports on one line \\
+	3615    E501 linha muito longa (82 characters) \\
+	612     W601 .has\_key() is deprecated, usar 'in' \\
+	\bottomrule
+	\end{tabularx}
+	\end{center}
+\end{table}
+
+O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é "/etc/config/arquivo", quando o sistema operacional é Linux; caso seja Windows, o caminho é "%userprofile%/pep8".
+
+O Código \ref{configPep8} contém um modelo de configuração encontrada ao abrir o arquivo de comportamento.
+
+\lstinputlisting[language=Bash, caption=Arquivo de configuração., label=configPep8]{cods/confPep8.sh}
+
+O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a ser exibidos após uma analise de um código-fonte.
+
+\subsection{Flake 8}
+\label{flake_8}
+
+É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python. \cite{flake-8_2015} A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
+ 
+A sua instalação pode ser realizada através da linha de comando exemplificado na Tabela \ref{instflak8}
+
+\begin{table}[ht]
+        \caption{Instalação Flake8.}
+        \label{instflak8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+         pip install flake8 \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um determinado projeto, e com seus respectivos resultados, na qual apresenta a estrutura de uma letra do alfabeto, seguida  de um número e uma mensagem descrevendo a violação ao estilo descrito na seção \ref{pep8} detectada.
+
+\begin{table}[ht]
+        \caption{Sintaxe de uso do Flake8.}
+        \label{sintxflak8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+		\$ flake8 coolproject \\
+		coolproject/mod.py:97:1: F401 'shutil' imported but unused \\
+		coolproject/mod.py:625:17: E225 faltandoEspaços em branco around operato \\
+		coolproject/mod.py:729:1: F811 redefinition of function 'readlines' from line 723 \\
+		coolproject/mod.py:1028:1: F841 local variable 'errors' is assigned to but never use \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{Linguagens de Programação}
+
+\subsection{Java}
+
+A linguagem de programação Java foi utilizada para criar o algorítimo que captura arquivos compactados e o armazenamento localmente para a realização da validação deste trabalho.
+A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 (Java SE Development Kit) release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{http://bit.ly/1mTJaPC}.
+
+\subsection{Python}
+
+A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o endereço eletrônico \footnote{https://www.python.org/downloads/}
+
+\section{Extrator de métricas}
+
+Neste capítulo detalharemos os procedimentos efetuados para verificar se os projetos contidos  no repositório de software livre PyPI \cite{pypi_2015} escritos em  Python estão aderentes ao padrão descrito na seção \ref{pep8}, e qual o nível de adoção de cada projeto.
+
+\subsection{Rotinas e Scripts}
+
+O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e  transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessários para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python [3] e a quatificação das métricas avaliadas.
+
+\subsection{Rotinas Java}
+
+A primeira etapa se da na leitura de uma página web do endereço eletrônico \ref{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
+
+O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura dos endereços eletrônicos dos arquivos compactados a serem salvos localmente. 
+
+\lstinputlisting[language=Java, caption=Código para obter endereços dos pacotes., label=obtLinksPac]{cods/ObterLinkPacotes_new.java}
+
+O resultado do procedimento acima, gerou um arquivo texto denomiado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
+
+\begin{table}[ht]
+        \caption{Links obtidos pelo código.}
+        \label{linksobt}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+                https://pypi.python.org/pypi/02exercicio/1.0.0\\
+		https://pypi.python.org/pypi/0x10c-asm/0.0.2\\
+		https://pypi.python.org/pypi/115wangpan/0.5.0\\
+		https://pypi.python.org/pypi/131228\_pytest\_1/1.0.0\\
+		https://pypi.python.org/pypi/1337/1.0.0\\
+		https://pypi.python.org/pypi/17MonIP/0.2.4\\
+		https://pypi.python.org/pypi/18-e/final\\
+		https://pypi.python.org/pypi/1ee/1.0.0\\
+		https://pypi.python.org/pypi/1pass/0.2.1\\
+		https://pypi.python.org/pypi/1to001/0.3.0\\
+		https://pypi.python.org/pypi/2013007\_pyh/1.0.0\\
+		...... \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Na segunda etapa foi escrito outro procedimento, também em linguagem Java, o qual recebe como parâmetro os endereços obtido na etapa anterior e a partir de cada endereço é executada uma análise baseada em padrões da construção da página para encontrar o link que aponta para o arquivo compactado. Assim que a rotina encontrava o link dava-se iniciava a transferência e o armazenamento do arquivo em um diretório local.
+
+O Código \ref{downFile}, apresenta a rotina de análise da estrutura das páginas web para a descoberta dos links que contém os arquivos compactados.
+
+\lstinputlisting[language=Java, caption=Obter link dos arquivos compactados., label=downFile]{cods/UrlContent.java}
+
+O Código \ref{downFile2} apresenta o método utilizado para realizar a transferência e o armazenamento dos arquivos compactados. 
+
+\lstinputlisting[language=Java, caption=Obter arquivos compactados., label=downFile2]{cods/UrlContent2.java}
+
+As etapas anteriores foram adotadas a linguagem de programação Java \cite{java_2015} por se tratar de uma linguagem que possui maior desempenho e menor consumo de processamento segundo o comparativo descrito em \cite{BencJavaPython}, neste endereço é exibido um comparativo entre as linguagens Java e Python.
+
+Para a criação e execução dos procedimentos acima mencionados foram encontrados alguns obstáculos a serem superados. A primeira dificuldade foi a de compreender a estrutura do site na qual está localizado o repositório com os arquivos compactados para o download, pois o domínio \cite{pypi_2015} além de conter vários endereços (o que torna a página pesada e extensa de se carregar e navegar), os mesmos não direcionavam ao arquivo desejado e sim a uma nova página que continha uma outra página com uma determinada estrutura que também necessitava de análise para criar rotinas para a localização do arquivo para que pudesse ser salvo no disco rígido.
+ 
+A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \cite{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração média de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
+
+\begin{table}[ht]
+        \caption{Exceções na transferência de arquivos.}
+        \label{exctransarq}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+        	00:12:25,713 ERROR UrlContent:237 - http://aha-gae.googlecode.com/files/project.zip \\
+		\%20rel=nofollow \\
+		00:14:12,920 ERROR UrlContent:237 - Software caused connection abort: recv failed \\
+		00:16:54,874 ERROR UrlContent:237 - Server returned HTTP response code: 403 for \\
+				URL: http://jamwt.com/downloads/apricot/apricot-0.2.tar.gz \\
+		00:17:03,524 ERROR UrlContent:237 - https://bitbucket.org/ganymed/araldo/downloads/ \\
+		araldo-redis-latest.tar.gz \\
+		00:17:04,618 ERROR UrlContent:237 - https://bitbucket.org/ganymed/araldo/downloads/ \\
+		araldo-websocket-latest.tar.gz \\
+		00:17:52,369 ERROR UrlContent:237 - http://programmer-art.org/media/releases/ \\
+		arista-transcoder/arista-0.9.7.tar.gz \\
+		00:18:31,121 ERROR UrlContent:237 - Server returned HTTP response code: 400 for \\
+				URL: http://sourceforge.net/project/downloading.php \\
+		00:18:43,788 ERROR UrlContent:237 - https://code.google.com/p/pyswim/downloads/detail \\
+		00:20:07,981 ERROR UrlContent:237 - Unexpected end of file from server \\
+		00:20:53,183 ERROR UrlContent:237 - http://www.wayforward.net/avdata/avdata-0.1.0.tar.gz \\
+		19:19:06,759 ERROR UrlContent:237 - Connection timed out: connect \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\subsection{Scripts Python}
+\label{scriptsPython}
+
+Para o desenvolvimento do script responsável pela a análise e coleta das métricas proposta na seção \ref{pep8}, utilizamos a linguagem Python e o sistema operacional Linux, também é aplicada a técnica de desenvolvimento chamada programação em par.
+ 
+A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador ¿piloto¿ implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca \cite{pairprogram_2002, págs. 38-42}.
+ 
+Tal prática foi adotada pelo fato de que  código produzido é visto por, pelo menos, duas pessoas é menor a correção de falhas, com isto possuí menor manutenibilidade aumenta a velocidade de desenvolvimento e há o compartilhamento de  conhecimento.
+
+O Código \ref{extractFile} e \ref{extractFile2}, exibe a rotina desenvolvida para a obtenção dos resultados gerados utilizando as métricas do guia de estilo descritas na seçao \ref{pep8}.
+
+O Código \ref{extractFile} é responsável pela execução da ferramenta descrita na seção 3.1.2.6(ref).
+
+\lstinputlisting[language=Python, caption=Procedimento A responsável pela execução do procedimento execExtractFiles.py., label=extractFile]{cods/extractFiles.py}
+
+Código \ref{extractFile2} - procedimento referenciado no código xxx, que tem como tarefa a extração dos arquivos em um arquivo temporário para sua análise.
+
+\lstinputlisting[language=Python, caption=Procedimento B responsável pela execução do procedimento execExtractFiles.py., label=extractFile2]{cods/extractFiles2.py}
+
+O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
+
+\begin{itemize}
+	\item Acessar um determinado diretório (neste trabalho, chamado /tcc-unb/arquivos);
+	\item Ler arquivo com extensões *.zip, *.tar.gz, *.bz2, *.egg, *.tgz, e *.whl. descompactado em um diretório temporário do sistema operacional (por, exe	mplo, \\tmp);
+	\item Após a extração do arquivo, executar o flake8, ferramenta citada no item \ref{flake_8}, tendo como parâmetros as regras mais relevantes. 
+	Esta ferramenta analisa, linha a linha, cada arquivo dentro de cada projeto. No Código xxx é exemplificado o resultado da análise da execução da 
+	ferramenta mencionada;
+	\item Ao término da análise o script move o arquivo compactado para um outro diretório (denominado "arquivos -orig"), onde contém sub diretórios refente	s a sua extensão (por exemplo, "/arquivos-orig/zip", "/arquivos-orig/tar.gz", "/arquivos-orig/tgz" etc..).
+\end{itemize}
+
+Os procedimentos executados anteriormente deu origem a um arquivo texto denominado resultado-flake8.txt e tem sua estrutura exemplificada a Tabela \ref{exemScriptPep8} 
+
+\begin{table}[ht]
+        \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
+        \label{exemScriptPep8}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \midrule
+		ArangoPy-0.0.9.tar.gz \\ %[]
+		4 modules \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/setup.py \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/arangodb/tests.py \\
+		1       E262 inline comment should start with '\# ' \\
+		1       W292 no newline at end of file \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/arangodb/\_\_init\_\_.py \\
+		-- /tmp/tmpUn3gdb/ArangoPy-0.0.9/arangodb/api.py \\
+		1       E271 multiple spaces after keyword \\
+		2       E303 too many blank lines (2) \\
+		5       E501 line too long (81 > 79 characters) \\
+		4       F821 undefined name 'QueryFilterStatement' \\ 
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Um terceiro script é criado utilizando a linguagem python, com a finalidade de quantificar os resultados obtidos, este script é exibido no Código \ref{scriptRules}.
+
+\lstinputlisting[language=Python, caption=Script extrator dos resultados das métricas., label=scriptRules]{cods/extractResultRules.py}
+
+Neste estudo foram removida as verificações para os seguintes códigos de erros: E121; E123; E126; E133; E226; E241; E242; E704. Esta remoção ocorreu pois de acordo com a seção \ref{pep8}, estas regras não são aceitas por unanimidade.
+
+\chapter{Resultados}
+
+Após a execução das rotinas mencionadas nos itens de código \ref{downFile} e \ref{downFile2} obteve-se  um total de 62.729 arquivos compactados, ocupando 17.4 Gigabytes de espaço físico do disco rígido, onde cada arquivo compactado corresponde a um projeto open source escrito em Python. Contudo, foram encontrados 229 arquivos defeituosos,  os quais foram descartados.
+
+Posteriormente a execução do script mencionado na Seção \ref{scriptsPython}, obteve-se um arquivo texto contendo 5.863.878 de linhas, nos moldes da Tabela \ref{exemScriptPep8} .
+
+A execução do código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no PEP8 (aug)(Anexo xyz).
+
+\begin{table}[ht]
+        \caption{Resultados obtidos com a análise de script}
+        \label{resultScript}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Perguntas} & \textbf{Respostas} \\
+        \midrule
+                Qual a quantidade total de projetos? & 62.500 \\
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de projetos com erros? & 59.253 \\ 
+		Qual a quantidade total de módulos analisados? & 1.265.511 \\ 
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de módulos com erros? & 722.120 \\ 
+		Qual a quantidade total de todas as  ocorrências de erros?  & 51.616.508 \\ 
+	\rowcolor[gray]{0.8}
+		Qual a quantidade de erros distintos? & 70 \\ 
+		Qual o projeto com maior número de módulos? & appengine\_sdk-1.9.19.post3-py2-none-any.whl (5735 módulos) \\ 
+	\rowcolor[gray]{0.8}
+		Qual o projeto com maior número de erros & nodepy-0.6.tar.gz (658.888 erros) \\
+	\bottomrule	
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Também foi obtida a quantidade de projetos, módulos e ocorrências para cada um dos códigos de erros analisados. A Tabela \ref{exemResult} exemplifica parte do resultado obtido,  para o código E501.
+
+\begin{table}[ht]
+        \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
+        \label{exemResult}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		\big[E501\big] Número de Projetos: 49345 \\
+		\big[E501\big] Número de módulos: 561319 \\
+		\big[E501\big] Total de ocorrências: 9328781 \\
+		\big[E501\big] Porcentagem em relação ao total de erros: 17.4792337182 \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Após resultado obtido com a análise descrita na Tabela \ref{exemResult}, ficou constatado que apenas 3.247 projetos estavam totalmente aderentes ao guia de estilo citado na Seção \ref{pep8}. No Gráfico \ref{allErrors} são exibidos os códigos dos erros que foram encontrados nos projetos analisados.
+
+O número de projetos é inferior ao número de arquivos transferidos pelo motivo que, ao executar a rotina apresentada no Código \ref{downFile} e \ref{downFile2}, detectou-se que alguns arquivos estavam corrompidos, o que impedia sua extração e posterior análise.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.6]{figs/all_erros}
+\caption{Código de erros detectados por número de ocorrências. \label{allErrors}}
+\end{figure}
+
+Para melhor análise dos erros encontrados, as informações foram organizadas por número de ocorrências. Em seguidas serão detalhando os tipos de erros e a relevância dos mesmos  para este estudo, classificado o grau de gravidade de cada erro. Serão analisados apenas os códigos de erros com mais de um milhão de ocorrências.
+
+No Gráfico \ref{majorErrors}, são apresentados os códigos de erros com mais de um milhão de ocorrências:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{figs/maiores_erros.png}
+\caption{Códigos de erros com mais de um milhão de ocorrências. \label{majorErrors}}
+\end{figure}
+
+São erros que não foram considerados graves, pois não trazem grandes impactos no desempenho ou segurança do programa afetando somente o processo de leitura do desenvolvedor que o estiver averiguando, desenvolvendo ou apenas estudando o código-fonte.
+
+Serão utilizadas duas marcações especiais em alguns códigos de erro:
+
+\begin{itemize}
+	\item (\^{})  Os itens que possuem este símbolo são verificações que poderiam ser desativadas adicionando o comentário especial \#noqa, 
+		este tipo de comentário  informa ao compilador para ignorar ou não alertar sobre o erro. Esta possibilidade deve ser reservado para casos especiais
+	\item (*) Na configuração padrão, estas verificações são ignorados porque não são regras aceitas por unanimidade.	
+\end{itemize}
+
+Os exemplos de códigos utilizados nas seções seguintes serão todos retirados do arquivo resultante da execução do script da Seção \ref{scriptsPython}.
+
+\section{E501(\^{})}
+
+De acordo com o Anexo A, o erro E501, corresponde a linha muito longa, composta de mais de 79 caracteres. 
+
+Este tipo de erro, é facilmente cometido devido ao tamanho de tela e resolução dos monitores disponíveis atualmente (widescreen com 13 ou mais polegadas). No passado, com equipamentos mais simples e telas com menor resolução, este tipo de restrição era imposta pelo motivo  de que era impraticável ficar arrastando a barra na horizontal para continuar a ler um determinado código-fonte. No Gráfico \ref{ge501}, são exibidos os dados referentes as  ocorrências deste erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E501.png}
+\caption{Dados E501. \label{ge501}}
+\end{figure}
+
+A Tabela \ref{ee501} exemplifica um trecho código de resulta neste erro.
+
+\begin{table}[ht]
+        \caption{Erro E501}
+        \label{ee501}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		 if self.value[2] == 29 and self.value[1] == 2 and ((self.value[0] \% 4 != 0) or \\
+		(self.value[0] \% 100 == 0)):  \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce501}, exemplifica a correção deste erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E501}
+        \label{ce501}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		 if self.value[2] == 29 and self.value[1] == 2 and ( \\
+		 \hspace{10 mm}(self.value[0] \% 4 != 0) or (self.value[0] \% 100 == 0)):  \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E231}
+
+De acordo com o Anexo A, o erro E231 corresponde a falta de espaço em branco após a utilização dos caracteres virgula ',', ponto e virgula ';', ou dois pontos ':'.
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um  script que trate adequadamente cada um dos caracteres listados. Assim, seria possível eliminar todas as ocorrências deste erro de forma automatizada (tomando o devido cuidado de não gerar um novo erro E501 ao adicionar os espaços em branco que estavam faltando). 
+
+No Gráfico \ref{ge231}, são exibidos os dados referentes as ocorrências deste erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E231.png}
+\caption{Dados E231. \label{ge231}}
+\end{figure}
+
+A Tabela \ref{ee231} exemplifica um trecho código de resulta neste erro.
+
+\begin{table}[ht]
+        \caption{Erro E231}
+        \label{ee231}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		 def \_\_init\_\_(self,value):  \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce231}, exemplifica a correção deste erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E231}
+        \label{ce231}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		def \_\_init\_\_(self, value): \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{W191}
+
+De acordo com o Anexo A, o erro W191, indica que o código fonte contém indentação com tabulação misturada com espaços em branco. Este tipo de erro geralmente é acompanhando do erro E101, que corresponde ao erro de indentação com espaços em branco.
+
+No gráfico \ref{gw191}, são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/W191.png}
+\caption{Dados W191. \label{gw191}}
+\end{figure}
+
+\section{W293}
+
+De acordo com o Anexo A, o erro W293 indica que existe um linha em branco  que contém espaços em branco. 
+
+No Gráfico \ref{gw293}, são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/W293.png}
+\caption{Dados W293. \label{gw293}}
+\end{figure}
+
+\section{E128}
+
+De acordo com o Anexo A, o erro E128, corresponde a linha contínua visualmente não indentada. 
+
+Desenvolvedores tem uma dificuldade natural em aderir a este tipo de regra, pois IDEs e editores de texto lhe induziriam a cometer está infração, uma vez que, ao terminar o preechimento de uma linha o editor,  o mesmo posiciona o cursor automaticamente no começo da  nova linha, e não abaixo do comentário, como citado na Tabela xxx.
+
+No Gráfico \ref{ge128}, são exibidos os dados referentes as ocorrências deste erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E128.png}
+\caption{Dados E128. \label{ge128}}
+\end{figure}
+
+A Tabela \ref{ee128} exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E128}
+        \label{ee128}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		 XPtrException.INTERNAL\_ERROR: \_('There is an internal bug in 4Suite. ' \\
+        	'Please make a post to the 4Suite mailing list to report this error ' \%s),  \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce128}, exemplifica a correção deste erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E128}
+        \label{ce128}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		XPtrException.INTERNAL\_ERROR: \_('There is an internal bug in 4Suite.' \\
+                \hspace{62mm}                     'Please make a post to the 4Suite mailing ' \\
+                 \hspace{62mm}                    'list to report this error  \%s'), \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E111}
+
+De acordo com o Anexo A, o erro E111 indica que a indentação utilizada não é múltiplo do número 4, ou seja a indentação possui um número ou inferior, ou superior, ou contém espaços em branco.
+
+Este tipo de erro pode ocorrer caso esteja utilizando uma IDE ou editor de texto que não possua por padrão configurado o valor 4 para a indentação, necessitando a alteração manual por parte do usuário.
+
+No Gráfico \ref{ge111}, são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E111.png}
+\caption{Dados E111. \label{ge111}}
+\end{figure}
+
+\section{E265}
+
+De acordo com o Anexo A, o código de erro E265 indica que o bloco de comentário deve iniciar  com jogo da velha ('\#') seguido de espaço em branco (' ').
+
+No Gráfico \ref{ge265}, são exibidos os dados referente as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E265.png}
+\caption{Dados E265. \label{ge265}}
+\end{figure}
+
+A Tabela \ref{ee265}, exemplifica um trecho  de código onde ocorre este erro.
+
+\begin{table}[ht]
+        \caption{Erro E265}
+        \label{ee265}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		\#Remove suffix if there is one (why?) \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce265}, exemplifica a correção deste código de erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E265}
+        \label{ce265}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		\# Remove suffix if there is one (why?) \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E302}
+
+De acordo com o Anexo A, o código de erro E302 indica que são esperadas 2 linhas em branco ao invés de somente uma (entre duas definições de funções, após as importações, etc).
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há duas linhas em branco na posição esperada/indicada, e faça a inserção da linha extra, se necessário.
+
+Novamente este é o tipo de regra que tem como finalidade principal aumentar a legibilidade do código por parte do desenvolvedor.
+
+No Gráfico \ref{ge302}, são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E302.png}
+\caption{Dados E302. \label{ge302}}
+\end{figure}
+
+A Tabela \ref{ee302} exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E302}
+        \label{ee302}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		from Ft.Xml.InputSource import DefaultFactory \\
+		\\
+		class XUpdateCommandLineApp(CommandLineApp.CommandLineApp): \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce302}, exemplifica a correção deste erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E302}
+        \label{ce302}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		from Ft.Xml.InputSource import DefaultFactory \\
+		\\
+		\\
+		class XUpdateCommandLineApp(CommandLineApp.CommandLineApp): \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{W291}
+
+De acordo com o Anexo A, o código de erro W291 corresponde a um espaço em branco após um comentário, nome de função, classe ou variáveis.
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco exigido ao final de cada um dos elementos listados.
+
+No Gráfico \ref{gw291}, são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/W291.png}
+\caption{Dados W291. \label{gw291}}
+\end{figure}
+
+\section{E251}
+
+De acordo com o Anexo A, o código de erro E251 corresponde a espaços em branco em torno de do caracter "=".
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco ao redor do caracter em questão e remover estes espaços quando não estiverem dentro de aspas simples ou duplas.
+
+No Gráfico \ref{ge251}, são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E251.png}
+\caption{Dados E251. \label{ge251}}
+\end{figure}
+
+A Tabela \ref{ee251} exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E251}
+        \label{ee251}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		return Ft.Xml.XPath.Evaluate(expr,context = con) \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce251}, exemplifica a correção deste erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E251}
+        \label{ce251}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		return Ft.Xml.XPath.Evaluate(expr,context=con) \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E122}
+
+De acordo com o Anexo A, o código de erro E201 corresponde a uma linha de continuação não indentada.
+
+No Gráfico \ref{ge122} são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E122.png}
+\caption{Dados E122. \label{ge122}}
+\end{figure}
+
+A Tabela \ref{ee122} exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E122}
+        \label{ee122}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		ExtElements = \{ \\
+		\#    (EXSL\_DATE\_TIME\_NS, 'date-format'): DateFormatElement \\
+		\} \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce122}, exemplifica a correção deste erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E122}
+        \label{ce122}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		ExtElements = \{ \\
+		\hspace{10mm}\#    (EXSL\_DATE\_TIME\_NS, 'date-format'): DateFormatElement \\
+		\} \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E201}
+
+De acordo com o Anexo A, o código de erro E201 corresponde a um espaço em branco após o uso dos caracters "\{" e "\big[".
+
+No Gráfico \ref{ge201}, são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E201.png}
+\caption{Dados E201. \label{ge201}}
+\end{figure}
+
+A Tabela \ref{ee201}, exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E201}
+        \label{ee201}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		XML\_FILENAMES = \big[ f for f in os.listdir(DIR) \\
+                              if f.endswith('.xml') \big] \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce201}, exemplifica a correção deste código de erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E201}
+        \label{ce201}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		XML\_FILENAMES = \big[f for f in os.listdir(DIR) \\
+                              if f.endswith('.xml') \big] \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E203}
+
+De acordo com o Anexo A, o código de erro E203 corresponde a um espaço em branco antes do uso do caracter dois pontos ":". 
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que remova  o espaço em branco antes do uso do caracter dois pontos, quando não estiver dentro de aspas simples ou duplas.
+
+No Gráfico \ref{ge203}, são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E203.png}
+\caption{Dados E203. \label{ge203}}
+\end{figure}
+
+A Tabela \ref{ee203}, exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E203}
+        \label{ee203}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		tests = \{ParsedExpr.ParsedFilterExpr : \big[((nodeset2, plT), \\
+		\hspace{20mm}	context1, list(nodeset2.val)), \\
+                \hspace{20mm}   ((nodeset2, plF), context1, \big[\big]),\big],\} \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce203}, exemplifica a correção deste código de erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E203}
+        \label{ce203}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		tests = \{ParsedExpr.ParsedFilterExpr: \big[((nodeset2, plT), \\
+		\hspace{20mm}	context1, list(nodeset2.val)), \\
+                \hspace{20mm}   ((nodeset2, plF), context1, \big[\big]),\big],\} \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E225}
+
+De acordo com o Anexo A, o código de erro E225, representa a falta de espaço em branco em torno do operador "=". 
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que identifique o uso de tal operador e faça a correção para o número de espaços adequados.
+
+No Gráfico \ref{ge225}, são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E225.png}
+\caption{Dados E225. \label{ge225}}
+\end{figure}
+
+A Tabela \ref{ee225}, exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E225}
+        \label{ee225}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		result=tester.test\_data\big['parse'\big](isrc) \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce225}, exemplifica a correção deste código de erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E225}
+        \label{ce225}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		result = tester.test\_data\big['parse'\big](isrc)\\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+\section{E202}
+
+De acordo com o Anexo A, o erro E202 corresponde ao uso de um espaço em branco antes da utilização dos caracteres ")", "\big]" e "\}" . 
+
+No Gráfico \ref{ge202}, são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E202.png}
+\caption{Dados E202. \label{ge202}}
+\end{figure}
+
+A Tabela \ref{ee202} exemplifica este código de erro.
+
+\begin{table}[ht]
+        \caption{Erro E202}
+        \label{ee202}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		actual = [ node.data for node in expr.evaluate(con) ] \\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+A Tabela \ref{ce202}, exemplifica a correção deste código de erro.
+
+\begin{table}[ht]
+        \caption{Correção do erro E202}
+        \label{ce202}
+        \begin{center}
+        \begin{tabularx}{0.9\textwidth}{lX}
+        \midrule
+		actual = [node.data for node in expr.evaluate(con)]\\
+	\bottomrule
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Devido ao fato de dois códigos de erros apresentarem uma quantidade de ocorrências muito elevada e possuirem um baixo grau de complexidade para a sua correção, foi executada uma nova avaliação dos dados obtidos, excluindo as regras E501 e E231 e verificando o impacto destas regras no nível  de adoção do estilo de código discutido neste estudo.
+
+A Tabela \ref{resultScript2}, contém os novos resultados após a remoção dos itens mencionado anteriormente.
+
+\begin{table}[ht]
+        \caption{Resultados obtidos com a análise de script segunda análise}
+        \label{resultScript2}
+        \begin{center}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Perguntas} & \textbf{Respostas} \\
+        \midrule
+                Qual a quantidade total de projetos? & 62.500 \\
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de projetos com erros? & 57.576 \\		
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de módulos com erros? & 639.671 \\ 
+		Qual a quantidade total de todas as  ocorrências de erros?  & 34.533.934 \\ 
+	\rowcolor[gray]{0.8}
+		Qual a quantidade de erros distintos? & 68 \\
+		Qual o projeto com maior número de erros & UcsSdk-0.8.1.6.tar.gz (241936 erros) \\
+	\bottomrule	
+        \end{tabularx}
+        \end{center}
+\end{table}
+
+Mesmo removidos os dois maiores códigos de erros, não houve uma alteração significativa no nível de adoção, tendo apenas  4.924 projetos sem  alguma violação/erro.
+
+O total de ocorrências dos códigos de erros analisados é de 45.356.622, portanto corresponde a 87,8723179 porcento dos erros ocorridos em todo o projeto.
+
+
