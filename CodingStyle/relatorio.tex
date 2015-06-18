@@ -184,16 +184,10 @@ showstringspaces=false
 \mainmatter
 \setcounter{page}{1} \pagenumbering{arabic} \pagestyle{plain}
 
-% *** Introducao ***
+% Arquivos de entrada
 %\include{cap_Introducao}
-
-% *** Desenvolvimento ***
-\include{cap_Desenvolvimento}
-
-% *** Resultados Experimentais ***
-%\include{cap_Experimentos}
-
-% *** Conclusões
+%\include{cap_Desenvolvimento}
+\include{cap_Experimentos}
 %\include{cap_Conclusoes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,20 +214,14 @@ showstringspaces=false
 }
 \makeatother
 
-% *** Anexo I: Diagramas esquemáticos ***
-\include{anexo_pep8_regras}
-\refstepcounter{noAnexo}
+% Descomentar linhas abaixo na versão final
 
-\chapter[PEP8]{PEP8}
-\label{anexoB}
-
-\includepdf[pages=-,landscape=true,fitpaper=true,offset=0.1in 0.1in]{PEP8.pdf}
-
-
-% *** Anexo II: Descrição do CD ***
-%\include{anexo_CD}
+%\include{anexo_pep8_regras}
 %\refstepcounter{noAnexo}
 
-% Acrescente mais anexos conforme julgar necessário.
+%\chapter[PEP8]{PEP8}
+%\label{anexoB}
+%\includepdf[pages=-,landscape=true,fitpaper=true,offset=0.1in 0.1in]{PEP8.pdf}
+
 \end{document}
 

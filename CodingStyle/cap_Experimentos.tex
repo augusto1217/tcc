@@ -1,8 +1,7 @@
 %TCIDATA{LaTeXparent=0,0,relatorio.tex}
-                      
-\chapter{Metodologias (Materiais e Métodos)}
+\chapter{Metodologia}
 
-Nesta seção são descritas as metodologias e ferramentas utilizadas para o desenvolvimento de algoritmos para obtenção de arquivos e a extração de métricas para a análise de estilo de códigos escritos em Python.
+Neste capítlulo são descritas as metodologias e ferramentas utilizadas para o desenvolvimento deste trabalho, em particular os algoritmos para obtenção de arquivos e a extração de métricas para a análise de estilo de códigos escritos em Python.
 
 \section{Ferramentas}
 
@@ -24,16 +23,14 @@ O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado par
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.4]{figs/mint.png}
+\includegraphics[scale=0.35]{figs/mint.png}
 \caption{Linux Mint 17 \label{mint}}
 \end{figure}
 
 \subsection{IDE's - Eclipse}
 
 O Eclipse é o IDE utilizado neste projeto, por ser de fácil aprendizagem e possuir um núcleo extremamente adaptável às necessidades do projeto. A versão utilizada  neste trabalho é 
-Eclipse Luna Release (4.4.0), build id: 20140612-0600.
-
-As versões utilizadas podem ser obtidas no em \footnote{http://bit.ly/1EPcAGg} e \footnote{http://bit.ly/1KY7Zqh}
+Eclipse Luna Release (4.4.0), build id: 20140612-0600\footnote{http://bit.ly/1EPcAGg}\footnote{http://bit.ly/1KY7Zqh}.
 
 A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
 
@@ -45,7 +42,7 @@ A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
 
 \subsection{IDE's - PyDev}
 
-PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython \cite{pydev_2015}. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0 que pode ser obtida através do seguinte link: \footnote{http://pydev.org/updates}
+PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython \cite{pydev_2015}. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0\footnote{http://pydev.org/updates}.
 
 \begin{figure}[ht!]
 \centering
@@ -55,9 +52,9 @@ PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Py
 
 \subsection{Editores de texto - VIM}
 
-Segundo \cite{learning-vim-2008}, a sigla VIM significa "vi melhorado." O VIM é um editor de texto que foi escrito e é mantido por Bram Moolenaar. Atualmente, Vim é talvez o clone do vi mais amplamente utilizados, e existe um domínio da Internet \footnote{http://vim.org} dedicado a ele. A versão atual é  a 7.1. Irrestrito por normas ou comitês, o Vim continua a crescer em termos de funcionalidade. Uma comunidade inteira cresceu em torno dele. Coletivamente,  os membros da comunidade decidem os novos recursos a serem adicionados e as funcionalidades existentes a serem modificadas através da nomeação e votação para sugestões durante os ciclos de desenvolvimento.
+Segundo \cite{learning-vim-2008}, a sigla VIM significa \lq\lq vi melhorado\rq\rq. O VIM é um editor de texto que foi escrito e é mantido por Bram Moolenaar. Atualmente, Vim é talvez o clone do vi mais amplamente utilizados, e existe um domínio da Internet\footnote{http://vim.org} dedicado a ele. A versão atual é  a 7.1. Irrestrito por normas ou comitês, o Vim continua a crescer em termos de funcionalidade. Uma comunidade inteira cresceu em torno dele. Coletivamente,  os membros da comunidade decidem os novos recursos a serem adicionados e as funcionalidades existentes a serem modificadas através da nomeação e votação para sugestões durante os ciclos de desenvolvimento.
 
-Vim é um editor modal no sentido de que as teclas do teclado têm diferentes funções em cada modo de operação; possui suporte a expressões regulares em buscas, com várias extensões à sintaxe padrão de expressões regulares, mapeamento de qualquer tecla do teclado e corretor ortográfico a partir da versão 7.0; funciona tanto no console/terminal quanto em ambiente gráfico (que neste caso utiliza o aplicativo gVim); é absolutamente programável, via interfaces com interpretadores (Perl, Python, Ruby) ou via seu próprio interpretador; contém vários temas de cores e tem licença GPL. \cite{vim_2015}
+Vim é um editor modal no sentido de que as teclas do teclado têm diferentes funções em cada modo de operação; possui suporte a expressões regulares em buscas, com várias extensões à sintaxe padrão de expressões regulares, mapeamento de qualquer tecla do teclado e corretor ortográfico a partir da versão 7.0; funciona tanto no console/terminal quanto em ambiente gráfico (que neste caso utiliza o aplicativo gVim); é absolutamente programável, via interfaces com interpretadores (Perl, Python, Ruby) ou via seu próprio interpretador; contém vários temas de cores e tem licença GPL \cite{vim_2015}.
 
 A tela do editor modo texto Vim pode ser vista na Figura \ref{vim}
 
@@ -71,15 +68,15 @@ A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do reposit
 
 \subsection{PEP8 Tools}
 
-É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo \ref{pep8}. Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. \cite{peptools_2015}
+É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 (Anexo \ref{anexoB}). Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. \cite{peptools_2015}
 
-Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela \ref{instpep8}
+Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela \ref{instpep8}.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Instalação e desinstalação pep8.}
         \label{instpep8}
         \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
                 \$ pip install pep8 \\
                 \$ pip install --upgrade pep8 \\
@@ -89,13 +86,14 @@ Sua instalação, atualização e desinstalação podem ser realizadas através dos com
         \end{center}
 \end{table}
 
-A ajuda rápida está disponível através da linha de comando "pep8 -h", que tem como resposta as opções listadas na Tabela \ref{helpPep8}.
+A ajuda rápida está disponível através da linha de comando \lq\lq\texttt{pep8 -h}\rq\rq, que tem como resposta as opções listadas na Tabela \ref{helpPep8}.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Pep8 Ajuda.}
         \label{helpPep8}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{small}
+        \begin{tabularx}{0.99\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Opções} & \textbf{Descrição} \\
         \midrule
@@ -128,16 +126,16 @@ A ajuda rápida está disponível através da linha de comando "pep8 -h", que tem co
 		--benchmark & Mede a velocidade de processamento. \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
+        \end{small}
 \end{table}
 
-O Código \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
+A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
 
 \begin{table}[ht]
-        \caption{Pep8 estatísticas.}
+        \caption{Estatísticas referentes à execução do pep8.}
         \label{statistpep8}
         \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
         \$ pep8 --statistics -qq Python-2.5/Lib\\
 	232     E201 Espaços em branco depois de '[' \\
@@ -155,7 +153,7 @@ O Código \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros 
 	\end{center}
 \end{table}
 
-O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é "/etc/config/arquivo", quando o sistema operacional é Linux; caso seja Windows, o caminho é "%userprofile%/pep8".
+O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é \lq\lq\texttt{/etc/config/arquivo}\rq\rq, quando o sistema operacional é Linux; caso seja Windows, o caminho é \lq\lq\texttt{\%userprofile\%/pep8}\rq\rq.
 
 O Código \ref{configPep8} contém um modelo de configuração encontrada ao abrir o arquivo de comportamento.
 
@@ -398,7 +396,7 @@ Também foi obtida a quantidade de projetos, módulos e ocorrências para cada um d
         \begin{center}
         \begin{tabularx}{0.9\textwidth}{lX}
         \midrule
-		\big[E501\big] Número de Projetos: 49345 \\
+		{[}E501{]} Número de Projetos: 49345 \\
 		\big[E501\big] Número de módulos: 561319 \\
 		\big[E501\big] Total de ocorrências: 9328781 \\
 		\big[E501\big] Porcentagem em relação ao total de erros: 17.4792337182 \\
