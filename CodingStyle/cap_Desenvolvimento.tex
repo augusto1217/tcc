@@ -20,24 +20,24 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
 \begin{table}[ht]
         \caption{Indicadores da notação húngara}
         \label{tab2}
-        \begin{center}
+        \centering
 
         \begin{tabularx}{0.7\textwidth}{>{\ttfamily}lX}
         \toprule
         	\textbf{Nome} & \textbf{Descrição} \\
         \midrule
-	       	s & String \\ 
+	       	s & \textit{string} \\ 
         \rowcolor[gray]{0.8}
-		sz & Aponta o primeiro caracter de uma string terminada em zero \\ 
-		st & Ponteiro da string, o primeiro byte é contador dos caracteres \\ 
+		sz & Aponta o primeiro caracter de uma \textit{string} terminada em zero \\ 
+		st & Ponteiro da \textit{string}, o primeiro \textit{byte} é contador dos caracteres \\ 
         \rowcolor[gray]{0.8}
-		h & Handle \\ 
+		h & \textit{Handle} \\ 
 		msg & Mensagem \\ 
         \rowcolor[gray]{0.8}
 		fn & Função (ponteiro) \\ 
-		c & char (8 bits) \\ 
+		c & caracterer (8 bits) \\ 
         \rowcolor[gray]{0.8}
-		by & unsigned char (byte ou caractere não sinalizado de 8 bits) \\ 
+		by & unsigned char (\textit{byte} ou caractere não sinalizado de 8 bits) \\ 
 		n & Inteiro \\ 
         \rowcolor[gray]{0.8}
 		b & Booleana (verdadeiro ou falso) \\ 
@@ -46,13 +46,12 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
 		u & Inteiro não sinalizado \\ 
 		w & Word (Variável com o tamanho de um registrador da máquina) \\ 
         \rowcolor[gray]{0.8}
-		ch & Caractere com texto ASCII \\ 
+		ch & Caracterer com texto ASCII \\ 
 		l & Inteiro longo (32 bits) \\ 
         \rowcolor[gray]{0.8}
 		dw & Inteiro longo não sinalizado (dword 32 bits) \\	
 		pX & Ponteiro para X \\ \bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Um bom desenvolvedor geralmente deve considerar os identificadores como valores mnemônicos que facilitem a lembrança do significado do nome da variável criada pelo programador; que sejam sugestivos, facilitando a leitura dos demais desenvolvedor; e que sejam simples de identificar, de modo que o desenvolvedor não perca tempo pensando para que ou em qual contexto aquela variável será utilizada \cite{notacao2015}. 
@@ -62,50 +61,50 @@ A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notaçã
 \begin{table}[ht!]
         \caption{Variáveis utilizando notação húngara}
         \label{tabVarNtHun}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.7\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Nome} & \textbf{Descrição} \\
         \midrule
-                bBusy & boolean \\
+                bBusy & Verdadeiro ou Falso \\
 	\rowcolor[gray]{0.8}
-		chInitial & char \\ 
-		cApples & count of items \\ 
+		chInitial & caracterer \\ 
+		cApples & contador de itens \\ 
 	\rowcolor[gray]{0.8}
-		dwLightYears & double word \\ 
+		dwLightYears & \textit{double} palavra \\ 
 		fBusy & float \\ 
 	\rowcolor[gray]{0.8}
-		nSize & integer or count \\ 
-		iSize & integer or index \\ 
+		nSize & Inteiro ou contador \\ 
+		iSize & Inteiro or índice \\ 
 	\rowcolor[gray]{0.8}
-		fpPrice & floating-point \\ 
-		dbPi & double \\ 
+		fpPrice & ponto flutuante \\ 
+		dbPi & \textit{double} \\ 
 	\rowcolor[gray]{0.8}
-		pFoo & pointer \\
-		rgStudents  & array, or range \\ 
+		pFoo & ponteiro \\
+		rgStudents  & \textit{array}, ou intervalos de valores \\ 
 	\rowcolor[gray]{0.8}
-		szLastName  & zero-terminated string \\
-		u32Identifier  & unsigned 32-bit integer \\
+		szLastName  & terminador zero \textit{string} \\
+		u32Identifier  & Inteiro não sinalizado de 32-bit \\
 	\rowcolor[gray]{0.8}
-		stTime & clock time structure \\
-		fnFunction  & function name \\
+		stTime & estrutura de tempo \\
+		fnFunction  & nome de função \\
 	\rowcolor[gray]{0.8}
-		pszOwner  & pointer to zero-terminated string \\
-		rgfpBalances  & array of floating-point values \\
+		pszOwner  & ponteiro para terminador zero \textit{string} \\
+		rgfpBalances  & \textit{array} para valores de ponto flutuante \\
 	\rowcolor[gray]{0.8}
-		aulColors & array of unsigned long \\
-		hwndFoo  & handle to a window \\
+		aulColors & \textit{array} \textit{long} não sinalizado \\
+		hwndFoo  & \textit{Handle} para um \textit{window} \\
 	\rowcolor[gray]{0.8}
-		lpszBar  & long pointer to a zero-terminated string \\
-		g\_nWheels & member of a global namespace, integer \\
+		lpszBar  & \textit{long} ponteiro \textit{string} para um terminador zero \\
+		g\_nWheels & membros de um \textit{namespace} global, inteiro \\
 	\rowcolor[gray]{0.8}
-		m\_nWheels & member of a structure/class, integer \\
-		m\_wheels,\_wheels  & member of a structure/class \\
+		m\_nWheels & membros de uma estrutura/classe, inteiro \\
+		m\_wheels,\_wheels  & membros de uma estrutura/classe \\
 	\rowcolor[gray]{0.8}
-		s\_wheels  & static member of a class \\
-		c\_wheels & static member of a function \\ \bottomrule
+		s\_wheels  & membros estaticos de uma classe \\
+		c\_wheels & membros estaticos de uma função \\ 
+	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 O sistema húngaro foi adotado como padrão de programação do Windows, e se espalhou amplamente por meio de livros como \cite{charles2002}, a bíblia para aprender programação do Windows . Rapidamente a notação húngara se tornou o estilo de codificação dominante utilizado em códigos escritos em linguagem C \cite{notacao2015}.
@@ -125,7 +124,7 @@ O estilo GNU proposto para a linguagem C possui características próprias no que 
 \subsubsection{Formatação}
 
 O estilo de codificação Gnu/C utiliza 79 caracteres para o comprimento das linhas. Segundo Stallman, esta caraterística facilita a leitura do código nos mais diversos ambientes e editores.
-O estilo também recomenda a utilização de chaves "\{ \}" para o bloco da função em linha posterior à da declaração da função e ao final do bloco. O Código \ref{formatGnuC} exemplifica a formatação mencionada.
+O estilo também recomenda a utilização de chaves \lq\lq \{ \}\rq\rq para o bloco da função em linha posterior à da declaração da função e ao final do bloco. O Código \ref{formatGnuC} exemplifica a formatação mencionada.
 
 \lstinputlisting[language=C, caption=Formatação GNU/C, label=formatGnuC]{cods/formatgnu.c}
 
@@ -199,14 +198,14 @@ O Código \ref{comentumalinhajava} exemplifica comentários de linha única.
 
 De acordo com \cite{javadocj2013}, a ferramenta JavaDoc fornece uma linguagem especifica para enriquecer os comentários da linguagem Java, pois baseia-se na inserção de textos explicativos em forma de um comentário especial, que antecedem o escopo de uma classe ou de um método, tendo a responsabilidade de apresentar o elemento que sucede o comentário.
 
-Seu funcionamento  é baseado no uso de marcação de documentos  com doclets, gerando arquivos nos formatos HTML \textit{(HyperText Markup Language)}, SGML \textit{(Standard Generalized Markup Language)}, XML \textit{(EXtensible Markup Language)} ou RTF \textit{(Rich Text Format)}. Tais marcações são feitas através de comentários, contendo tags especiais que especificam quais informações serão inseridas, com objetivo de manter uma massa de conhecimento reutilizável em qualquer projeto que faça uso da classe em questão.
+Seu funcionamento  é baseado no uso de marcação de documentos  com doclets, gerando arquivos nos formatos HTML \textit{HyperText Markup Language}, SGML \textit{Standard Generalized Markup Language}, XML \textit{EXtensible Markup Language} ou RTF \textit{Rich Text Format}. Tais marcações são feitas através de comentários, contendo tags especiais que especificam quais informações serão inseridas, com objetivo de manter uma massa de conhecimento reutilizável em qualquer projeto que faça uso da classe em questão.
 
 A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu respectivo significado.
 
 \begin{table}[ht]
         \caption{Tags JavaDoc.}
         \label{tabtagsJavaDoc}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Tag} & \textbf{Significado} \\
@@ -227,7 +226,6 @@ A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu 
 	
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 O Código \ref{utiltagsjava}, exemplifica a utilização de comentário no padrão javaDoc.
@@ -243,7 +241,7 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
 \begin{table}[ht!]
         \caption{Tipos de Identificadores Java (\cite{convencoesjava2013}, com adaptações).}
         \label{tabtpidentJava}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.99\textwidth}{lXX}
         \toprule
                 \textbf{Tipo de Identificador} & \textbf{Regras Para Nome} & \textbf{Exemplos} \\
@@ -269,7 +267,6 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
 		palavras separadas por sublinhados ("\_"). & static final int MIN\_WIDTH = 4; static final int MAX\_WIDTH = 999; \\ 
        \bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \subsubsection{Indentação}
@@ -314,30 +311,30 @@ Todas as versões da linguagem Python são \textit{open source}\footnote{http://op
 \begin{table}[ht]
         \caption{Versões Python (\cite{histpython1990}, com adaptações).}
         \label{versoesPython}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.99\textwidth}{lXXXX}
         \toprule
                 \textbf{Versão} & \textbf{Evolução de} & \textbf{Ano} & \textbf{Proprietário} & \textbf{Compatibilidade GPL} \\
         \midrule
-		0.9thru .0 1.2 & n/a & 1991-1995 & CWI & yes \\
+		0.9thru .0 1.2 & n/a & 1991-1995 & CWI & sim \\
 	\rowcolor[gray]{0.8}
-		1.3 thru 1.5.2 & 1.2 & 1995-1999 & CNRI & yes \\
+		1.3 thru 1.5.2 & 1.2 & 1995-1999 & CNRI & sim \\
 		1.6 & 1.5.2 & 2000 & CNRI & no \\
 	\rowcolor[gray]{0.8}
-		2.0 & 1.6 & 2000 & BeOpen.com & no \\
-		1.6.1 & 1.6 & 2001 & CNRI & no \\
+		2.0 & 1.6 & 2000 & BeOpen.com & não \\
+		1.6.1 & 1.6 & 2001 & CNRI & não \\
 	\rowcolor[gray]{0.8}
-		2.1 & 2.0+1.6.1 & 2001 & PSF & no \\
-		2.0.1 & 2.0+1.6.1 & 2001 & PSF & yes \\
+		2.1 & 2.0+1.6.1 & 2001 & PSF & não \\
+		2.0.1 & 2.0+1.6.1 & 2001 & PSF & sim \\
 	\rowcolor[gray]{0.8}
-		2.1.1 & 2.1+2.0.1 & 2001 & PSF & yes \\
-		2.1.2 & 2.1.1 & 2002 & PSF & yes \\
+		2.1.1 & 2.1+2.0.1 & 2001 & PSF & sim \\
+		2.1.2 & 2.1.1 & 2002 & PSF & sim \\
 	\rowcolor[gray]{0.8}
-		2.1.3 & 2.1.2 & 2002 & PSF & yes \\
-		2.2 e acima & 2.1.3 & 2001- atualmente & PSF & yes \\
+		2.1.3 & 2.1.2 & 2002 & PSF & sim \\
+		2.2 e acima & 2.1.3 & 2001- atualmente & PSF & sim \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
+
 \end{table}
 
 \subsection{Outros Guias de Estilos}
@@ -347,7 +344,7 @@ Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio
 \begin{table}[ht]
         \caption{Guias de estilo google.}
         \label{guiagoogle}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.99\textwidth}{lX}
         \toprule
                 \textbf{Guia de Estilo} & \textbf{Endereço eletrônico} \\
@@ -368,21 +365,20 @@ Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio
 	\rowcolor[gray]{0.8}
 		Vimscript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/vimscriptguide.xml \\ 
 	\bottomrule
-        \end{tabularx}
-        \end{center}
+        \end{tabularx}        
 \end{table}
 
 
 \section{PEP8}
 \label{pep8}
 
-De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 (Python Enhancement Proposal 8) propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
+De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 \textit{Python Enhancement Proposal 8} propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
 
 Assim como os estilos de codificação C e Java, o guia de estilo para Python também possui suas características e particularidades, como formatação, comentários, convenção de nomenclaturas, dentre outras.
 
 \subsection{Codificação de caracteres}
 
-Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII \textit{(American Standard Code for Information Interchange)} ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 \textit{(8-bit Unicode Transformation Format)} \footnote{http://www.python.org/dev/peps/pep-3120}.
+Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII \textit{American Standard Code for Information Interchange} ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 \textit{8-bit Unicode Transformation Format} \footnote{http://www.python.org/dev/peps/pep-3120}.
 
 \subsection{Formatação}
 
@@ -485,7 +481,7 @@ O guia de estilos proposto para a linguagem Python no item citado na Seção \ref{
 
 Segundo \cite{learningjava2013},  uma maneira intuitiva e fácil de adotar um estilo de codificação é utilizar uma ferramenta de formatação de código que faça parte ou funcione conjuntamente a um IDE. 
 
-IDEs (Integrated Development Environment) são pacotes de software que integram várias ferramentas de desenvolvimento em um ambiente consistente, com o objetivo de aumentar a produtividade do desenvolvedor. Geralmente, IDEs incluem recursos como syntax highlight (código fonte colorizado conforme a sintaxe da linguagem), navegadores de código, shell integrado e code completion (o editor apresenta, durante a digitação, formas possíveis de completar o texto que ele consegue identificar) \cite{guido2011}.
+IDEs \textit{Integrated Development Environment} são pacotes de software que integram várias ferramentas de desenvolvimento em um ambiente consistente, com o objetivo de aumentar a produtividade do desenvolvedor. Geralmente, IDEs incluem recursos como \textit{syntax highlight} (código fonte colorizado conforme a sintaxe da linguagem), navegadores de código, shell integrado e code completion (o editor apresenta, durante a digitação, formas possíveis de completar o texto que ele consegue identificar) \cite{guido2011}.
 
 Entre as IDEs que suportam Python, encontram-se: 
 

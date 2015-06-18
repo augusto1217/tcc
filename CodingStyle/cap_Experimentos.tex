@@ -66,7 +66,7 @@ A tela do editor modo texto Vim pode ser vista na Figura \ref{vim}
 
 A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do repositório oficial do sistema operacional Linux Mint 17.
 
-\subsection{PEP8 Tools}
+\subsection{PEP8 \textit{Tools}}
 
 É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 (Anexo \ref{anexoB}). Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. \cite{peptools_2015}
 
@@ -75,7 +75,7 @@ Sua instalação, atualização e desinstalação podem ser realizadas através dos com
 \begin{table}[ht!]
         \caption{Instalação e desinstalação pep8.}
         \label{instpep8}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
                 \$ pip install pep8 \\
@@ -83,7 +83,6 @@ Sua instalação, atualização e desinstalação podem ser realizadas através dos com
                 \$ pip uninstall pep8 \\
         \bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A ajuda rápida está disponível através da linha de comando \lq\lq\texttt{pep8 -h}\rq\rq, que tem como resposta as opções listadas na Tabela \ref{helpPep8}.
@@ -131,26 +130,25 @@ A ajuda rápida está disponível através da linha de comando \lq\lq\texttt{pep8 -h
 
 A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Estatísticas referentes à execução do pep8.}
         \label{statistpep8}
-        \begin{center}
+        \centering
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
-        \$ pep8 --statistics -qq Python-2.5/Lib\\
-	232     E201 Espaços em branco depois de '[' \\
-	631     E203 Espaços em branco antes de ',' \\
-	842     E211 Espaços em branco antes de '(' \\
-	2531    E221 mútliplos espaços antes de operador \\
-	4473    E301 esperado 1 linha em branco, encontrada 0 \\
-	4006    E302 esperado 2 linha em brancos, encontrada 1 \\
-	165     E303, muita linha em brancos (4) \\
-	325     E401 mútliplosimports on one line \\
-	3615    E501 linha muito longa (82 characters) \\
-	612     W601 .has\_key() is deprecated, usar 'in' \\
+        \textbf{\$ pep8 --statistics -qq Python-2.5/Lib} \\
+	232 \hspace{3mm} E201 Espaços em branco depois de '[' \\
+	631 \hspace{3mm} E203 Espaços em branco antes de ',' \\
+	842 \hspace{3mm} E211 Espaços em branco antes de '(' \\
+	2531\hspace{3mm} E221 mútliplos espaços antes de operador \\
+	4473\hspace{3mm} E301 esperado 1 linha em branco, encontrada 0 \\
+	4006\hspace{3mm} E302 esperado 2 linha em brancos, encontrada 1 \\
+	165 \hspace{3mm} E303, muita linha em brancos (4) \\
+	325 \hspace{3mm} E401 mútliplosimports on one line \\
+	3615\hspace{3mm} E501 linha muito longa (82 characters) \\
+	612 \hspace{3mm} W601 .has\_key() is deprecated, usar 'in' \\
 	\bottomrule
 	\end{tabularx}
-	\end{center}
 \end{table}
 
 O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é \lq\lq\texttt{/etc/config/arquivo}\rq\rq, quando o sistema operacional é Linux; caso seja Windows, o caminho é \lq\lq\texttt{\%userprofile\%/pep8}\rq\rq.
@@ -168,34 +166,32 @@ O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a
  
 A sua instalação pode ser realizada através da linha de comando exemplificado na Tabela \ref{instflak8}
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Instalação Flake8.}
         \label{instflak8}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
          pip install flake8 \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um determinado projeto, e com seus respectivos resultados, na qual apresenta a estrutura de uma letra do alfabeto, seguida  de um número e uma mensagem descrevendo a violação ao estilo descrito na seção \ref{pep8} detectada.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Sintaxe de uso do Flake8.}
         \label{sintxflak8}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
-		\$ flake8 coolproject \\
+		\textbf{\$ flake8 coolproject} \\
 		coolproject/mod.py:97:1: F401 'shutil' imported but unused \\
 		coolproject/mod.py:625:17: E225 faltandoEspaços em branco around operato \\
 		coolproject/mod.py:729:1: F811 redefinition of function 'readlines' from line 723 \\
 		coolproject/mod.py:1028:1: F841 local variable 'errors' is assigned to but never use \\
         \bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{Linguagens de Programação}
@@ -203,7 +199,7 @@ Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um 
 \subsection{Java}
 
 A linguagem de programação Java foi utilizada para criar o algorítimo que captura arquivos compactados e o armazenamento localmente para a realização da validação deste trabalho.
-A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 (Java SE Development Kit) release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{http://bit.ly/1mTJaPC}.
+A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 \textit{Java SE Development Kit} release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{http://bit.ly/1mTJaPC}.
 
 \subsection{Python}
 
@@ -215,11 +211,11 @@ Neste capítulo detalharemos os procedimentos efetuados para verificar se os proj
 
 \subsection{Rotinas e Scripts}
 
-O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e  transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessários para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python [3] e a quatificação das métricas avaliadas.
+O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e  transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessários para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python \cite{intoPython-2011} e a quatificação das métricas avaliadas.
 
 \subsection{Rotinas Java}
 
-A primeira etapa se da na leitura de uma página web do endereço eletrônico \ref{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
+A primeira etapa se da na leitura de uma página web do endereço eletrônico \footnote{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
 
 O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura dos endereços eletrônicos dos arquivos compactados a serem salvos localmente. 
 
@@ -227,11 +223,11 @@ O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura 
 
 O resultado do procedimento acima, gerou um arquivo texto denomiado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Links obtidos pelo código.}
         \label{linksobt}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
                 https://pypi.python.org/pypi/02exercicio/1.0.0\\
 		https://pypi.python.org/pypi/0x10c-asm/0.0.2\\
@@ -247,7 +243,6 @@ O resultado do procedimento acima, gerou um arquivo texto denomiado \texttt{writ
 		...... \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Na segunda etapa foi escrito outro procedimento, também em linguagem Java, o qual recebe como parâmetro os endereços obtido na etapa anterior e a partir de cada endereço é executada uma análise baseada em padrões da construção da página para encontrar o link que aponta para o arquivo compactado. Assim que a rotina encontrava o link dava-se iniciava a transferência e o armazenamento do arquivo em um diretório local.
@@ -266,11 +261,11 @@ Para a criação e execução dos procedimentos acima mencionados foram encontrados 
  
 A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \cite{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração média de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Exceções na transferência de arquivos.}
         \label{exctransarq}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
         	00:12:25,713 ERROR UrlContent:237 - http://aha-gae.googlecode.com/files/project.zip \\
 		\%20rel=nofollow \\
@@ -291,7 +286,6 @@ A outra dificuldade foi o tempo necessário para a execução e conclusão do proces
 		19:19:06,759 ERROR UrlContent:237 - Connection timed out: connect \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \subsection{Scripts Python}
@@ -299,7 +293,7 @@ A outra dificuldade foi o tempo necessário para a execução e conclusão do proces
 
 Para o desenvolvimento do script responsável pela a análise e coleta das métricas proposta na seção \ref{pep8}, utilizamos a linguagem Python e o sistema operacional Linux, também é aplicada a técnica de desenvolvimento chamada programação em par.
  
-A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador ¿piloto¿ implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca \cite[pg. 38-42]{pairprogram_2002}.
+A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador piloto implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca \cite[pg. 38-42]{pairprogram_2002}.
  
 Tal prática foi adotada pelo fato de que  código produzido é visto por, pelo menos, duas pessoas é menor a correção de falhas, com isto possuí menor manutenibilidade aumenta a velocidade de desenvolvimento e há o compartilhamento de  conhecimento.
 
@@ -326,11 +320,11 @@ O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
 
 Os procedimentos executados anteriormente deu origem a um arquivo texto denominado resultado-flake8.txt e tem sua estrutura exemplificada a Tabela \ref{exemScriptPep8} 
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
         \label{exemScriptPep8}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
 		ArangoPy-0.0.9.tar.gz \\ %[]
 		4 modules \\
@@ -346,7 +340,6 @@ Os procedimentos executados anteriormente deu origem a um arquivo texto denomina
 		4       F821 undefined name 'QueryFilterStatement' \\ 
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Um terceiro script é criado utilizando a linguagem python, com a finalidade de quantificar os resultados obtidos, este script é exibido no Código \ref{scriptRules}.
@@ -363,11 +356,11 @@ Posteriormente a execução do script mencionado na Seção \ref{scriptsPython}, obt
 
 A execução do código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no PEP8 (aug)(Anexo xyz).
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Resultados obtidos com a análise de script}
         \label{resultScript}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.99\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Perguntas} & \textbf{Respostas} \\
         \midrule
@@ -385,16 +378,15 @@ A execução do código \ref{scriptRules}, citado na seção \ref{scriptsPython}, tev
 		Qual o projeto com maior número de erros & nodepy-0.6.tar.gz (658.888 erros) \\
 	\bottomrule	
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Também foi obtida a quantidade de projetos, módulos e ocorrências para cada um dos códigos de erros analisados. A Tabela \ref{exemResult} exemplifica parte do resultado obtido,  para o código E501.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
         \label{exemResult}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		{[}E501{]} Número de Projetos: 49345 \\
 		\big[E501\big] Número de módulos: 561319 \\
@@ -402,7 +394,6 @@ Também foi obtida a quantidade de projetos, módulos e ocorrências para cada um d
 		\big[E501\big] Porcentagem em relação ao total de erros: 17.4792337182 \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Após resultado obtido com a análise descrita na Tabela \ref{exemResult}, ficou constatado que apenas 3.247 projetos estavam totalmente aderentes ao guia de estilo citado na Seção \ref{pep8}. No Gráfico \ref{allErrors} são exibidos os códigos dos erros que foram encontrados nos projetos analisados.
@@ -451,32 +442,30 @@ Este tipo de erro, é facilmente cometido devido ao tamanho de tela e resolução d
 
 A Tabela \ref{ee501} exemplifica um trecho código de resulta neste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E501}
         \label{ee501}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		 if self.value[2] == 29 and self.value[1] == 2 and ((self.value[0] \% 4 != 0) or \\
 		(self.value[0] \% 100 == 0)):  \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce501}, exemplifica a correção deste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E501}
         \label{ce501}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		 if self.value[2] == 29 and self.value[1] == 2 and ( \\
 		 \hspace{10 mm}(self.value[0] \% 4 != 0) or (self.value[0] \% 100 == 0)):  \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E231}
@@ -495,30 +484,28 @@ No Gráfico \ref{ge231}, são exibidos os dados referentes as ocorrências deste er
 
 A Tabela \ref{ee231} exemplifica um trecho código de resulta neste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E231}
         \label{ee231}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		 def \_\_init\_\_(self,value):  \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce231}, exemplifica a correção deste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E231}
         \label{ce231}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		def \_\_init\_\_(self, value): \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{W191}
@@ -561,33 +548,31 @@ No Gráfico \ref{ge128}, são exibidos os dados referentes as ocorrências deste er
 
 A Tabela \ref{ee128} exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E128}
         \label{ee128}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		 XPtrException.INTERNAL\_ERROR: \_('There is an internal bug in 4Suite. ' \\
         	'Please make a post to the 4Suite mailing list to report this error ' \%s),  \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce128}, exemplifica a correção deste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E128}
         \label{ce128}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		XPtrException.INTERNAL\_ERROR: \_('There is an internal bug in 4Suite.' \\
                 \hspace{62mm}                     'Please make a post to the 4Suite mailing ' \\
                  \hspace{62mm}                    'list to report this error  \%s'), \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E111}
@@ -618,30 +603,28 @@ No Gráfico \ref{ge265}, são exibidos os dados referente as ocorrências deste tip
 
 A Tabela \ref{ee265}, exemplifica um trecho  de código onde ocorre este erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E265}
         \label{ee265}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		\#Remove suffix if there is one (why?) \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce265}, exemplifica a correção deste código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E265}
         \label{ce265}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		\# Remove suffix if there is one (why?) \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E302}
@@ -662,27 +645,26 @@ No Gráfico \ref{ge302}, são exibidos os dados referentes a este tipo de erro.
 
 A Tabela \ref{ee302} exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E302}
         \label{ee302}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		from Ft.Xml.InputSource import DefaultFactory \\
 		\\
 		class XUpdateCommandLineApp(CommandLineApp.CommandLineApp): \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce302}, exemplifica a correção deste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E302}
         \label{ce302}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		from Ft.Xml.InputSource import DefaultFactory \\
 		\\
@@ -690,7 +672,6 @@ A Tabela \ref{ce302}, exemplifica a correção deste erro.
 		class XUpdateCommandLineApp(CommandLineApp.CommandLineApp): \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{W291}
@@ -723,30 +704,28 @@ No Gráfico \ref{ge251}, são exibidos os dados referentes as ocorrências deste ti
 
 A Tabela \ref{ee251} exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E251}
         \label{ee251}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		return Ft.Xml.XPath.Evaluate(expr,context = con) \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce251}, exemplifica a correção deste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E251}
         \label{ce251}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		return Ft.Xml.XPath.Evaluate(expr,context=con) \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E122}
@@ -763,34 +742,32 @@ No Gráfico \ref{ge122} são exibidos os dados referentes a este tipo de erro.
 
 A Tabela \ref{ee122} exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E122}
         \label{ee122}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		ExtElements = \{ \\
 		\#    (EXSL\_DATE\_TIME\_NS, 'date-format'): DateFormatElement \\
 		\} \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce122}, exemplifica a correção deste erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E122}
         \label{ce122}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		ExtElements = \{ \\
 		\hspace{10mm}\#    (EXSL\_DATE\_TIME\_NS, 'date-format'): DateFormatElement \\
 		\} \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E201}
@@ -807,32 +784,30 @@ No Gráfico \ref{ge201}, são exibidos os dados referentes as ocorrências deste ti
 
 A Tabela \ref{ee201}, exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E201}
         \label{ee201}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		XML\_FILENAMES = \big[ f for f in os.listdir(DIR) \\
                               if f.endswith('.xml') \big] \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce201}, exemplifica a correção deste código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E201}
         \label{ce201}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		XML\_FILENAMES = \big[f for f in os.listdir(DIR) \\
                               if f.endswith('.xml') \big] \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E203}
@@ -851,34 +826,32 @@ No Gráfico \ref{ge203}, são exibidos os dados referentes a este tipo de erro.
 
 A Tabela \ref{ee203}, exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E203}
         \label{ee203}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		tests = \{ParsedExpr.ParsedFilterExpr : \big[((nodeset2, plT), \\
 		\hspace{20mm}	context1, list(nodeset2.val)), \\
                 \hspace{20mm}   ((nodeset2, plF), context1, \big[\big]),\big],\} \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce203}, exemplifica a correção deste código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E203}
         \label{ce203}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		tests = \{ParsedExpr.ParsedFilterExpr: \big[((nodeset2, plT), \\
 		\hspace{20mm}	context1, list(nodeset2.val)), \\
                 \hspace{20mm}   ((nodeset2, plF), context1, \big[\big]),\big],\} \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E225}
@@ -897,30 +870,28 @@ No Gráfico \ref{ge225}, são exibidos os dados referentes a este tipo de erro.
 
 A Tabela \ref{ee225}, exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E225}
         \label{ee225}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		result=tester.test\_data\big['parse'\big](isrc) \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce225}, exemplifica a correção deste código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E225}
         \label{ce225}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		result = tester.test\_data\big['parse'\big](isrc)\\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 \section{E202}
@@ -937,41 +908,39 @@ No Gráfico \ref{ge202}, são exibidos os dados referentes a este tipo de erro.
 
 A Tabela \ref{ee202} exemplifica este código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Erro E202}
         \label{ee202}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		actual = [ node.data for node in expr.evaluate(con) ] \\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 A Tabela \ref{ce202}, exemplifica a correção deste código de erro.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Correção do erro E202}
         \label{ce202}
-        \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		actual = [node.data for node in expr.evaluate(con)]\\
 	\bottomrule
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Devido ao fato de dois códigos de erros apresentarem uma quantidade de ocorrências muito elevada e possuirem um baixo grau de complexidade para a sua correção, foi executada uma nova avaliação dos dados obtidos, excluindo as regras E501 e E231 e verificando o impacto destas regras no nível  de adoção do estilo de código discutido neste estudo.
 
 A Tabela \ref{resultScript2}, contém os novos resultados após a remoção dos itens mencionado anteriormente.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Resultados obtidos com a análise de script segunda análise}
         \label{resultScript2}
-        \begin{center}
-        \begin{tabularx}{0.99\textwidth}{lX}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Perguntas} & \textbf{Respostas} \\
         \midrule
@@ -986,7 +955,6 @@ A Tabela \ref{resultScript2}, contém os novos resultados após a remoção dos iten
 		Qual o projeto com maior número de erros & UcsSdk-0.8.1.6.tar.gz (241936 erros) \\
 	\bottomrule	
         \end{tabularx}
-        \end{center}
 \end{table}
 
 Mesmo removidos os dois maiores códigos de erros, não houve uma alteração significativa no nível de adoção, tendo apenas  4.924 projetos sem  alguma violação/erro.
