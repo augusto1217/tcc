@@ -7,7 +7,7 @@
 
 \section{Introdu\c{c}\~{a}o}
 
-Neste capítulo será apresentado o histórico dos estilos de codificação, que tiverem origem com a notação húngara, nos anos 70. Em seguida serão apresentados os estilos mais prominentes, como os estilos Gnu/C, Java, C++ e Python.
+Neste capítulo será apresentado o histórico dos estilos de codificação, que tiverem origem com a notação húngara, nos anos 70, passando pelos estilos mais prominentes, como os estilos Gnu/C, Java e Python. Em seguida, será apresentado o estilo PEP8 da linguagem Python, que será objeto deste estudo. Por fim, é descrito brevemente o conceito de ambientes integrados de desenvolvimento -- IDEs.
 
 \section{Histórico dos padrões de codificação}
 
@@ -22,7 +22,7 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
         \label{tab2}
         \begin{center}
 
-        \begin{tabularx}{0.7\textwidth}{lX}
+        \begin{tabularx}{0.7\textwidth}{>{\ttfamily}lX}
         \toprule
         	\textbf{Nome} & \textbf{Descrição} \\
         \midrule
@@ -37,7 +37,7 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
 		fn & Função (ponteiro) \\ 
 		c & char (8 bits) \\ 
         \rowcolor[gray]{0.8}
-		by & unsigned char (byte or uchar ¿ 8 bits) \\ 
+		by & unsigned char (byte ou caractere não sinalizado de 8 bits) \\ 
 		n & Inteiro \\ 
         \rowcolor[gray]{0.8}
 		b & Booleana (verdadeiro ou falso) \\ 
@@ -46,7 +46,7 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
 		u & Inteiro não sinalizado \\ 
 		w & Word (Variável com o tamanho de um registrador da máquina) \\ 
         \rowcolor[gray]{0.8}
-		ch & Char, com texto ASCII \\ 
+		ch & Caractere com texto ASCII \\ 
 		l & Inteiro longo (32 bits) \\ 
         \rowcolor[gray]{0.8}
 		dw & Inteiro longo não sinalizado (dword 32 bits) \\	
@@ -59,11 +59,11 @@ Um bom desenvolvedor geralmente deve considerar os identificadores como valores 
 
 A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notação húngara e seus respectivos significados e tipos.
 
-\begin{table}[ht]
+\begin{table}[ht!]
         \caption{Variáveis utilizando notação húngara}
         \label{tabVarNtHun}
         \begin{center}
-        \begin{tabularx}{0.7\textwidth}{lX}
+        \begin{tabularx}{0.7\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Nome} & \textbf{Descrição} \\
         \midrule
@@ -112,9 +112,9 @@ O sistema húngaro foi adotado como padrão de programação do Windows, e se espalh
 
 Mas, por algum motivo não divulgado ao público, com a primeira versão da plataforma .NET, a Microsoft começou a abandonar o uso da notação húngara. A equipe de projetos do Excel e Word ficaram aliviados em não ter que usar uma convenção de nomenclatura estranha, já que nos dias atuais a verificação de declaração dos tipos de variáveis é feita pelo compilador e há o recurso de autocompletar o código digitado que sugere um conjunto de opções ao programador, a depender do contexto \cite{notacao2015}.
 
-\subsection{GNU C}
+\subsection{GNU/C}
 
-O estilo de codificação Gnu/C foi proposto e definido por Richard Stallman e outros voluntários do projeto GNU em meados de 1992, pois Stallman acreditava que a adoção de um padrão tornaria os programas e componentes GNU limpos, consistentes e de fácil manutenção.
+O estilo de codificação GNU/C foi proposto e definido por Richard Stallman e outros voluntários do projeto GNU em meados de 1992, pois Stallman acreditava que a adoção de um padrão tornaria os programas e componentes GNU limpos, consistentes e de fácil manutenção.
 
 Para que um novo desenvolvedor possa participar de algum projeto ou criar algo para a comunidade do software livre GNU, é exigido apenas que ele se atente ao  documento oficial de estilos\footnote{http://www.gnu.org/prep/standards/}.  É de suma importância que se utilize a versão atualizada, para que não seja escrito um código formatado sobre regras que possam ter sido revogadas ou substituídas.
 
@@ -122,50 +122,50 @@ Também é possível que o desenvolvedor faça uma contribuição para o documento que
 
 O estilo GNU proposto para a linguagem C possui características próprias no que se refere à formatação, comentários, convenção de nomes, tabulações, espaços e indentações, dentre outros.
 
-\subsection{Formatação}
+\subsubsection{Formatação}
 
 O estilo de codificação Gnu/C utiliza 79 caracteres para o comprimento das linhas. Segundo Stallman, esta caraterística facilita a leitura do código nos mais diversos ambientes e editores.
-O estilo também recomenda a utilização de colchetes "{}", para o bloco da função em linha posterior à da declaração da função e ao final do bloco. O Código \ref{formatGnuC}, exemplifica a formatação mencionada.
+O estilo também recomenda a utilização de chaves "\{ \}" para o bloco da função em linha posterior à da declaração da função e ao final do bloco. O Código \ref{formatGnuC} exemplifica a formatação mencionada.
 
-\lstinputlisting[language=C, caption=Formatação GNU C, label=formatGnuC]{cods/formatgnu.c}
+\lstinputlisting[language=C, caption=Formatação GNU/C, label=formatGnuC]{cods/formatgnu.c}
 
-\subsection{Comentário}
+\subsubsection{Comentário}
 
-Stallman diz que todo programa deve começar com um comentário no topo do código-fonte contendo a função 'principal' do programa. Este comentário deve informar o nome do arquivo e apresentar uma ou duas linhas a respeito do objetivo geral do programa. As estruturas e as funções devem trazer comentários com a descrição sobre sua funcionalidade, quais os tipos de argumentos pode receber e o seu tipo de retorno, quando houver.
+Stallman diz que todo programa deve começar com um comentário no topo do código-fonte contendo a função \lq principal\rq\ do programa. Este comentário deve informar o nome do arquivo e apresentar uma ou duas linhas a respeito do objetivo geral do programa. As estruturas e as funções devem trazer comentários com a descrição sobre sua funcionalidade, quais os tipos de argumentos pode receber e o seu tipo de retorno, quando houver.
 
 É  recomendado que os comentários sejam escritos em inglês. A justificativa é que o inglês é o idioma comum para quase todos os desenvolvedores, tornando possível a um grande número de pessoas entenderem o que foi definido naquela função.
 
 O Código \ref{comentGnuC} exemplifica um programa com comentários no estilo GNU/C.
 
-\lstinputlisting[language=C, caption=Comentários GNU C, label=comentGnuC]{cods/comentgnu.c}
+\lstinputlisting[language=C, caption=Comentários GNU/C, label=comentGnuC]{cods/comentgnu.c}
 
-\subsection{Convenção de nomes}
+\subsubsection{Convenção de nomes}
 
 O nomes de variáveis e funções globais devem ser concisos, trazendo consigo informações úteis sobre o significado da variável ou função. Assim como o comentário, os identificadores devem ser escritos em  inglês. Variáveis locais podem conter nomes mais curto, porque elas são utilizadas apenas dentro de um contexto específico. É recomendado a utilização de sublinhados para separar palavras e nomes, de modo que os comandos possam ser legíveis. O estilo GNU/C sugere o uso apenas de letras minúsculas para identificadores de variáveis e funções, reservando maiúsculas para macros, constantes, enumerações e para prefixos que seguem uma convenção uniforme.
 
 O Código \ref{varGnuC}, exemplifica uma variável cujo identificador segue o padrão GNU/C.
 
-\lstinputlisting[language=C, caption=Variáveis Gnu C, label=varGnuC]{cods/vargnu.c}
+\lstinputlisting[language=C, caption=Variáveis Gnu/C, label=varGnuC]{cods/vargnu.c}
 
-\subsection{Indentação}
+\subsubsection{Indentação}
 
 Segundo \cite{kernelorg2002}, a idéia por trás da indentação é definir claramente onde um bloco de controle começa e onde ele termina. A indentação, em geral, utiliza 8 caracteres, mas existem editores que utilizam apenas 4, ou até mesmo 2 caracteres. Porém, de acordo com \cite{kernelorg2002}, a definição do tamanho de uma indentação é um problema semelhante ao da definição de uma aproximação para o valor da constante $\pi$.
 
 Apesar de algumas pessoas argumentarem que a utilização de 8 caracteres faz com que o código fonte fique muito deslocado à direita, o que como consequência faz com que seja difícil a leitura em uma tela de 80 caracteres, é desaconselhável a utilização de mais de 3 níveis de indentação em um mesmo bloco.
 
-\subsection{Espaçamento}
+\subsubsection{Espaçamento}
 
 De acordo com \cite{kernelorg2002}, um dos principais usos de espaços é a separação e destaque de palavras chaves que geralmente são acompanhadas de parênteses.
 
-A Tabela \ref{palchaveGnuC} exemplifica algumas palavras chaves que utilizam espaço após sua declaração.
+O Código \ref{palchaveGnuC} exemplifica algumas palavras chaves que utilizam espaço após sua declaração.
 
-\lstinputlisting[language=C, caption=Palavras chaves espaços em brancos Gnu C, label=palchaveGnuC]{cods/palchavegnu.c}
+\lstinputlisting[language=C, caption=Palavras chaves espaços em brancos no estilo Gnu/C, label=palchaveGnuC]{cods/palchavegnu.c}
 
-Já a Tabela \ref{palchaveExcGnuC} exemplifica algumas palavras chaves que não  utilizam espaço após sua declaração.
+Já o Código \ref{palchaveExcGnuC} exemplifica algumas palavras chaves que não  utilizam espaço após sua declaração.
 
-\lstinputlisting[language=C, caption=Palavras chaves exceção espaços em brancos Gnu C, label=palchaveExcGnuC]{cods/palchaveexcgnu.c}
+\lstinputlisting[language=C, caption=Palavras chaves exceção espaços em brancos no estilo Gnu/C, label=palchaveExcGnuC]{cods/palchaveexcgnu.c}
 
-\section{Java}
+\subsection{Java}
 
 Após ter sua solicitação de padronização negada pelos orgãos ISO/IEC e ECMA a empresa Sun Microsystems criou, em 1998, o Java Community Process (JCP), com o objetivo de ser um processo aberto e participativo para desenvolver e revisar as especificações de suas implementações de referência, das suítes de teste e do estilo de codificação da tecnologia Java.
  
@@ -173,11 +173,9 @@ A abertura do JCP permitiu que empresas concorrentes da Sun se tornassem partici
  
 Em 13 de novembro de 2006 foi lançada a maior parte do Java como Software Livre sob os termos da GNU (GPL). Em 8 de maio de 2007 o processo de adoção da nova licença foi finalizado, tornando praticamente todo o código Java como software de código aberto, exceto uma pequena porção da qual a Sun não possui copyright \cite{javamagazine2013}.
 
-[TODO perguntar sobre estas citações]
-
 De acordo com \cite{javamagazinecj2013}, a linguagem Java, em sua criação, teve como base a linguagem C++, que por sua vez teve como base a linguagem C. Com isto a linguagem possui algumas características semelhantes às encontradas em C/C++, dentre elas os tipos de comentários e estruturas de seleção, repetição. Naturalmente há outras características que são únicas do Java, como comentários para documentação e convenção de nomenclatura, dentre outras.
 
-\subsection{Formatação}
+\subsubsection{Formatação}
 \label{sec:formatacao}
 Segundo \cite{oracle2015}, a linguagem Java deve utilizar quatro espaços como unidade de recuo e evitar linhas com mais de 80 caracteres, uma vez que que recuos maiores ou linhas com mais de 80 caracteres não são bem tratadas por determinados terminais e ferramentas. Quando uma expressão não couber em uma única linha, ela deves ser interrompida de acordo com os seguintes  princípios:
 
@@ -187,9 +185,9 @@ Segundo \cite{oracle2015}, a linguagem Java deve utilizar quatro espaços como un
 \item a nova linha deve estar alinhada com o início de cada expressão, no mesmo nível da linha anterior.
 \end{enumerate}
 
-\subsection{Comentários}
+\subsubsection{Comentários}
 
-De acordo com \cite{oracle2015}, todos os códigos-fontes devem começar com um comentário semelhante ao estilo GNU/C citado em \ref{sec:formatacao}. No estilo Java é necessário que o comentário contenha o nome da classe, informações sobre a versão, a data de criação e o aviso de direitos autorais.  Os comentários de implementação são delimitados por /*...*/ ou precedidos pelos caracteres //. Os comentários de documentação são conhecidos como "comentários doc" e são delimitadas pelos marcardos "/**" e "*/".
+De acordo com \cite{oracle2015}, todos os códigos-fontes devem começar com um comentário semelhante ao estilo GNU/C citado na Seção \ref{sec:formatacao}. No estilo Java é necessário que o comentário contenha o nome da classe, informações sobre a versão, a data de criação e o aviso de direitos autorais.  Os comentários de implementação são delimitados por \texttt{/*...*/} ou precedidos pelos caracteres \texttt{//}. Os comentários de documentação são conhecidos como \lq\lq comentários doc\rq\rq\ e são delimitadas pelos marcadores \texttt{/**} e \texttt{*/}.
 
 O Código \ref{comentjava} exemplifica o estilo de comentário Java para início de uma classe.
 
@@ -209,7 +207,7 @@ A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu 
         \caption{Tags JavaDoc.}
         \label{tabtagsJavaDoc}
         \begin{center}
-        \begin{tabularx}{0.9\textwidth}{lX}
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Tag} & \textbf{Significado} \\
         \midrule
@@ -236,14 +234,14 @@ O Código \ref{utiltagsjava}, exemplifica a utilização de comentário no padrão ja
 
 \lstinputlisting[language=Java, caption=Utilizando tags JavaDoc, label=utiltagsjava]{cods/utiltags.java}
 
-\subsection{Convenção de nomes}
+\subsubsection{Convenção de nomes}
 
 De acordo com \cite{convencoesjava2013}, as convenções de nomes em Java tem como objetivo tornar os programas mais fáceis e compreensíveis, podendo também fornecer informações sobre a função do identificador.
 
 A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utilizados em Java.
 
-\begin{table}[ht]
-        \caption{Tipos de Identificadores Java ( \cite{convencoesjava2013}, com adaptações ).}
+\begin{table}[ht!]
+        \caption{Tipos de Identificadores Java (\cite{convencoesjava2013}, com adaptações).}
         \label{tabtpidentJava}
         \begin{center}
         \begin{tabularx}{0.99\textwidth}{lXX}
@@ -274,11 +272,11 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
         \end{center}
 \end{table}
 
-\subsection{Indentação}
+\subsubsection{Indentação}
 
 De acordo com \cite{oracle2015}, a indentação na linguagem Java  deve conter 4 espaços ou 1 tabulação cujo tamanho corresponde exatamente à 8 espaços. A construção exata do recuo (espaços ou tabulação) é indeterminado.
 
-\subsection{Espaços em branco em expressões}
+\subsubsection{Espaços em branco em expressões}
 
 De acordo com \cite{oracle2015}, as linhas em branco melhoram a legibilidade ao separar seções de código que são logicamente relacionada.
 Duas linhas em branco deve ser sempre utilizado nas seguintes circunstâncias:
@@ -297,25 +295,25 @@ Uma linha em branco deve ser sempre utilizada:
 \item entre seções lógicas dentro de um método, para melhorar a legibilidade.
 \end{enumerate}
 
-As linguagens Java e C possuem outros tipos estruturas comuns entre si, as quais podem ser consultadas no guia de estilo das linguagem citadas nos itens \footnote{http://www.gnu.org/prep/standards/} e \footnote{http://www.oracle.com/technetwork/java/codeconvtoc-136057.html}.
+As linguagens Java e C possuem outros tipos estruturas comuns entre si, as quais podem ser consultadas no guia de estilo das linguagem citadas\footnote{http://www.gnu.org/prep/standards/}\footnote{http://www.oracle.com/technetwork/java/codeconvtoc-136057.html}.
 
-\section{Python}
+\subsection{Python}
 
-De acordo com \cite{histpython1990}, a linguagem Python foi criada no início de 1990 por Guido van Rossum no instituto de pesquisa Stichting Mathematisch Centrum - CWI\footnote{http://www.cwi.nl}, localizado na Holanda. Esta linguagem é considerada uma sucessora da linguagem ABC.
+De acordo com \cite{histpython1990}, a linguagem Python foi criada no início de 1990 por Guido van Rossum no instituto de pesquisa Stichting Mathematisch Centrum -- CWI\footnote{http://www.cwi.nl}, localizado na Holanda. Esta linguagem é considerada uma sucessora da linguagem ABC.
 
 Segundo \cite{guido2011}, Python é uma  linguagem de programação fácil de aprender, poderosa, e que possui eficientes estruturas de dados de alto nível e suporte à programação orientada a objetos. Sua sintaxe é elegante e possui tipagem dinâmica a qual, juntamente com a sua natureza interpretada, torna a linguagem ideal para o desenvolvimento de scripts e eficaz para desenvolvimento de aplicações em diversas áreas, em múltiplas plataformas.
 
 As ferramentas e a documentação da linguagem Python são softwares de código aberto com uma licença compatível com a General Public License (GPL), porém menos restritiva, permitindo que o Python seja inclusive incorporado em produtos proprietários. A especificação da linguagem é mantida pela Python Software Foundation (PSF). Além de ser utilizada como linguagem principal no desenvolvimento de sistemas, o Python também é muito utilizado como linguagem script em vários softwares, permitindo automatizar tarefas e adicionar novas funcionalidades em softwares desenvolvidos primariamente em outras linguagens \cite{guido2011}.
 
-A implementação oficial do Python é mantida pela PSF e escrita em C e, por isso, é também conhecida como CPython. A versão estável mais recente está disponível para download no endereço: \footnote{http://www.python.org/download/}. Para a plataforma Windows, basta executar o instalador. Para outras plataformas, como em distribuições Linux, geralmente o Python já faz parte da distribuição; porém em alguns casos pode ser necessário compilar e instalar o interpretador a partir dos arquivos fonte.
+A implementação oficial do Python é mantida pela PSF e escrita em C e, por isso, é também conhecida como CPython\footnote{http://www.python.org/download/}. Para a plataforma Windows, basta executar o instalador. Para outras plataformas, como em distribuições Linux, geralmente o Python já faz parte da distribuição; porém em alguns casos pode ser necessário compilar e instalar o interpretador a partir dos arquivos fonte.
 
 Existem também implementações de Python para .NET (IronPython)\footnote{http://ironpython.net/}, JVM (Jython)\footnote{http://www.jython.org/} e em Python (PyPy)\footnote{http://pypy.org/} \cite{guido2011}.
 
-Todas as versões da linguagem Python são open source\footnote{http://opensource.org}. A maioria das versões de Python são compatíveis com a licença GPL; a Tabela \ref{tabtpidentJava} resume as principais características de cada versão.
+Todas as versões da linguagem Python são \textit{open source}\footnote{http://opensource.org}. A maioria das versões de Python são compatíveis com a licença GPL; a Tabela \ref{versoesPython} resume as principais características de cada versão.
 
 \begin{table}[ht]
-        \caption{Versões Python ( \cite{histpython1990}, com adaptações ).}
-        \label{tabtpidentJava}
+        \caption{Versões Python (\cite{histpython1990}, com adaptações).}
+        \label{versoesPython}
         \begin{center}
         \begin{tabularx}{0.99\textwidth}{lXXXX}
         \toprule
@@ -341,115 +339,6 @@ Todas as versões da linguagem Python são open source\footnote{http://opensource.
         \end{tabularx}
         \end{center}
 \end{table}
-
-\section{PEP8}
-\label{pep8}
-
-De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 (Python Enhancement Proposal 8) propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
-
-Assim como os estilos de codificação C e Java, o guia de estilo para Python também possui suas características e particularidades, como formatação, comentários, convenção de nomenclaturas, dentre outras.
-
-\subsection{Codificação de caracteres}
-
-Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII \textit{(American Standard Code for Information Interchange)} ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 \textit{(8-bit Unicode Transformation Format)} \footnote{http://www.python.org/dev/peps/pep-3120}.
-
-\subsection{Formatação}
-
-De acordo com \cite{pep8-2001}, por se tratar de uma linguagem que raizes na linguagem C, o estilo de codificação Python também traz consigo a limitação de 79 caracteres por linha, ainda que muitos dispositivos que sejam limitados a 80 caracteres. Para longos blocos de texto como docstrings ou comentários, a limitação é de 72 caracteres. Para linhas longas deve ser utilizada a continuação implícita entre parênteses, colchetes e chaves.
-
-\subsection{Importações}
-
-Importações ficam sempre no começo do arquivo, após os comentários e a docstring de módulo, e antes da declaração das constantes e variáveis globais. Quando um pacote é importado, são adicionadas funcionalidades criadas por terceiros ou da biblioteca padrão ao código-fonte em desenvolvimento.
-
-Importações devem aparecer na seguinte ordem, de acordo com a origem do pacote:
-
-\begin{enumerate}
-\item biblioteca padrão;
-\item de terceiros;
-\item da aplicação. 
-\end{enumerate}
-
-De acordo com \cite{pep328-2003}, deve ser utilizado o caminho absoluto do pacote na utilização de importações, pois tais linhas são mais portáteis e, geralmente, mais legíveis. 
-
-A Tabela \ref{importpy} exemplifica a utilização de importação de pacotes segundo às recomendações citada na seção \ref{pep8}.
-
-\lstinputlisting[language=Python, caption=Importação de pacotes conforme o estilo Python., label=importpy]{cods/import.py}
-
-A Tabela \ref{importnotstylepy} exemplifica a utilização de importação de pacotes de forma divergente à proposta no estilo citado na seção \ref{pep8}.
-
-\lstinputlisting[language=Python, caption=Importação pacotes que não segue o estilo PEP8., label=importnotstylepy]{cods/importnotestyle.py}
-
-\subsection{Comentários}
-
-Comentários são frases ou orações relacionadas ao significado e funcionamento de um determinado trecho de código. A primeira letra de um cometário deve ser maiúscula, a não ser que seja um identificador que comece com minúscula. 
-Comentários de bloco normalmente consistem em um ou mais parágrafos, divididos em múltiplas linhas; já os comentários em uma mesma linha devem ter ao menos dois espaços de distância do último caractere e começar com um '\#', um espaço e o texto.
-
-O Código \ref{comentonelinepy}, exemplifica um comentário de uma linha.
-
-\lstinputlisting[language=Python, caption=Comentário de uma linha., label=comentonelinepy]{cods/comentoneline.py}
-
-\subsection{DocStrings}
-
-O manual \cite{pep257-2001} descreve como escrever um comentário em formato docstring, o qual consiste em uma cadeia de caracteres que ocorre como a primeira declaração em um módulo, função, classe ou definição de método. 
-
-A  Tabela \ref{docstringpy} exemplifica um comentário em formato docstrings.
-
-\lstinputlisting[language=Python, caption=Comentário em formato docstrings., label=docstringpy]{cods/docstrig.py}
-
-\subsubsection*{Indentação}
-
-De acordo com \cite{pep8-2001}, não se pode misturar tabulações e espaços para a utilização de indentação: o recomendado é que se utilize 4 espaços para a indentação dos blocos. Para projetos mais antigos  a orientaçao é utilizar uma tabulação (tecla TAB), 
-com tamanho equivalente a 8 espaços. 
-
-\subsection{Espaço em branco em expressões}
-
-De acordo com \cite{pep8-2001}, a utilização de linhas em branco deve seguir as seguintes recomendações:
-
-\begin{enumerate}
-\item separar funções de nível superior e definições de classe com duas linhas em branco;
-\item definições de método dentro de uma classe são separadas por uma linha em branco;
-\item linhas em branco extras podem ser utilizadas com moderação para separar grupos de funções;
-\item usar linhas em branco em funções, com moderação, para indicar seções lógicas.
-\end{enumerate}
-
- Deve-se evitar espaços em branco nas seguintes situações: 
-
-\begin{enumerate}
-\item dentro de parênteses, colchetes e chaves;
-\item antes de vírgula, ponto e vírgula e dois-pontos; 
-\item antes do parêntese de abertura da lista de argumentos de uma função;
-\item antes do colchete de índices; 
-\item mais de um espaço em torno de um operador para alinhar com outros;
-\item não usar espaços em volta do caractere '=' quando é antecedido por uma palavra-chave de um argumento ou sucedido por um valor padrão para um parâmetro.
-\end{enumerate}
-
-Outra recomendação relativa ao uso de espaços em branco é sempre colocar espaços em torno das operações.
-
-\subsection {Convenção de nomes}
-
-Segundo \cite{pep8-2001} as convenções de nome da biblioteca padrão da linguagem Python são confusas,
- e inconsistentes. No entanto, são recomendadas as seguintes convenções para a construção de nomes e identificadores, numeradas por ordem de prioridade:
-
-\begin{enumerate}
-\item uma letra minúscula
-\item uma letra maiúscula
-\item minúsculas
-\item minúsculas\_com\_sublinhado
-\item MAIÚSCULAS
-\item MAIÚSCULAS\_COM\_SUBLINHADO
-\item IniciaisMaiúsculas 
-\end{enumerate}
-
-Nunca utilize os caracteres 'l' (ele minúsculo), 'O' (o maiúsculo), ou I, (i maiúsculo) como nome de uma variável de apenas um caractere pois, em determinadas fontes, esses caracteres são indistinguíveis dos numerais 1 (um) e 0 (zero). Quando  for necessário a usar 
-o 'l', usar o caractere 'L' em seu lugar.
-
-Módulos devem ter nome em minúsculas. Sublinhado podem ser usados no nome do módulo se implicar em uma melhora na legibilidade. Pacotes Python devem ter um nome curto, todo em minúsculas, embora nesse caso o uso de sublinhados seja desencorajado.
-
-Uma vez que nomes de módulos são mapeados para nomes de arquivos, e alguns sistemas de arquivos não diferenciam maiúsculas de minúsculas e truncam nomes longos, é importante que o nome do módulo escolhido seja bastante curto. Nomes longos não são um problema em plataformas Unix, mas podem vir a ser em sistemas operacionais Mac OSX mais antigos ou em ambientes Windows e DOS.
-
-Em relação aos métodos e classes, utilize sempre o identificador "self" como primeiro argumento de métodos de instância e usar "cls" como primeiro argumento para métodos de classe. 
-
-O guia de estilos proposto para a linguagem Python no item citado na seção \ref{pep8} é extenso, e pode ser consultado em \cite{pep8-2001}  e no Anexo B.
 
 \subsection{Outros Guias de Estilos}
 
@@ -482,6 +371,115 @@ Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio
         \end{tabularx}
         \end{center}
 \end{table}
+
+
+\section{PEP8}
+\label{pep8}
+
+De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 (Python Enhancement Proposal 8) propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
+
+Assim como os estilos de codificação C e Java, o guia de estilo para Python também possui suas características e particularidades, como formatação, comentários, convenção de nomenclaturas, dentre outras.
+
+\subsection{Codificação de caracteres}
+
+Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII \textit{(American Standard Code for Information Interchange)} ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 \textit{(8-bit Unicode Transformation Format)} \footnote{http://www.python.org/dev/peps/pep-3120}.
+
+\subsection{Formatação}
+
+De acordo com \cite{pep8-2001}, por se tratar de uma linguagem que raizes na linguagem C, o estilo de codificação Python também traz consigo a limitação de 79 caracteres por linha, ainda que muitos dispositivos que sejam limitados a 80 caracteres. Para longos blocos de texto como docstrings ou comentários, a limitação é de 72 caracteres. Para linhas longas deve ser utilizada a continuação implícita entre parênteses, colchetes e chaves.
+
+\subsection{Importações}
+
+Importações ficam sempre no começo do arquivo, após os comentários e a docstring de módulo, e antes da declaração das constantes e variáveis globais. Quando um pacote é importado, são adicionadas funcionalidades criadas por terceiros ou da biblioteca padrão ao código-fonte em desenvolvimento.
+
+Importações devem aparecer na seguinte ordem, de acordo com a origem do pacote:
+
+\begin{enumerate}
+\item biblioteca padrão;
+\item de terceiros;
+\item da aplicação. 
+\end{enumerate}
+
+De acordo com \cite{pep328-2003}, deve ser utilizado o caminho absoluto do pacote na utilização de importações, pois tais linhas são mais portáteis e, geralmente, mais legíveis. 
+
+O Código \ref{importpy} exemplifica a utilização de importação de pacotes segundo às recomendações citada na Seção \ref{pep8}.
+
+\lstinputlisting[language=Python, caption=Importação de pacotes conforme o estilo Python., label=importpy]{cods/import.py}
+
+O Código \ref{importnotstylepy} exemplifica a utilização de importação de pacotes de forma divergente à proposta no estilo citado na Seção \ref{pep8}.
+
+\lstinputlisting[language=Python, caption=Importação pacotes que não segue o estilo PEP8., label=importnotstylepy]{cods/importnotestyle.py}
+
+\subsection{Comentários}
+
+Comentários são frases ou orações relacionadas ao significado e funcionamento de um determinado trecho de código. A primeira letra de um cometário deve ser maiúscula, a não ser que seja um identificador que comece com minúscula. 
+Comentários de bloco normalmente consistem em um ou mais parágrafos, divididos em múltiplas linhas; já os comentários em uma mesma linha devem ter ao menos dois espaços de distância do último caractere e começar com um \lq \texttt{\#}\rq, um espaço e o texto.
+
+O Código \ref{comentonelinepy}, exemplifica um comentário de uma linha.
+
+\lstinputlisting[language=Python, caption=Comentário de uma linha., label=comentonelinepy]{cods/comentoneline.py}
+
+\subsection{DocStrings}
+
+O manual \cite{pep257-2001} descreve como escrever um comentário em formato docstring, o qual consiste em uma cadeia de caracteres que ocorre como a primeira declaração em um módulo, função, classe ou definição de método. 
+
+O Código \ref{docstringpy} exemplifica um comentário em formato docstrings.
+
+\lstinputlisting[language=Python, caption=Comentário em formato docstrings., label=docstringpy]{cods/docstrig.py}
+
+\subsection{Indentação}
+
+De acordo com \cite{pep8-2001}, não se pode misturar tabulações e espaços para a utilização de indentação: o recomendado é que se utilize 4 espaços para a indentação dos blocos. Para projetos mais antigos  a orientaçao é utilizar uma tabulação (tecla \texttt{TAB}), 
+com tamanho equivalente a 8 espaços. 
+
+\subsection{Espaço em branco em expressões}
+
+De acordo com \cite{pep8-2001}, a utilização de linhas em branco deve seguir as seguintes recomendações:
+
+\begin{enumerate}
+\item separar funções de nível superior e definições de classe com duas linhas em branco;
+\item definições de método dentro de uma classe são separadas por uma linha em branco;
+\item linhas em branco extras podem ser utilizadas com moderação para separar grupos de funções;
+\item usar linhas em branco em funções, com moderação, para indicar seções lógicas.
+\end{enumerate}
+
+ Deve-se evitar espaços em branco nas seguintes situações: 
+
+\begin{enumerate}
+\item dentro de parênteses, colchetes e chaves;
+\item antes de vírgula, ponto e vírgula e dois-pontos; 
+\item antes do parêntese de abertura da lista de argumentos de uma função;
+\item antes do colchete de índices; 
+\item mais de um espaço em torno de um operador para alinhar com outros;
+\item não usar espaços em volta do caractere \lq \texttt{=}\rq\ quando é antecedido por uma palavra-chave de um argumento ou sucedido por um valor padrão para um parâmetro.
+\end{enumerate}
+
+Outra recomendação relativa ao uso de espaços em branco é sempre colocar espaços em torno das operações.
+
+\subsection {Convenção de nomes}
+
+Segundo \cite{pep8-2001} as convenções de nome da biblioteca padrão da linguagem Python são confusas,
+ e inconsistentes. No entanto, são recomendadas as seguintes convenções para a construção de nomes e identificadores, numeradas por ordem de prioridade:
+
+\begin{enumerate}
+\item uma letra minúscula
+\item uma letra maiúscula
+\item minúsculas
+\item minúsculas\_com\_sublinhado
+\item MAIÚSCULAS
+\item MAIÚSCULAS\_COM\_SUBLINHADO
+\item IniciaisMaiúsculas 
+\end{enumerate}
+
+Nunca utilize os caracteres \lq \texttt{l}\rq\ (ele minúsculo), \lq\texttt{O}\rq\ (o maiúsculo), ou \lq\texttt{I}\rq, (i maiúsculo) como nome de uma variável de apenas um caractere pois, em determinadas fontes, esses caracteres são indistinguíveis dos numerais \texttt{1} (um) e \texttt{0} (zero). Quando  for necessário a usar o \lq\texttt{l}\rq, usar o caractere \lq\texttt{L}\rq\ em seu lugar.
+
+Módulos devem ter nome em minúsculas. Sublinhado podem ser usados no nome do módulo se implicar em uma melhora na legibilidade. Pacotes Python devem ter um nome curto, todo em minúsculas, embora nesse caso o uso de sublinhados seja desencorajado.
+
+Uma vez que nomes de módulos são mapeados para nomes de arquivos, e alguns sistemas de arquivos não diferenciam maiúsculas de minúsculas e truncam nomes longos, é importante que o nome do módulo escolhido seja bastante curto. Nomes longos não são um problema em plataformas Unix, mas podem vir a ser em sistemas operacionais Mac OSX mais antigos ou em ambientes Windows e DOS.
+
+Em relação aos métodos e classes, utilize sempre o identificador \lq\lq\texttt{self}\rq\rq\ como primeiro argumento de métodos de instância e usar \lq\lq\texttt{cls}\rq\rq\ como primeiro argumento para métodos de classe. 
+
+O guia de estilos proposto para a linguagem Python no item citado na Seção \ref{pep8} é extenso, e pode ser consultado em \cite{pep8-2001} e no Anexo \ref{anexoB}.
 
 \section {IDE - \textit{Integrated Development Environments}}
 

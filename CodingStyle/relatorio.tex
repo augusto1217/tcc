@@ -32,6 +32,8 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage[multiple]{footmisc}
+\usepackage[final]{pdfpages}
 
 % Setup
 \lstset{numbers=left,
@@ -221,6 +223,12 @@ showstringspaces=false
 % *** Anexo I: Diagramas esquemáticos ***
 \include{anexo_pep8_regras}
 \refstepcounter{noAnexo}
+
+\chapter[PEP8]{PEP8}
+\label{anexoB}
+
+\includepdf[pages=-,landscape=true,fitpaper=true,offset=0.1in 0.1in]{PEP8.pdf}
+
 
 % *** Anexo II: Descrição do CD ***
 %\include{anexo_CD}
