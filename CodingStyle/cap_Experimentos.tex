@@ -162,7 +162,7 @@ O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a
 \subsection{Flake 8}
 \label{flake_8}
 
-É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python. \cite{flake-8_2015} A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
+É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python \cite{flake-8_2015}. A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
  
 A sua instalação pode ser realizada através da linha de comando exemplificado na Tabela \ref{instflak8}
 
@@ -172,7 +172,7 @@ A sua instalação pode ser realizada através da linha de comando exemplificado na
         \centering
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
-         pip install flake8 \\
+         \$ pip install flake8 \\
 	\bottomrule
         \end{tabularx}
 \end{table}
@@ -203,7 +203,7 @@ A versão utilizada para o desenvolvimento dos procedimentos escritos em java é J
 
 \subsection{Python}
 
-A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o endereço eletrônico \footnote{https://www.python.org/downloads/}
+A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o visitar o sítio oficial da linguagem, na aba de downloads\footnote{https://www.python.org/downloads/}.
 
 \section{Extrator de métricas}
 
@@ -215,7 +215,7 @@ O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo 
 
 \subsection{Rotinas Java}
 
-A primeira etapa se da na leitura de uma página web do endereço eletrônico \footnote{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
+A primeira etapa consiste na leitura de uma página web do endereço eletrônico\footnote{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
 
 O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura dos endereços eletrônicos dos arquivos compactados a serem salvos localmente. 
 
@@ -301,15 +301,14 @@ A programação em par é uma das práticas primárias da metodologia XP. Como o nome
  
 Tal prática foi adotada pelo fato de que  código produzido é visto por, pelo menos, duas pessoas é menor a correção de falhas, com isto possuí menor manutenibilidade aumenta a velocidade de desenvolvimento e há o compartilhamento de  conhecimento.
 
-O Código \ref{extractFile} e \ref{extractFile2}, exibe a rotina desenvolvida para a obtenção dos resultados gerados utilizando as métricas do guia de estilo descritas na seçao \ref{pep8}.
-
-O Código \ref{extractFile} é responsável pela execução da ferramenta descrita na seção \ref{flake_8}.
+Os Códigos \ref{extractFile} e \ref{extractFile2} exibem as rotinas desenvolvidas para a obtenção dos resultados gerados utilizando as métricas do guia de estilo descritas na seçao \ref{pep8}.
+O Código \ref{extractFile} é responsável pela execução da ferramenta descrita na Seção \ref{flake_8}.
 
 \lstinputlisting[language=Python, caption=Procedimento A responsável pela execução do procedimento execExtractFiles.py., label=extractFile]{cods/extractFiles.py}
 
-Código \ref{extractFile2} - procedimento referenciado no código \ref{extractFile}, que tem como tarefa a extração dos arquivos em um arquivo temporário para sua análise.
+O Código \ref{extractFile2} contém o procedimento referenciado no Código \ref{extractFile}, que tem como tarefa a extração dos arquivos em um arquivo temporário para sua análise.
 
-\lstinputlisting[language=Python, caption=Procedimento B responsável pela execução do procedimento execExtractFiles.py., label=extractFile2]{cods/extractFiles2.py}
+\lstinputlisting[language=Python, caption=Procedimento responsável pela execução do procedimento execExtractFiles.py., label=extractFile2]{cods/extractFiles2.py}
 
 O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
 
@@ -350,15 +349,15 @@ Um terceiro script é criado utilizando a linguagem python, com a finalidade de q
 
 \lstinputlisting[language=Python, caption=Script extrator dos resultados das métricas., label=scriptRules]{cods/extractResultRules.py}
 
-Neste estudo foram removida as verificações para os seguintes códigos de erros: \texttt{E121}; \texttt{E123}; \texttt{E126}; \texttt{E133}; \texttt{E226}; \texttt{E241}; \texttt{E242}; \texttt{E704}. Esta remoção ocorreu pois de acordo com a seção \ref{pep8}, estas regras não são aceitas por unanimidade.
+Neste estudo foram removida as verificações para os seguintes códigos de erros: \texttt{E121}; \texttt{E123}; \texttt{E126}; \texttt{E133}; \texttt{E226}; \texttt{E241}; \texttt{E242}; \texttt{E704}. Esta remoção ocorreu pois de acordo com a Seção \ref{pep8}, estas regras não são aceitas por unanimidade.
 
 \chapter{Resultados}
 
-Após a execução das rotinas mencionadas nos itens de código \ref{downFile} e \ref{downFile2} obteve-se  um total de \textbf{62.729} arquivos compactados, ocupando \textbf{17.4 Gigabytes} de espaço físico do disco rígido, onde cada arquivo compactado corresponde a um projeto open source escrito em Python. Contudo, foram encontrados \textbf{229} arquivos defeituosos,  os quais foram descartados.
+Após a execução das rotinas mencionadas nos Código \ref{downFile} e \ref{downFile2} obteve-se  um total de \textbf{62.729} arquivos compactados, ocupando \textbf{17.4 Gigabytes} de espaço físico do disco rígido, onde cada arquivo compactado corresponde a um projeto open source escrito em Python. Contudo, foram encontrados \textbf{229} arquivos defeituosos,  os quais foram descartados.
 
 Posteriormente a execução do script mencionado na Seção \ref{scriptsPython}, obteve-se um arquivo texto contendo 5.863.878 de linhas, nos moldes da Tabela \ref{exemScriptPep8} .
 
-A execução do código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no anexo \ref{anexoB}.
+A execução do Código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no anexo \ref{anexoB}.
 
 \begin{table}[ht]
         \caption{Resultados obtidos com a análise de script}
@@ -378,7 +377,7 @@ A execução do código \ref{scriptRules}, citado na seção \ref{scriptsPython}, tev
 		Qual a quantidade total de todas as  ocorrências de erros?  & 51.616.508 \\ 
 	\rowcolor[gray]{0.8}
 		Qual a quantidade de erros distintos? & 70 \\ 
-		Qual o projeto com maior número de módulos? & appengine\_sdk-1.9.19.post3-py2-none-any.whl (5735 módulos) \\ 
+		Qual o projeto com maior número de módulos? & appengine\_sdk-1.9.19.post3-py2-none-any.whl (5.735 módulos) \\ 
 	\rowcolor[gray]{0.8}
 		Qual o projeto com maior número de erros & nodepy-0.6.tar.gz (658.888 erros) \\
 	\bottomrule	
@@ -480,12 +479,12 @@ De acordo com o Anexo A, o erro \texttt{E231} corresponde a falta de espaço em b
 
 Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um  script que trate adequadamente cada um dos caracteres listados. Assim, seria possível eliminar todas as ocorrências deste erro de forma automatizada (tomando o devido cuidado de não gerar um novo erro E501 ao adicionar os espaços em branco que estavam faltando). 
 
-No Gráfico \ref{ge231}, são exibidos os Erro referentes as ocorrências deste erro.
+Na Figura \ref{ge231} são exibidos os dados referentes as ocorrências deste erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E231.png}
-\caption{Erro E231. \label{ge231}}
+\caption{Ocorrências do erro E231 por projetos, módulos e total. \label{ge231}}
 \end{figure}
 
 A Tabela \ref{ee231} exemplifica um trecho código de resulta neste erro.
@@ -597,7 +596,7 @@ No Gráfico \ref{ge111}, são exibidos os Erro referentes as ocorrências deste tip
 
 \section{E265}
 
-De acordo com o Anexo A, o código de erro E265 indica que o bloco de comentário deve iniciar  com jogo da velha (\lq \#\rq) seguido de espaço em branco (\lq \rq).
+De acordo com o Anexo A, o código de erro E265 indica que o bloco de comentário deve iniciar  com jogo da velha (\lq \#\rq) seguido de espaço em branco (\lq\ \rq).
 
 No Gráfico \ref{ge265}, são exibidos os Erro referente as ocorrências deste tipo de erro.
 
