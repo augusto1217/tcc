@@ -187,7 +187,7 @@ Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um 
         \midrule
 		\textbf{\$ flake8 coolproject} \\
 		coolproject/mod.py:97:1: F401 'shutil' imported but unused \\
-		coolproject/mod.py:625:17: E225 faltandoEspaços em branco around operato \\
+		coolproject/mod.py:625:17: E225 missing whitespace around operator \\
 		coolproject/mod.py:729:1: F811 redefinition of function 'readlines' from line 723 \\
 		coolproject/mod.py:1028:1: F841 local variable 'errors' is assigned to but never use \\
         \bottomrule
@@ -224,7 +224,7 @@ O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura 
 O resultado do procedimento acima, gerou um arquivo texto denomiado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
 
 \begin{table}[ht!]
-        \caption{Links obtidos pelo código.}
+        \caption{Links obtidos pelo Código \ref{obtLinksPac} .}
         \label{linksobt}
         \centering
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
@@ -259,7 +259,7 @@ As etapas anteriores foram adotadas a linguagem de programação Java \cite{java_2
 
 Para a criação e execução dos procedimentos acima mencionados foram encontrados alguns obstáculos a serem superados. A primeira dificuldade foi a de compreender a estrutura do site na qual está localizado o repositório com os arquivos compactados para o download, pois o domínio \cite{pypi_2015} além de conter vários endereços (o que torna a página pesada e extensa de se carregar e navegar), os mesmos não direcionavam ao arquivo desejado e sim a uma nova página que continha uma outra página com uma determinada estrutura que também necessitava de análise para criar rotinas para a localização do arquivo para que pudesse ser salvo no disco rígido.
  
-A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \cite{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração média de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
+A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \cite{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração média de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A Tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
 
 \begin{table}[ht!]
         \caption{Exceções na transferência de arquivos.}
@@ -313,12 +313,12 @@ O Código \ref{extractFile2} contém o procedimento referenciado no Código \ref{ex
 O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
 
 \begin{itemize}
-	\item Acessar um determinado diretório (neste trabalho, chamado /tcc-unb/arquivos);
+	\item Acessar um determinado diretório (neste trabalho, chamado \texttt{/tcc-unb/arquivos});
 	\item Ler arquivo com extensões \texttt{*.zip}, \texttt{*.tar.gz}, \texttt{*.bz2}, \texttt{*.egg}, \texttt{*.tgz}, e \texttt{*.whl}. descompactado em um diretório temporário do sistema operacional (por, exemplo, \texttt{\\tmp});
 	\item Após a extração do arquivo, executar o flake8, ferramenta citada no item \ref{flake_8}, tendo como parâmetros as regras mais relevantes. 
 	Esta ferramenta analisa, linha a linha, cada arquivo dentro de cada projeto.
 	\item Ao término da análise o script move o arquivo compactado para um outro diretório (denominado \lq\lq arquivos-orig\rq\rq), onde contém sub diretórios refentes a sua extensão 
-	(por exemplo, \lq\lq /arquivos-orig/zip\rq\rq, \lq\lq /arquivos-orig/tar.gz\rq\rq, \lq\lq /arquivos-orig/tgz \rq\rq etc..).
+	(por exemplo, \lq\lq \texttt{/arquivos-orig/zip}\rq\rq, \lq\lq \texttt{/arquivos-orig/tar.gz}\rq\rq, \lq\lq \texttt{/arquivos-orig/tgz} \rq\rq etc..).
 \end{itemize}
 
 Os procedimentos executados anteriormente deu origem a um arquivo texto denominado resultado-flake8.txt e tem sua estrutura exemplificada a Tabela \ref{exemScriptPep8} 
@@ -357,7 +357,7 @@ Após a execução das rotinas mencionadas nos Código \ref{downFile} e \ref{downFil
 
 Posteriormente a execução do script mencionado na Seção \ref{scriptsPython}, obteve-se um arquivo texto contendo 5.863.878 de linhas, nos moldes da Tabela \ref{exemScriptPep8} .
 
-A execução do Código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no anexo \ref{anexoB}.
+A execução do Código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na Tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no anexo \ref{anexoB}.
 
 \begin{table}[ht]
         \caption{Resultados obtidos com a análise de script}
@@ -401,7 +401,7 @@ Também foi obtida a quantidade de projetos, módulos e ocorrências para cada um d
         \end{tabularx}
 \end{table}
 
-Após resultado obtido com a análise descrita na Tabela \ref{exemResult}, ficou constatado que apenas \textbf{3.247} projetos estavam totalmente aderentes ao guia de estilo citado na Seção \ref{pep8}. No Gráfico \ref{allErrors} são exibidos os códigos dos erros que foram encontrados nos projetos analisados.
+Após resultado obtido com a análise descrita na Tabela \ref{exemResult}, ficou constatado que apenas \textbf{3.247} projetos estavam totalmente aderentes ao guia de estilo citado na Seção \ref{pep8}. Na Figura \ref{allErrors} são exibidos os códigos dos erros que foram encontrados nos projetos analisados.
 
 O número de projetos é inferior ao número de arquivos transferidos pelo motivo que, ao executar a rotina apresentada no Código \ref{downFile} e \ref{downFile2}, detectou-se que alguns arquivos estavam corrompidos, o que impedia sua extração e posterior análise.
 
@@ -413,7 +413,7 @@ O número de projetos é inferior ao número de arquivos transferidos pelo motivo q
 
 Para melhor análise dos erros encontrados, as informações foram organizadas por número de ocorrências. Em seguidas serão detalhando os tipos de erros e a relevância dos mesmos  para este estudo, classificado o grau de gravidade de cada erro. Serão analisados apenas os códigos de erros com mais de um milhão de ocorrências.
 
-No Gráfico \ref{majorErrors}, são apresentados os códigos de erros com mais de um milhão de ocorrências:
+Na Figura \ref{majorErrors} são apresentados os códigos de erros com mais de um milhão de ocorrências:
 
 \begin{figure}[ht!]
 \centering
@@ -435,20 +435,20 @@ Os exemplos de códigos utilizados nas seções seguintes serão todos retirados do 
 
 \section{E501(\^{})}
 
-De acordo com o Anexo A, o erro \texttt{E501}, corresponde a linha muito longa, composta de mais de 79 caracteres. 
+De acordo com o Anexo A, o erro \texttt{E501} corresponde a linha muito longa, composta de mais de 79 caracteres. 
 
-Este tipo de erro, é facilmente cometido devido ao tamanho de tela e resolução dos monitores disponíveis atualmente (widescreen com 13 ou mais polegadas). No passado, com equipamentos mais simples e telas com menor resolução, este tipo de restrição era imposta pelo motivo  de que era impraticável ficar arrastando a barra na horizontal para continuar a ler um determinado código-fonte. No Gráfico \ref{ge501}, são exibidos os dados referentes as  ocorrências deste erro.
+Este tipo de erro, é facilmente cometido devido ao tamanho de tela e resolução dos monitores disponíveis atualmente (widescreen com 13 ou mais polegadas). No passado, com equipamentos mais simples e telas com menor resolução, este tipo de restrição era imposta pelo motivo  de que era impraticável ficar arrastando a barra na horizontal para continuar a ler um determinado código-fonte. Na Figura \ref{ge501}, são exibidos os dados referentes as  ocorrências deste erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E501.png}
-\caption{Erro E501. \label{ge501}}
+\caption{Ocorrências do erro E501 por projetos, módulos e total. \label{ge501}}
 \end{figure}
 
 A Tabela \ref{ee501} exemplifica um trecho código de resulta neste erro.
 
 \begin{table}[ht!]
-        \caption{Erro E501}
+        \caption{Ocorrências do erro E501}
         \label{ee501}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -459,7 +459,7 @@ A Tabela \ref{ee501} exemplifica um trecho código de resulta neste erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce501}, exemplifica a correção deste erro.
+A Tabela \ref{ce501} exemplifica a correção deste erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E501}
@@ -490,7 +490,7 @@ Na Figura \ref{ge231} são exibidos os dados referentes as ocorrências deste erro
 A Tabela \ref{ee231} exemplifica um trecho código de resulta neste erro.
 
 \begin{table}[ht!]
-        \caption{Erro E231}
+        \caption{Ocorrências do erro E231}
         \label{ee231}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -500,7 +500,7 @@ A Tabela \ref{ee231} exemplifica um trecho código de resulta neste erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce231}, exemplifica a correção deste erro.
+A Tabela \ref{ce231} exemplifica a correção deste erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E231}
@@ -515,46 +515,46 @@ A Tabela \ref{ce231}, exemplifica a correção deste erro.
 
 \section{W191}
 
-De acordo com o Anexo A, o erro \texttt{W191}, indica que o código fonte contém indentação com tabulação misturada com espaços em branco. Este tipo de erro geralmente é acompanhando do erro \texttt{E101}, que corresponde ao erro de indentação com espaços em branco.
+De acordo com o Anexo A, o erro \texttt{W191} indica que o código fonte contém indentação com tabulação misturada com espaços em branco. Este tipo de erro geralmente é acompanhando do erro \texttt{E101} que corresponde ao erro de indentação com espaços em branco.
 
-No gráfico \ref{gw191}, são exibidos os Erro referentes as ocorrências deste tipo de erro.
+Na Figura \ref{gw191} são exibidos os dados referentes as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/W191.png}
-\caption{Erro W191. \label{gw191}}
+\caption{Ocorrências do erro W191 por projetos, módulos e total. \label{gw191}}
 \end{figure}
 
 \section{W293}
 
 De acordo com o Anexo A, o erro W293 indica que existe um linha em branco  que contém espaços em branco. 
 
-No Gráfico \ref{gw293}, são exibidos os Erro referentes as ocorrências deste tipo de erro.
+Na Figura \ref{gw293} são exibidos os dados referentes as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/W293.png}
-\caption{Erro W293. \label{gw293}}
+\caption{Ocorrências do erro W293 por projetos, módulos e total. \label{gw293}}
 \end{figure}
 
 \section{E128}
 
-De acordo com o Anexo A, o erro \texttt{E128}, corresponde a linha contínua visualmente não indentada. 
+De acordo com o Anexo A, o erro \texttt{E128} corresponde a linha contínua visualmente não indentada. 
 
 Desenvolvedores tem uma dificuldade natural em aderir a este tipo de regra, pois IDEs e editores de texto lhe induziriam a cometer está infração, uma vez que, ao terminar o preechimento de uma linha o editor,  o mesmo posiciona o cursor automaticamente no começo da  nova linha, e não abaixo do comentário.
 
-No Gráfico \ref{ge128}, são exibidos os Erro referentes as ocorrências deste erro.
+Na Figura \ref{ge128} são exibidos os dados referentes as ocorrências deste erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E128.png}
-\caption{Erro E128. \label{ge128}}
+\caption{Ocorrências do erro E128 por projetos, módulos e total. \label{ge128}}
 \end{figure}
 
 A Tabela \ref{ee128} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E128}
+        \caption{Ocorrências do erro E128}
         \label{ee128}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -565,7 +565,8 @@ A Tabela \ref{ee128} exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce128}, exemplifica a correção deste erro.
+
+A Tabela \ref{ce128} exemplifica a correção deste erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E128}
@@ -586,30 +587,30 @@ De acordo com o Anexo A, o erro \texttt{E111} indica que a indentação utilizada 
 
 Este tipo de erro pode ocorrer caso esteja utilizando uma IDE ou editor de texto que não possua por padrão configurado o valor 4 para a indentação, necessitando a alteração manual por parte do usuário.
 
-No Gráfico \ref{ge111}, são exibidos os Erro referentes as ocorrências deste tipo de erro.
+Na Figura \ref{ge111} são exibidos os dados referentes as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E111.png}
-\caption{Erro E111. \label{ge111}}
+\caption{Ocorrências do erro E111 por projetos, módulos e total. \label{ge111}}
 \end{figure}
 
 \section{E265}
 
 De acordo com o Anexo A, o código de erro E265 indica que o bloco de comentário deve iniciar  com jogo da velha (\lq \#\rq) seguido de espaço em branco (\lq\ \rq).
 
-No Gráfico \ref{ge265}, são exibidos os Erro referente as ocorrências deste tipo de erro.
+Na Figura \ref{ge265} são exibidos os dados referente as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E265.png}
-\caption{Erro E265. \label{ge265}}
+\caption{Ocorrências do erro E265 por projetos, módulos e total. \label{ge265}}
 \end{figure}
 
-A Tabela \ref{ee265}, exemplifica um trecho  de código onde ocorre este erro.
+A Tabela \ref{ee265} exemplifica um trecho  de código onde ocorre este erro.
 
 \begin{table}[ht!]
-        \caption{Erro E265}
+        \caption{Ocorrências do erro E265}
         \label{ee265}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -619,7 +620,7 @@ A Tabela \ref{ee265}, exemplifica um trecho  de código onde ocorre este erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce265}, exemplifica a correção deste código de erro.
+A Tabela \ref{ce265} exemplifica a correção deste código de erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E265}
@@ -640,18 +641,18 @@ Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da constr
 
 Novamente este é o tipo de regra que tem como finalidade principal aumentar a legibilidade do código por parte do desenvolvedor.
 
-No Gráfico \ref{ge302}, são exibidos os Erro referentes a este tipo de erro.
+Na Figura \ref{ge302} são exibidos os dados referentes a este tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E302.png}
-\caption{Erro E302. \label{ge302}}
+\caption{Ocorrências do erro E302 por projetos, módulos e total. \label{ge302}}
 \end{figure}
 
 A Tabela \ref{ee302} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E302}
+        \caption{Ocorrências do erro E302}
         \label{ee302}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -663,7 +664,7 @@ A Tabela \ref{ee302} exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce302}, exemplifica a correção deste erro.
+A Tabela \ref{ce302} exemplifica a correção deste erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E302}
@@ -685,12 +686,12 @@ De acordo com o Anexo A, o código de erro \texttt{W291} corresponde a um espaço 
 
 Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco exigido ao final de cada um dos elementos listados.
 
-No Gráfico \ref{gw291}, são exibidos os Erro referentes as ocorrências deste tipo de erro.
+Na Figura \ref{gw291} são exibidos os dados referentes as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/W291.png}
-\caption{Erro W291. \label{gw291}}
+\caption{Ocorrências do erro W291 por projetos, módulos e total. \label{gw291}}
 \end{figure}
 
 \section{E251}
@@ -699,18 +700,18 @@ De acordo com o Anexo A, o código de erro E251 corresponde a espaços em branco e
 
 Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco ao redor do caracter em questão e remover estes espaços quando não estiverem dentro de aspas simples ou duplas.
 
-No Gráfico \ref{ge251}, são exibidos os Erro referentes as ocorrências deste tipo de erro.
+Na Figura \ref{ge251} são exibidos os dados referentes as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E251.png}
-\caption{Erro E251. \label{ge251}}
+\caption{Ocorrências do erro E251 por projetos, módulos e total. \label{ge251}}
 \end{figure}
 
 A Tabela \ref{ee251} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E251}
+        \caption{Ocorrências do erro E251}
         \label{ee251}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -720,7 +721,7 @@ A Tabela \ref{ee251} exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce251}, exemplifica a correção deste erro.
+A Tabela \ref{ce251} exemplifica a correção deste erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E251}
@@ -737,18 +738,18 @@ A Tabela \ref{ce251}, exemplifica a correção deste erro.
 
 De acordo com o Anexo A, o código de erro \texttt{E201} corresponde a uma linha de continuação não indentada.
 
-No Gráfico \ref{ge122} são exibidos os Erro referentes a este tipo de erro.
+Na Figura \ref{ge122} são exibidos os dados referentes a este tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E122.png}
-\caption{Erro E122. \label{ge122}}
+\caption{Ocorrências do erro E122 por projetos, módulos e total. \label{ge122}}
 \end{figure}
 
 A Tabela \ref{ee122} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E122}
+        \caption{Ocorrências do erro E122}
         \label{ee122}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -760,7 +761,7 @@ A Tabela \ref{ee122} exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce122}, exemplifica a correção deste erro.
+A Tabela \ref{ce122} exemplifica a correção deste erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E122}
@@ -779,18 +780,18 @@ A Tabela \ref{ce122}, exemplifica a correção deste erro.
 
 De acordo com o Anexo A, o código de erro \texttt{E201} corresponde a um espaço em branco após o uso dos caracters \lq\lq \{\rq\rq e \lq\lq{[}\rq\rq.
 
-No Gráfico \ref{ge201}, são exibidos os Erro referentes as ocorrências deste tipo de erro.
+Na Figura \ref{ge201} são exibidos os dados referentes as ocorrências deste tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E201.png}
-\caption{Erro E201. \label{ge201}}
+\caption{Ocorrências do erro E201 por projetos, módulos e total. \label{ge201}}
 \end{figure}
 
-A Tabela \ref{ee201}, exemplifica este código de erro.
+A Tabela \ref{ee201} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E201}
+        \caption{Ocorrências do erro E201}
         \label{ee201}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -801,7 +802,7 @@ A Tabela \ref{ee201}, exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce201}, exemplifica a correção deste código de erro.
+A Tabela \ref{ce201} exemplifica a correção deste código de erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E201}
@@ -821,18 +822,18 @@ De acordo com o Anexo A, o código de erro \texttt{E203} corresponde a um espaço 
 
 Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que remova  o espaço em branco antes do uso do caracter dois pontos, quando não estiver dentro de aspas simples ou duplas.
 
-No Gráfico \ref{ge203}, são exibidos os Erro referentes a este tipo de erro.
+Na Figura \ref{ge203} são exibidos os dados referentes a este tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E203.png}
-\caption{Erro E203. \label{ge203}}
+\caption{Ocorrências do erro E203 por projetos, módulos e total. \label{ge203}}
 \end{figure}
 
-A Tabela \ref{ee203}, exemplifica este código de erro.
+A Tabela \ref{ee203} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E203}
+        \caption{Ocorrências do erro E203}
         \label{ee203}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -844,7 +845,7 @@ A Tabela \ref{ee203}, exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce203}, exemplifica a correção deste código de erro.
+A Tabela \ref{ce203} exemplifica a correção deste código de erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E203}
@@ -861,22 +862,22 @@ A Tabela \ref{ce203}, exemplifica a correção deste código de erro.
 
 \section{E225}
 
-De acordo com o Anexo A, o código de erro \texttt{E225}, representa a falta de espaço em branco em torno do operador \lq\lq =\rq\rq. 
+De acordo com o Anexo A, o código de erro \texttt{E225} representa a falta de espaço em branco em torno do operador \lq\lq =\rq\rq. 
 
 Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que identifique o uso de tal operador e faça a correção para o número de espaços adequados.
 
-No Gráfico \ref{ge225}, são exibidos os Erro referentes a este tipo de erro.
+Na Figura \ref{ge225} são exibidos os dados referentes a este tipo de erro.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.65]{figs/E225.png}
-\caption{Erro E225. \label{ge225}}
+\caption{Ocorrências do erro E225 por projetos, módulos e total. \label{ge225}}
 \end{figure}
 
-A Tabela \ref{ee225}, exemplifica este código de erro.
+A Tabela \ref{ee225} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E225}
+        \caption{Ocorrências do erro E225}
         \label{ee225}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -886,7 +887,7 @@ A Tabela \ref{ee225}, exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce225}, exemplifica a correção deste código de erro.
+A Tabela \ref{ce225} exemplifica a correção deste código de erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E225}
@@ -903,18 +904,18 @@ A Tabela \ref{ce225}, exemplifica a correção deste código de erro.
 
 De acordo com o Anexo A, o erro \texttt{E202} corresponde ao uso de um espaço em branco antes da utilização dos caracteres \lq\lq )\rq\rq, \lq\lq {]}\rq\rq e \lq\lq \}\rq\rq . 
 
-No Gráfico \ref{ge202}, são exibidos os Erro referentes a este tipo de erro.
+Na Figura \ref{ge202} são exibidos os dados referentes a este tipo de erro.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.95]{figs/E202.png}
-\caption{Erro E202. \label{ge202}}
+\includegraphics[scale=0.65]{figs/E202.png}
+\caption{Ocorrências do erro E202 por projetos, módulos e total. \label{ge202}}
 \end{figure}
 
 A Tabela \ref{ee202} exemplifica este código de erro.
 
 \begin{table}[ht!]
-        \caption{Erro E202}
+        \caption{Ocorrências do erro E202}
         \label{ee202}
         \centering
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
@@ -924,7 +925,7 @@ A Tabela \ref{ee202} exemplifica este código de erro.
         \end{tabularx}
 \end{table}
 
-A Tabela \ref{ce202}, exemplifica a correção deste código de erro.
+A Tabela \ref{ce202} exemplifica a correção deste código de erro.
 
 \begin{table}[ht!]
         \caption{Correção do erro E202}
@@ -937,9 +938,9 @@ A Tabela \ref{ce202}, exemplifica a correção deste código de erro.
         \end{tabularx}
 \end{table}
 
-Devido ao fato de dois códigos de erros apresentarem uma quantidade de ocorrências muito elevada e possuirem um baixo grau de complexidade para a sua correção, foi executada uma nova avaliação dos Erro obtidos, excluindo as regras \texttt{E501} e \texttt{E231} e verificando o impacto destas regras no nível  de adoção do estilo de código discutido neste estudo.
+Devido ao fato de dois códigos de erros apresentarem uma quantidade de ocorrências muito elevada e possuirem um baixo grau de complexidade para a sua correção, foi executada uma nova avaliação dos dados obtidos, excluindo as regras \texttt{E501} e \texttt{E231} e verificando o impacto destas regras no nível  de adoção do estilo de código discutido neste estudo.
 
-A Tabela \ref{resultScript2}, contém os novos resultados após a remoção dos itens mencionado anteriormente.
+A Tabela \ref{resultScript2} contém os novos resultados após a remoção dos itens mencionado anteriormente.
 
 \begin{table}[ht!]
         \caption{Resultados obtidos com a análise de script segunda análise}
@@ -966,6 +967,6 @@ A Tabela \ref{resultScript2}, contém os novos resultados após a remoção dos iten
 
 Mesmo removidos os dois maiores códigos de erros, não houve uma alteração significativa no nível de adoção, tendo apenas  \textbf{4.924} projetos sem  alguma violação/erro.
 
-O total de ocorrências dos códigos de erros analisados é de \textbf{45.356.622}, portanto corresponde a \textbf{87,8723179} porcento dos erros ocorridos em todo o projeto.
+O total de ocorrências dos códigos de erros analisados é de \textbf{45.356.622}, portanto corresponde a \textbf{87,87\%} dos erros ocorridos em todo o projeto.
 
 
