@@ -20,46 +20,48 @@ public class UrlContent implements Runnable {
 		FileReader fr = null;
 		BufferedReader br1 = null;
 		String link = null;
-    	try {
-    		arquivoUrlHtml = new File("file/write.txt");
-    		errorFile = new File("file/error.txt");
+	        
+	        try {
+		      arquivoUrlHtml = new File("file/write.txt");
+		      errorFile = new File("file/error.txt");
 
-    		fr = new FileReader(arquivoUrlHtml);
-    		br1 = new BufferedReader(fr);
-    		pw = new PrintWriter(new FileWriter(errorFile));
-			
-			while (br1.ready()) {
-				link = br1.readLine();
-				if(!executaDownFile(link)){
-					pw.append(link + "\r\n");
-					pw.flush();
-				}
-			}
-			
-			br1.close();
-			fr.close();
-			
-			if(pw != null) {
-				pw.close();
-				pw = null;
-			}
-			if(br1 != null) {
-				br1 = null;
-			}
-			if(fr != null) {
-				fr = null;
-			}
-			if(arquivoUrlHtml != null) {
-				arquivoUrlHtml = null;
-			}
-			
-		} catch (IOException e) {
-			pw.append(link + "\r\n");
-			pw.flush();
-			logger.error(e.getMessage());
-			return;
-		} 
-    }
+		      fr = new FileReader(arquivoUrlHtml);
+		      br1 = new BufferedReader(fr);
+		      pw = new PrintWriter(new FileWriter(errorFile));
+			      
+			      while (br1.ready()) {
+				      link = br1.readLine();
+				      if(!executaDownFile(link)){
+					      pw.append(link + "\r\n");
+					      pw.flush();
+				      }
+			      }
+			      
+			      br1.close();
+			      fr.close();
+			      
+			      if(pw != null) {
+				      pw.close();
+				      pw = null;
+			      }
+			      if(br1 != null) {
+				      br1 = null;
+			      }
+			      if(fr != null) {
+				      fr = null;
+			      }
+			      if(arquivoUrlHtml != null) {
+				      arquivoUrlHtml = null;
+			      }
+			      
+		      } catch (IOException e) {
+			      pw.append(link + "\r\n");
+			      pw.flush();
+			      logger.error(e.getMessage());
+			      return;
+		      }
+		}
+	}
 	
 	private static boolean executaDownFile(String links) {
 		

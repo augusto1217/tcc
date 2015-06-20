@@ -28,11 +28,11 @@
                 E133 (*) & colchete de fechamento está faltando indenta\\
                 \\
                 \textbf{E2} & Espaços em branco \\
-                E201 & Espaços em branco depois de '(' \\
-                E202 & Espaços em branco antes de ')' \\
-                E203 & Espaços em branco antes de ':' \\
+                E201 & Espaços em branco depois de \lq (\rq  \\
+                E202 & Espaços em branco antes de \lq )\rq  \\
+                E203 & Espaços em branco antes de \lq :\rq  \\
                 \\
-                E211 & Espaços em branco antes de '(' \\
+                E211 & Espaços em branco antes de \lq (\rq  \\
                 \\
                 E221 & múltiplos espaços antes de operador\\
                 E222 & múltiplos espaços depois de operador\\
@@ -52,16 +52,16 @@
 		\midrule
                 \\
 
-                E231 & faltando espaços em branco depois de ',' \\
-                E241 (*) & múltiplos espaços depois de ','\\
-                E242 (*) & tabulação depois de ','\\
+                E231 & faltando espaços em branco depois de \lq ,\rq  \\
+                E241 (*) & múltiplos espaços depois de \lq ,\rq \\
+                E242 (*) & tabulação depois de \lq ,\rq \\
                 \\
                 E251 & espaços não esperado ao redor de palavra chave / parâmetros igual \\
                 \\
                 E261 & pelo menos dois espaços antes de em linha de comentário \\
-                E262 & linha de comentários deve ser  iniciada com '\# ' \\
-                E265 & blocos de comentários deve ser iniciada com '\# ' \\
-                E266 & para bloco de comentário muito importante '\#' \\
+                E262 & linha de comentários deve ser  iniciada com \lq \# \rq  \\
+                E265 & blocos de comentários deve ser iniciada com \lq \# \rq  \\
+                E266 & para bloco de comentário muito importante \lq \#\rq  \\
                 \\
                 E271 & múltiplos espaços depois de palavra chave \\
                 E272 & múltiplos espaços antes de palavra chave \\
@@ -87,10 +87,10 @@
 		E703 & declaração termina com um ponto e vírgula \\
 		E704 & múltiplos declaração em uma linha (def) \\
 		E711 (\^{}) & comparação para Nenhum deveria ser "if cond é None: " \\
-		E712 (\^{}) & comparação  de operação Verdadeira deve ser 'if cond is True:' or 'if cond: ' \\
-		E713 & teste para a adesão deve ser 'not in' \\
-		E714 & teste para a identidade do objeto deve ser 'is not' \\
-		E721 & para não se comparar os tipos, usar 'isinstance()' \\
+		E712 (\^{}) & comparação  de operação Verdadeira deve ser \lq if cond is True:\rq  or \lq if cond: \rq  \\
+		E713 & teste para a adesão deve ser \lq not in\lq  \\
+		E714 & teste para a identidade do objeto deve ser \lq is not\rq  \\
+		E721 & para não se comparar os tipos, usar \lq isinstance()\rq  \\
 		E731 & não atribuir uma expressão lambda, usar a def \\
 		\bottomrule
 		\end{tabularx}
@@ -116,9 +116,9 @@
 		W391 & linha em branco no final do arquivo \\
 		\\
 		\textbf{W6} & Alerta de depreciação \\
-		W601 & .has\_key() is deprecated, usar 'in' \\
+		W601 & .has\_key() is deprecated, usar \lq in\rq  \\
 		W602 & deprecated forma de aumentar a exceção \\
-		W603 & '<>' is deprecated, usar '!=' \\
-		W604 & backticks são deprecated, usar 'repr()' \\
+		W603 & \lq <>\lq  is deprecated, usar \lq !=\rq  \\
+		W604 & backticks são deprecated, usar \lq repr()\rq  \\
         \bottomrule
         \end{tabularx}
