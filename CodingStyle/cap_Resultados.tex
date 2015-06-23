@@ -1,0 +1,399 @@
+\chapter{Resultados}
+\label{result}
+
+Após a execução das rotinas mencionadas nos Código \ref{downFile} e \ref{downFile2} obteve-se  um total de \textbf{62.729} arquivos compactados, ocupando \textbf{17.4 Gigabytes} de espaço físico do disco rígido, onde cada arquivo compactado corresponde a um projeto open source escrito em Python. Contudo, foram encontrados \textbf{229} arquivos defeituosos,  os quais foram descartados.
+
+Posteriormente a execução do script mencionado na Seção \ref{scriptsPython}, obteve-se um arquivo texto contendo 5.863.878 de linhas, nos moldes da Tabela \ref{exemScriptPep8} .
+
+A execução do Código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na Tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no anexo \ref{anexoB}.
+
+\begin{table}[ht]
+        \caption{Resultados obtidos com a análise de script}
+        \label{resultScript}
+        \centering
+	\begin{small}
+        \begin{tabularx}{0.99\textwidth}{lX}
+        \toprule
+                \textbf{Perguntas} & \textbf{Respostas} \\
+        \midrule
+                Qual a quantidade total de projetos? & 62.500 \\
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de projetos com erros? & 59.253 \\ 
+		Qual a quantidade total de módulos analisados? & 1.265.511 \\ 
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de módulos com erros? & 722.120 \\ 
+		Qual a quantidade total de todas as  ocorrências de erros?  & 51.616.508 \\ 
+	\rowcolor[gray]{0.8}
+		Qual a quantidade de erros distintos? & 70 \\ 
+		Qual o projeto com maior número de módulos? & appengine\_sdk-1.9.19.post3-py2-none-any.whl (5.735 módulos) \\ 
+	\rowcolor[gray]{0.8}
+		Qual o projeto com maior número de erros & nodepy-0.6.tar.gz (658.888 erros) \\
+	\bottomrule	
+        \end{tabularx}
+        \end{small}
+\end{table}
+
+Também foi obtida a quantidade de projetos, módulos e ocorrências para cada um dos códigos de erros analisados. A Tabela \ref{exemResult} exemplifica parte do resultado obtido,  para o código de erro E501.
+
+\begin{table}[ht!]
+        \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
+        \label{exemResult}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
+        \midrule
+		{[}E501{]} Número de Projetos: 49345 \\
+		{[}E501{]} Número de módulos: 561319 \\
+		{[}E501{]} Total de ocorrências: 9328781 \\
+		{[}E501{]} Porcentagem em relação ao total de erros: 17.4792337182 \\
+	\bottomrule
+        \end{tabularx}
+\end{table}
+
+Após resultado obtido com a análise descrita na Tabela \ref{exemResult}, ficou constatado que apenas \textbf{3.247} projetos estavam totalmente aderentes ao guia de estilo citado na Seção \ref{pep8}. Na Figura \ref{allErrors} são exibidos os códigos dos erros que foram encontrados nos projetos analisados.
+
+O número de projetos é inferior ao número de arquivos transferidos pelo motivo que, ao executar a rotina apresentada no Código \ref{downFile} e \ref{downFile2}, detectou-se que alguns arquivos estavam corrompidos, o que impedia sua extração e posterior análise.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.6]{figs/all_erros}
+\caption{Código de erros detectados por número de ocorrências. \label{allErrors}}
+\end{figure}
+
+Para melhor análise dos erros encontrados, as informações foram organizadas por número de ocorrências. Em seguidas serão detalhando os tipos de erros e a relevância dos mesmos  para este estudo, classificado o grau de gravidade de cada erro. Serão analisados apenas os códigos de erros com mais de um milhão de ocorrências.
+
+Na Figura \ref{majorErrors} são apresentados os códigos de erros com mais de um milhão de ocorrências:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{figs/maiores_erros.png}
+\caption{Códigos de erros com mais de um milhão de ocorrências. \label{majorErrors}}
+\end{figure}
+
+São erros que não foram considerados graves, pois não trazem grandes impactos no desempenho ou segurança do programa afetando somente o processo de leitura do desenvolvedor que o estiver averiguando, desenvolvendo ou apenas estudando o código-fonte.
+
+Serão utilizadas duas marcações especiais em alguns códigos de erro:
+
+\begin{itemize}
+	\item (\^{})  Os itens que possuem este símbolo são verificações que poderiam ser desativadas adicionando o comentário especial \#noqa, 
+		este tipo de comentário  informa ao compilador para ignorar ou não alertar sobre o erro. Esta possibilidade deve ser reservado para casos especiais
+	\item (*) Na configuração padrão, estas verificações são ignorados porque não são regras aceitas por unanimidade.	
+\end{itemize}
+
+Os exemplos de códigos utilizados nas seções seguintes serão todos retirados do arquivo resultante da execução do script da Seção \ref{scriptsPython}.
+
+\section{E501(\^{})}
+
+De acordo com o Anexo A, o erro \texttt{E501} corresponde a linha muito longa, composta de mais de 79 caracteres. 
+
+Este tipo de erro, é facilmente cometido devido ao tamanho de tela e resolução dos monitores disponíveis atualmente (widescreen com 13 ou mais polegadas). No passado, com equipamentos mais simples e telas com menor resolução, este tipo de restrição era imposta pelo motivo  de que era impraticável ficar arrastando a barra na horizontal para continuar a ler um determinado código-fonte. Na Figura \ref{ge501}, são exibidos os dados referentes as  ocorrências deste erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E501.png}
+\caption{Ocorrências do erro E501 por projetos, módulos e total. \label{ge501}}
+\end{figure}
+
+O Código \ref{ee501} exemplifica um trecho código que resulta neste erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E501., label=ee501]{cods/e501.py}
+
+O Código \ref{ce501} exemplifica a correção deste erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E501., label=ce501]{cods/ce501.py}
+
+\section{E231}
+
+De acordo com o Anexo A, o erro \texttt{E231} corresponde a falta de espaço em branco após a utilização dos caracteres virgula \lq ,\rq, ponto e virgula \lq ;\rq, ou dois pontos \lq :\rq.
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um  script que trate adequadamente cada um dos caracteres listados. Assim, seria possível eliminar todas as ocorrências deste erro de forma automatizada (tomando o devido cuidado de não gerar um novo erro E501 ao adicionar os espaços em branco que estavam faltando). 
+
+Na Figura \ref{ge231} são exibidos os dados referentes as ocorrências deste erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E231.png}
+\caption{Ocorrências do erro E231 por projetos, módulos e total. \label{ge231}}
+\end{figure}
+
+O Código \ref{ee231} exemplifica um trecho código que resulta neste erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E231., label=ee231]{cods/e231.py}
+
+O Código \ref{ce231} exemplifica a correção deste erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E231., label=ce231]{cods/ce231.py}
+
+\section{W191}
+
+De acordo com o Anexo A, o erro \texttt{W191} indica que o código fonte contém indentação com tabulação misturada com espaços em branco. Este tipo de erro geralmente é acompanhando do erro \texttt{E101} que corresponde ao erro de indentação com espaços em branco.
+
+Na Figura \ref{gw191} são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/W191.png}
+\caption{Ocorrências do erro W191 por projetos, módulos e total. \label{gw191}}
+\end{figure}
+
+\section{W293}
+
+De acordo com o Anexo A, o erro \texttt{W293} indica que existe um linha em branco  que contém espaços em branco. 
+
+Na Figura \ref{gw293} são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/W293.png}
+\caption{Ocorrências do erro W293 por projetos, módulos e total. \label{gw293}}
+\end{figure}
+
+\section{E128}
+
+De acordo com o Anexo A, o erro \texttt{E128} corresponde a linha contínua visualmente não indentada. 
+
+Desenvolvedores tem uma dificuldade natural em aderir a este tipo de regra, pois IDEs e editores de texto lhe induziriam a cometer está infração, uma vez que, ao terminar o preechimento de uma linha o editor,  o mesmo posiciona o cursor automaticamente no começo da  nova linha, e não abaixo do comentário.
+
+Na Figura \ref{ge128} são exibidos os dados referentes as ocorrências deste erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E128.png}
+\caption{Ocorrências do erro E128 por projetos, módulos e total. \label{ge128}}
+\end{figure}
+
+O Código \ref{ee128} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E128., label=ee128]{cods/e128.py}
+
+O Código \ref{ce128} exemplifica a correção deste erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E128., label=ce128]{cods/ce128.py}
+
+\section{E111}
+
+De acordo com o Anexo A, o erro \texttt{E111} indica que a indentação utilizada não é múltiplo do número 4, ou seja a indentação possui um número ou inferior, ou superior, ou contém espaços em branco.
+
+Este tipo de erro pode ocorrer caso esteja utilizando uma IDE ou editor de texto que não possua por padrão configurado o valor 4 para a indentação, necessitando a alteração manual por parte do usuário.
+
+Na Figura \ref{ge111} são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E111.png}
+\caption{Ocorrências do erro E111 por projetos, módulos e total. \label{ge111}}
+\end{figure}
+
+\section{E265}
+
+De acordo com o Anexo A, o código de erro \texttt{E265} indica que o bloco de comentário deve iniciar  com jogo da velha (\lq \#\rq) seguido de espaço em branco (\lq\ \rq).
+
+Na Figura \ref{ge265} são exibidos os dados referente as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E265.png}
+\caption{Ocorrências do erro E265 por projetos, módulos e total. \label{ge265}}
+\end{figure}
+
+O Código \ref{ee265} exemplifica um trecho  de código onde ocorre este erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E265., label=ee265]{cods/e265.py}
+
+O Código \ref{ce265} exemplifica a correção deste código de erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E265., label=ce265]{cods/ce265.py}
+
+\section{E302}
+
+De acordo com o Anexo A, o código de erro \texttt{E302} indica que são esperadas 2 linhas em branco ao invés de somente uma (entre duas definições de funções, após as importações, etc).
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há duas linhas em branco na posição esperada/indicada, e faça a inserção da linha extra, se necessário.
+
+Novamente este é o tipo de regra que tem como finalidade principal aumentar a legibilidade do código por parte do desenvolvedor.
+
+Na Figura \ref{ge302} são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E302.png}
+\caption{Ocorrências do erro E302 por projetos, módulos e total. \label{ge302}}
+\end{figure}
+
+O Código \ref{ee302} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E302., label=ee302]{cods/e302.py}
+
+O Código \ref{ce302} exemplifica a correção deste erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E302., label=ce302]{cods/ce302.py}
+
+\section{W291}
+
+De acordo com o Anexo A, o código de erro \texttt{W291} corresponde a um espaço em branco após um comentário, nome de função, classe ou variáveis.
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco exigido ao final de cada um dos elementos listados.
+
+Na Figura \ref{gw291} são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/W291.png}
+\caption{Ocorrências do erro W291 por projetos, módulos e total. \label{gw291}}
+\end{figure}
+
+\section{E251}
+
+De acordo com o Anexo A, o código de erro \texttt{E251} corresponde a espaços em branco em torno de do caracter \lq\lq =\rq\rq.
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco ao redor do caracter em questão e remover estes espaços quando não estiverem dentro de aspas simples ou duplas.
+
+Na Figura \ref{ge251} são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E251.png}
+\caption{Ocorrências do erro E251 por projetos, módulos e total. \label{ge251}}
+\end{figure}
+
+O Código \ref{ee251} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E251., label=ee251]{cods/e251.py}
+
+O Código \ref{ce251} exemplifica a correção deste erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E251., label=ce251]{cods/ce251.py}
+
+\section{E122}
+
+De acordo com o Anexo A, o código de erro \texttt{E122} corresponde a uma linha de continuação não indentada.
+
+Na Figura \ref{ge122} são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E122.png}
+\caption{Ocorrências do erro E122 por projetos, módulos e total. \label{ge122}}
+\end{figure}
+
+O Código \ref{e122} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E122., label=e122]{cods/e122.py}
+
+O Código \ref{ce122} exemplifica a correção deste erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E122., label=ce122]{cods/ce122.py}
+
+\section{E201}
+
+De acordo com o Anexo A, o código de erro \texttt{E201} corresponde a um espaço em branco após o uso dos caracters \lq\lq \{\rq\rq e \lq\lq{[}\rq\rq.
+
+Na Figura \ref{ge201} são exibidos os dados referentes as ocorrências deste tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E201.png}
+\caption{Ocorrências do erro E201 por projetos, módulos e total. \label{ge201}}
+\end{figure}
+
+O Código \ref{ee201} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E201., label=ee201]{cods/e201.py}
+
+O Código \ref{ce201} exemplifica a correção deste código de erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E201., label=ce201]{cods/ce201.py}
+
+\section{E203}
+
+De acordo com o Anexo A, o código de erro \texttt{E203} corresponde a um espaço em branco antes do uso do caracter dois pontos ":". 
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que remova  o espaço em branco antes do uso do caracter dois pontos, quando não estiver dentro de aspas simples ou duplas.
+
+Na Figura \ref{ge203} são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E203.png}
+\caption{Ocorrências do erro E203 por projetos, módulos e total. \label{ge203}}
+\end{figure}
+
+O Código \ref{ee203} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E203., label=ee203]{cods/e203.py}
+
+O Código \ref{ce203} exemplifica a correção deste código de erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E203., label=ce203]{cods/ce203.py}
+
+\section{E225}
+
+De acordo com o Anexo A, o código de erro \texttt{E225} representa a falta de espaço em branco em torno do operador \lq\lq =\rq\rq. 
+
+Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que identifique o uso de tal operador e faça a correção para o número de espaços adequados.
+
+Na Figura \ref{ge225} são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.65]{figs/E225.png}
+\caption{Ocorrências do erro E225 por projetos, módulos e total. \label{ge225}}
+\end{figure}
+
+O Código \ref{ee225} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E225., label=ee225]{cods/e225.py}
+
+O Código \ref{ce225} exemplifica a correção deste código de erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E225., label=ce225]{cods/ce225.py}
+
+\section{E202}
+
+De acordo com o Anexo A, o erro \texttt{E202} corresponde ao uso de um espaço em branco antes da utilização dos caracteres \lq\lq )\rq\rq, \lq\lq {]}\rq\rq e \lq\lq \}\rq\rq . 
+
+Na Figura \ref{ge202} são exibidos os dados referentes a este tipo de erro.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.65]{figs/E202.png}
+\caption{Ocorrências do erro E202 por projetos, módulos e total. \label{ge202}}
+\end{figure}
+
+O Código \ref{ee202} exemplifica este código de erro.
+
+\lstinputlisting[language=Python, caption=Ocorrências do erro E202., label=ee202]{cods/e202.py}
+
+O Código \ref{ce202} exemplifica a correção deste código de erro.
+
+\lstinputlisting[language=Python, caption=Correção do erro E202., label=ce202]{cods/ce202.py}
+
+Devido ao fato de dois códigos de erros apresentarem uma quantidade de ocorrências muito elevada e possuirem um baixo grau de complexidade para a sua correção, foi executada uma nova avaliação dos dados obtidos, excluindo as regras \texttt{E501} e \texttt{E231} e verificando o impacto destas regras no nível  de adoção do estilo de código discutido neste estudo.
+
+A Tabela \ref{resultScript2} contém os novos resultados após a remoção dos itens mencionado anteriormente.
+
+\begin{table}[ht!]
+        \caption{Resultados obtidos com a análise de script segunda análise}
+        \label{resultScript2}
+        \centering
+	\begin{small}
+        \begin{tabularx}{0.80\textwidth}{lX}
+        \toprule
+                \textbf{Perguntas} & \textbf{Respostas} \\
+        \midrule
+                Qual a quantidade total de projetos? & 62.500 \\
+	\rowcolor[gray]{0.8}
+		Qual a quantidade total de projetos com erros? & 57.576 \\	
+		Qual a quantidade total de módulos com erros? & 639.671 \\
+	\rowcolor[gray]{0.8} 
+		Qual a quantidade total de todas as  ocorrências de erros?  & 34.533.934 \\ 	
+		Qual a quantidade de erros distintos? & 68 \\
+	\rowcolor[gray]{0.8}
+		Qual o projeto com maior número de erros & UcsSdk-0.8.1.6.tar.gz (241936 erros) \\
+	\bottomrule	
+        \end{tabularx}
+	\end{small}
+\end{table}
+
+Mesmo removidos os dois maiores códigos de erros, não houve uma alteração significativa no nível de adoção, tendo apenas  \textbf{4.924} projetos sem  alguma violação/erro.
+
+O total de ocorrências dos códigos de erros analisados é de \textbf{45.356.622}, portanto corresponde a \textbf{87,87\%} dos erros ocorridos em todo o projeto.

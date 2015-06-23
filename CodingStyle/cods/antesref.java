@@ -1,4 +1,4 @@
-/** Armazena o producto no banco de dados. */
+/** Armazena o produto no banco de dados. */
 
 public void save() throws Exception {
      // Verifica propriedades
