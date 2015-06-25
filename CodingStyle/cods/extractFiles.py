@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-1 -*-
 '''
 Created on Jan 17, 2015
-Funcionalide para extração de arquivos e execução
+Funcionalidade para extração de arquivos e execução
 das métricas do PEP8
 @author: augusto
 '''

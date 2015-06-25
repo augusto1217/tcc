@@ -9,7 +9,7 @@
 
 Neste capítulo será apresentado o histórico dos estilos de codificação, que tiverem origem com a notação húngara, nos anos 70, passando pelos estilos mais prominentes, como os estilos Gnu/C, Java e Python. Em seguida, será apresentado o estilo PEP8 da linguagem Python, que será objeto deste estudo. Por fim, é descrito brevemente o conceito de ambientes integrados de desenvolvimento -- IDEs.
 
-\section{Histórico dos padrões de codificação}
+\section{Histórico dos estilos de codificação}
 
 \subsection{Notação Húngara}
 
@@ -54,7 +54,7 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
         \end{tabularx}
 \end{table}
 
-Um bom desenvolvedor geralmente deve considerar os identificadores como valores mnemônicos que facilitem a lembrança do significado do nome da variável criada pelo programador; que sejam sugestivos, facilitando a leitura dos demais desenvolvedor; e que sejam simples de identificar, de modo que o desenvolvedor não perca tempo pensando para que ou em qual contexto aquela variável será utilizada \cite{notacao2015}. 
+Um bom desenvolvedor geralmente deve considerar os identificadores como valores mnemônicos que facilitem a lembrança do significado do nome da variável criada pelo programador; que sejam sugestivos, facilitando a leitura dos demais desenvolvedores; e que sejam simples de identificar, de modo que o desenvolvedor não perca tempo pensando para que ou em qual contexto aquela variável será utilizada \cite{notacao2015}. 
 
 A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notação húngara e seus respectivos significados e tipos.
 
@@ -117,7 +117,7 @@ O estilo de codificação GNU/C foi proposto e definido por Richard Stallman e out
 
 Para que um novo desenvolvedor possa participar de algum projeto ou criar algo para a comunidade do software livre GNU, é exigido apenas que ele se atente ao  documento oficial de estilos\footnote{http://www.gnu.org/prep/standards/}.  É de suma importância que se utilize a versão atualizada, para que não seja escrito um código formatado sobre regras que possam ter sido revogadas ou substituídas.
 
-Também é possível que o desenvolvedor faça uma contribuição para o documento que descreve o estilo de codificação GNU/C. Caso ele detecte alguma inconsistência ou uma possível evolução em um determinando conteúdo, basta enviar um email para bug-standards@gnu.org  com a descrições das contribuições \cite{stallman2015}.
+Também é possível que o desenvolvedor faça uma contribuição para o documento que descreve o estilo de codificação GNU/C. Caso ele detecte alguma inconsistência ou uma possível evolução em um determinado conteúdo, basta enviar um email para bug-standards@gnu.org com a descrição de suas contribuições \cite{stallman2015}.
 
 O estilo GNU proposto para a linguagem C possui características próprias no que se refere à formatação, comentários, convenção de nomes, tabulações, espaços e indentações, dentre outros.
 
@@ -140,7 +140,7 @@ O Código \ref{comentGnuC} exemplifica um programa com comentários no estilo GNU/
 
 \subsubsection{Convenção de nomes}
 
-O nomes de variáveis e funções globais devem ser concisos, trazendo consigo informações úteis sobre o significado da variável ou função. Assim como o comentário, os identificadores devem ser escritos em  inglês. Variáveis locais podem conter nomes mais curto, porque elas são utilizadas apenas dentro de um contexto específico. É recomendado a utilização de sublinhados para separar palavras e nomes, de modo que os comandos possam ser legíveis. O estilo GNU/C sugere o uso apenas de letras minúsculas para identificadores de variáveis e funções, reservando maiúsculas para macros, constantes, enumerações e para prefixos que seguem uma convenção uniforme.
+Os nomes de variáveis e funções globais devem ser concisos, trazendo consigo informações úteis sobre o significado da variável ou função. Assim como o comentário, os identificadores devem ser escritos em  inglês. Variáveis locais podem conter nomes mais curto, porque elas são utilizadas apenas dentro de um contexto específico. É recomendado a utilização de sublinhados para separar palavras e nomes, de modo que os comandos possam ser legíveis. O estilo GNU/C sugere o uso apenas de letras minúsculas para identificadores de variáveis e funções, reservando maiúsculas para macros, constantes, enumerações e para prefixos que seguem uma convenção uniforme.
 
 O Código \ref{varGnuC}, exemplifica uma variável cujo identificador segue o padrão GNU/C.
 
@@ -158,11 +158,11 @@ De acordo com \cite{kernelorg2002}, um dos principais usos de espaços é a separa
 
 O Código \ref{palchaveGnuC} exemplifica algumas palavras chaves que utilizam espaço após sua declaração.
 
-\lstinputlisting[language=C, caption=Palavras chaves espaços em brancos no estilo Gnu/C, label=palchaveGnuC]{cods/palchavegnu.c}
+\lstinputlisting[language=C, caption=Palavras chaves espaços em branco no estilo Gnu/C, label=palchaveGnuC]{cods/palchavegnu.c}
 
 Já o Código \ref{palchaveExcGnuC} exemplifica algumas palavras chaves que não  utilizam espaço após sua declaração.
 
-\lstinputlisting[language=C, caption=Palavras chaves exceção espaços em brancos no estilo Gnu/C, label=palchaveExcGnuC]{cods/palchaveexcgnu.c}
+\lstinputlisting[language=C, caption=Palavras chaves exceção espaços em branco no estilo Gnu/C, label=palchaveExcGnuC]{cods/palchaveexcgnu.c}
 
 \subsection{Java}
 
@@ -172,11 +172,11 @@ A abertura do JCP permitiu que empresas concorrentes da Sun se tornassem partici
  
 Em 13 de novembro de 2006 foi lançada a maior parte do Java como Software Livre sob os termos da GNU (GPL). Em 8 de maio de 2007 o processo de adoção da nova licença foi finalizado, tornando praticamente todo o código Java como software de código aberto, exceto uma pequena porção da qual a Sun não possui copyright \cite{javamagazine2013}.
 
-De acordo com \cite{javamagazinecj2013}, a linguagem Java, em sua criação, teve como base a linguagem C++, que por sua vez teve como base a linguagem C. Com isto a linguagem possui algumas características semelhantes às encontradas em C/C++, dentre elas os tipos de comentários e estruturas de seleção, repetição. Naturalmente há outras características que são únicas do Java, como comentários para documentação e convenção de nomenclatura, dentre outras.
+De acordo com \cite{javamagazinecj2013}, a linguagem Java, em sua criação, teve como base a linguagem C++, que por sua vez teve como base a linguagem C. Com isto a linguagem possui algumas características semelhantes às encontradas em C/C++, dentre elas os tipos de comentários, estruturas de seleção e repetição. Naturalmente há outras características que são únicas do Java, como comentários para documentação e convenção de nomenclatura, dentre outras.
 
 \subsubsection{Formatação}
 \label{sec:formatacao}
-Segundo \cite{oracle2015}, a linguagem Java deve utilizar quatro espaços como unidade de recuo e evitar linhas com mais de 80 caracteres, uma vez que que recuos maiores ou linhas com mais de 80 caracteres não são bem tratadas por determinados terminais e ferramentas. Quando uma expressão não couber em uma única linha, ela deves ser interrompida de acordo com os seguintes  princípios:
+Segundo \cite{oracle2015}, a linguagem Java deve utilizar quatro espaços como unidade de recuo e evitar linhas com mais de 80 caracteres, uma vez que recuos maiores ou linhas com mais de 80 caracteres não são bem tratadas por determinados terminais e ferramentas. Quando uma expressão não couber em uma única linha, ela deve ser interrompida de acordo com os seguintes  princípios:
 
 \begin{enumerate}
 \item após uma vírgula; 
@@ -218,7 +218,7 @@ A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu 
 		@param & Mostra um parâmetro que será passado a um método.\\
 		@return & Mostra qual o tipo de retorno de um método.\\
 	\rowcolor[gray]{0.8}
-		@see & Possibilita a definição de referências de classes ou métodos, que podem ser consultadas para melhor compreender a idéia daqui			lo que está sendo comentado.\\
+		@see & Possibilita a definição de referências de classes ou métodos, que podem ser consultadas para melhor compreender a idéia daquilo que está sendo comentado.\\
 		@since & Indica desde quando uma classe ou método foi adicionado\\
 	\rowcolor[gray]{0.8}
 		@throws & Indica os tipos de exceções que podem ser lançadas por um método.\\
@@ -244,10 +244,10 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
         \centering
         \begin{tabularx}{0.99\textwidth}{lXX}
         \toprule
-                \textbf{Tipo de Identificador} & \textbf{Regras Para Nome} & \textbf{Exemplos} \\
+                \textbf{Tipo de Identificador} & \textbf{Regras Para Nomes} & \textbf{Exemplos} \\
         \midrule
-		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes de domínio de nível superior, tal como especificado na norma \cite{iso3166-2015}. 
-		Componentes subseqüentes do nome do pacote varia de acordo com uma organização próprias convenções de nomenclatura internos. & com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
+		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes de domínio de nível superior, tal como 			especificado na norma \cite{iso3166-2015}. Componentes subseqüentes do nome do pacote, varia de acordo com a organização da convenções de nomenclatura. & 
+		com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
 	\rowcolor[gray]{0.8}
 		Classes & Os nomes de classe devem ser substantivos, em maiúsculas e minúsculas, com a primeira letra de cada palavra em maiúscula. & class Raster; class ImageSprite; \\
 
@@ -276,7 +276,7 @@ De acordo com \cite{oracle2015}, a indentação na linguagem Java  deve conter 4 e
 \subsubsection{Espaços em branco em expressões}
 
 De acordo com \cite{oracle2015}, as linhas em branco melhoram a legibilidade ao separar seções de código que são logicamente relacionada.
-Duas linhas em branco deve ser sempre utilizado nas seguintes circunstâncias:
+Duas linhas em branco devem ser sempre utilizadas nas seguintes circunstâncias:
 
 \begin{enumerate}
 \item entre as seções de um arquivo de origem;
@@ -404,7 +404,7 @@ O Código \ref{importpy} exemplifica a utilização de importação de pacotes segund
 
 O Código \ref{importnotstylepy} exemplifica a utilização de importação de pacotes de forma divergente à proposta no estilo citado na Seção \ref{pep8}.
 
-\lstinputlisting[language=Python, caption=Importação pacotes que não segue o estilo PEP8., label=importnotstylepy]{cods/importnotestyle.py}
+\lstinputlisting[language=Python, caption=Importação de pacotes que não segue o estilo PEP8., label=importnotstylepy]{cods/importnotestyle.py}
 
 \subsection{Comentários}
 
@@ -467,7 +467,7 @@ Segundo \cite{pep8-2001} as convenções de nome da biblioteca padrão da linguagem
 \item IniciaisMaiúsculas 
 \end{enumerate}
 
-Nunca utilize os caracteres \lq \texttt{l}\rq\ (ele minúsculo), \lq\texttt{O}\rq\ (o maiúsculo), ou \lq\texttt{I}\rq, (i maiúsculo) como nome de uma variável de apenas um caractere pois, em determinadas fontes, esses caracteres são indistinguíveis dos numerais \texttt{1} (um) e \texttt{0} (zero). Quando  for necessário a usar o \lq\texttt{l}\rq, usar o caractere \lq\texttt{L}\rq\ em seu lugar.
+Nunca utilize os caracteres \lq \texttt{l}\rq\ (ele minúsculo), \lq\texttt{O}\rq\ (o maiúsculo), ou \lq\texttt{I}\rq, (i maiúsculo) como nome de uma variável de apenas um caractere pois, em determinadas fontes, esses caracteres são indistinguíveis dos numerais \texttt{1} (um) e \texttt{0} (zero). Quando for necessário usar o \lq\texttt{l}\rq, use o caractere \lq\texttt{L}\rq\ em seu lugar.
 
 Módulos devem ter nome em minúsculas. Sublinhado podem ser usados no nome do módulo se implicar em uma melhora na legibilidade. Pacotes Python devem ter um nome curto, todo em minúsculas, embora nesse caso o uso de sublinhados seja desencorajado.
 

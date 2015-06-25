@@ -8,7 +8,7 @@ Posteriormente a execução do script mencionado na Seção \ref{scriptsPython}, obt
 A execução do Código \ref{scriptRules}, citado na seção \ref{scriptsPython}, teve como finalidade responder as perguntas citadas na Tabela \ref{resultScript}. Por erro entende-se uma violação de uma das regras descritas no anexo \ref{anexoB}.
 
 \begin{table}[ht]
-        \caption{Resultados obtidos com a análise de script}
+        \caption{Resultados obtidos com a análise do Código \ref{scriptRules}}
         \label{resultScript}
         \centering
 	\begin{small}
@@ -56,10 +56,10 @@ O número de projetos é inferior ao número de arquivos transferidos pelo motivo q
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.6]{figs/all_erros}
-\caption{Código de erros detectados por número de ocorrências. \label{allErrors}}
+\caption{Códigos de erros detectados por número de ocorrências. \label{allErrors}}
 \end{figure}
 
-Para melhor análise dos erros encontrados, as informações foram organizadas por número de ocorrências. Em seguidas serão detalhando os tipos de erros e a relevância dos mesmos  para este estudo, classificado o grau de gravidade de cada erro. Serão analisados apenas os códigos de erros com mais de um milhão de ocorrências.
+Para melhor análise dos erros encontrados, as informações foram organizadas por número de ocorrências. Em seguida serão detalhados os tipos de erros e a relevância dos mesmos  para este estudo, classificando o grau de gravidade de cada erro. Serão analisados apenas os códigos de erros com mais de um milhão de ocorrências.
 
 Na Figura \ref{majorErrors} são apresentados os códigos de erros com mais de um milhão de ocorrências:
 
@@ -75,8 +75,8 @@ Serão utilizadas duas marcações especiais em alguns códigos de erro:
 
 \begin{itemize}
 	\item (\^{})  Os itens que possuem este símbolo são verificações que poderiam ser desativadas adicionando o comentário especial \#noqa, 
-		este tipo de comentário  informa ao compilador para ignorar ou não alertar sobre o erro. Esta possibilidade deve ser reservado para casos especiais
-	\item (*) Na configuração padrão, estas verificações são ignorados porque não são regras aceitas por unanimidade.	
+		este tipo de comentário  informa ao compilador para ignorar ou não alertar sobre o erro. Esta possibilidade deve ser reservada para casos especiais
+	\item (*) Na configuração padrão, estas verificações são ignoradas porque não são regras aceitas por unanimidade.	
 \end{itemize}
 
 Os exemplos de códigos utilizados nas seções seguintes serão todos retirados do arquivo resultante da execução do script da Seção \ref{scriptsPython}.
@@ -151,7 +151,7 @@ Na Figura \ref{gw293} são exibidos os dados referentes as ocorrências deste tipo
 
 De acordo com o Anexo A, o erro \texttt{E128} corresponde a linha contínua visualmente não indentada. 
 
-Desenvolvedores tem uma dificuldade natural em aderir a este tipo de regra, pois IDEs e editores de texto lhe induziriam a cometer está infração, uma vez que, ao terminar o preechimento de uma linha o editor,  o mesmo posiciona o cursor automaticamente no começo da  nova linha, e não abaixo do comentário.
+Desenvolvedores tem uma dificuldade natural em aderir a este tipo de regra, pois IDEs e editores de texto lhe induziria a cometer esta infração, uma vez que, ao terminar o preechimento de uma linha, o editor posiciona o cursor automaticamente no começo da  nova linha, e não abaixo do comentário.
 
 Na Figura \ref{ge128} são exibidos os dados referentes as ocorrências deste erro.
 
@@ -171,7 +171,7 @@ O Código \ref{ce128} exemplifica a correção deste erro.
 
 \section{E111}
 
-De acordo com o Anexo A, o erro \texttt{E111} indica que a indentação utilizada não é múltiplo do número 4, ou seja a indentação possui um número ou inferior, ou superior, ou contém espaços em branco.
+De acordo com o Anexo A, o erro \texttt{E111} indica que a indentação utilizada não é múltiplo do número 4, ou seja a indentação possui um número inferior, ou superior, ou contém espaços em branco.
 
 Este tipo de erro pode ocorrer caso esteja utilizando uma IDE ou editor de texto que não possua por padrão configurado o valor 4 para a indentação, necessitando a alteração manual por parte do usuário.
 
@@ -243,7 +243,7 @@ Na Figura \ref{gw291} são exibidos os dados referentes as ocorrências deste tipo
 
 \section{E251}
 
-De acordo com o Anexo A, o código de erro \texttt{E251} corresponde a espaços em branco em torno de do caracter \lq\lq =\rq\rq.
+De acordo com o Anexo A, o código de erro \texttt{E251} corresponde a espaços em branco em torno do caracter \lq\lq =\rq\rq.
 
 Este tipo de erro pode ser corrigido de forma rápida e eficaz a partir da construção de um algoritmo que verifique se há a existência de espaço em branco ao redor do caracter em questão e remover estes espaços quando não estiverem dentro de aspas simples ou duplas.
 
@@ -372,7 +372,7 @@ Devido ao fato de dois códigos de erros apresentarem uma quantidade de ocorrênci
 A Tabela \ref{resultScript2} contém os novos resultados após a remoção dos itens mencionado anteriormente.
 
 \begin{table}[ht!]
-        \caption{Resultados obtidos com a análise de script segunda análise}
+        \caption{Resultados obtidos com a segunda análise do Código \ref{scriptRules}}
         \label{resultScript2}
         \centering
 	\begin{small}

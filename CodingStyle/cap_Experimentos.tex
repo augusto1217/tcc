@@ -142,11 +142,10 @@ A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros 
 	842 \hspace{3mm} E211 Espaços em branco antes de '(' \\
 	2531\hspace{3mm} E221 mútliplos espaços antes de operador \\
 	4473\hspace{3mm} E301 esperado 1 linha em branco, encontrada 0 \\
-	4006\hspace{3mm} E302 esperado 2 linha em brancos, encontrada 1 \\
-	165 \hspace{3mm} E303, muita linha em brancos (4) \\
-	325 \hspace{3mm} E401 mútliplosimports on one line \\
+	4006\hspace{3mm} E302 esperado 2 linhas em branco, encontrada 1 \\
+	165 \hspace{3mm} E303, muitas linhas em branco (4) \\
+	325 \hspace{3mm} E401 mútliplos importes em uma linha \\
 	3615\hspace{3mm} E501 linha muito longa (82 characters) \\
-	612 \hspace{3mm} W601 .has\_key() is deprecated, usar 'in' \\
 	\bottomrule
 	\end{tabularx}
 \end{table}
@@ -203,7 +202,7 @@ A versão utilizada para o desenvolvimento dos procedimentos escritos em java é J
 
 \subsection{Python}
 
-A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o visitar o sítio oficial da linguagem, na aba de downloads\footnote{https://www.python.org/downloads/}.
+A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o sítio oficial da linguagem, na aba de downloads\footnote{https://www.python.org/downloads/}.
 
 \section{Extrator de métricas}
 
@@ -211,7 +210,7 @@ Neste capítulo detalharemos os procedimentos efetuados para verificar se os proj
 
 \subsection{Rotinas e Scripts}
 
-O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e  transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessários para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python \cite{intoPython-2011} e a quatificação das métricas avaliadas.
+O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo de identificação e transferência de um ou mais arquivos de um servidor remoto para um computador local, tornando processo necessário para prosseguir com o procedimento de análise do estilo de codificação recomendadas para a linguagem Python e a quatificação das métricas avaliadas.
 
 \subsection{Rotinas Java}
 
@@ -221,7 +220,7 @@ O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura 
 
 \lstinputlisting[language=Java, caption=Código para obter endereços dos pacotes., label=obtLinksPac]{cods/ObterLinkPacotes_new.java}
 
-O resultado do procedimento acima, gerou um arquivo texto denomiado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
+O resultado do procedimento acima, gerou um arquivo texto denominado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
 
 \begin{table}[ht!]
         \caption{Links obtidos pelo Código \ref{obtLinksPac} .}
@@ -245,7 +244,7 @@ O resultado do procedimento acima, gerou um arquivo texto denomiado \texttt{writ
         \end{tabularx}
 \end{table}
 
-Na segunda etapa foi escrito outro procedimento, também em linguagem Java, o qual recebe como parâmetro os endereços obtido na etapa anterior e a partir de cada endereço é executada uma análise baseada em padrões da construção da página para encontrar o link que aponta para o arquivo compactado. Assim que a rotina encontrava o link dava-se início a transferência e o armazenamento do arquivo em um diretório local.
+Na segunda etapa foi escrito outro procedimento, também em linguagem Java, o qual recebe como parâmetro os endereços obtido na etapa anterior e a partir de cada endereço é executada uma análise baseada em padrões da construção da página para encontrar o endereço eletrônico que endereçava para o arquivo compactado. Assim que a rotina encontrava o endereço eletrônico que foi informado como parâmetro, dava-se início a transferência e o armazenamento do arquivo em um diretório local.
 
 O Código \ref{downFile}, apresenta a rotina de análise da estrutura das páginas web para a descoberta dos links que contém os arquivos compactados.
 
@@ -295,20 +294,20 @@ A outra dificuldade foi o tempo necessário para a execução e conclusão do proces
 \subsection{Scripts Python}
 \label{scriptsPython}
 
-Para o desenvolvimento do script responsável pela a análise e coleta das métricas proposta na seção \ref{pep8}, utilizamos a linguagem Python e o sistema operacional Linux, também é aplicada a técnica de desenvolvimento chamada programação em par.
+Para o desenvolvimento do script responsável pela análise e coleta das métricas proposta na seção \ref{pep8}, utilizamos a linguagem Python e o sistema operacional Linux, também é aplicada a técnica de desenvolvimento chamada programação em par.
  
 A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador piloto implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca \cite[pg. 38-42]{pairprogram_2002}.
  
-Tal prática foi adotada pelo fato de que  código produzido é visto por, pelo menos, duas pessoas é menor a correção de falhas, com isto possuí menor manutenibilidade aumenta a velocidade de desenvolvimento e há o compartilhamento de  conhecimento.
+Tal prática foi adotada pelo fato de que o código produzido, é visto por pelo menos duas pessoas, diminuindo a possibilidade de erros, com isto possuí menor manutenibilidade, aumenta a velocidade de desenvolvimento e há o compartilhamento de conhecimento.
 
 Os Códigos \ref{extractFile} e \ref{extractFile2} exibem as rotinas desenvolvidas para a obtenção dos resultados gerados utilizando as métricas do guia de estilo descritas na seçao \ref{pep8}.
 O Código \ref{extractFile} é responsável pela execução da ferramenta descrita na Seção \ref{flake_8}.
 
-\lstinputlisting[language=Python, caption=Procedimento A responsável pela execução do procedimento execExtractFiles.py., label=extractFile]{cods/extractFiles.py}
+\lstinputlisting[language=Python, caption=Procedimento responsável pela execução do Código \ref{extractFile}., label=extractFile]{cods/extractFiles.py}
 
 O Código \ref{extractFile2} contém o procedimento referenciado no Código \ref{extractFile}, que tem como tarefa a extração dos arquivos em um arquivo temporário para sua análise.
 
-\lstinputlisting[language=Python, caption=Procedimento responsável pela execução do procedimento execExtractFiles.py., label=extractFile2]{cods/extractFiles2.py}
+\lstinputlisting[language=Python, caption=Procedimento responsável pela execução do Código \ref{extractFile2}., label=extractFile2]{cods/extractFiles2.py}
 
 O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
 
@@ -349,6 +348,6 @@ Um terceiro script é criado utilizando a linguagem python, com a finalidade de q
 
 \lstinputlisting[language=Python, caption=Script extrator dos resultados das métricas., label=scriptRules]{cods/extractResultRules.py}
 
-Neste estudo foram removida as verificações para os seguintes códigos de erros: \texttt{E121}; \texttt{E123}; \texttt{E126}; \texttt{E133}; \texttt{E226}; \texttt{E241}; \texttt{E242}; \texttt{E704}. Esta remoção ocorreu pois de acordo com a Seção \ref{pep8}, estas regras não são aceitas por unanimidade.
+Neste estudo foram removidas as verificações para os seguintes códigos de erros: \texttt{E121}; \texttt{E123}; \texttt{E126}; \texttt{E133}; \texttt{E226}; \texttt{E241}; \texttt{E242}; \texttt{E704}. Esta remoção ocorreu pois de acordo com a Seção \ref{pep8}, estas regras não são aceitas por unanimidade.
 
 
