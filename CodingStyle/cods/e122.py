@@ -2,5 +2,5 @@
 # -*- coding: iso-8859-1 -*-
 
 ExtElements = { 
-#    (EXSL_DATE_TIME_NS, 'date-format'): DateFormatElement 
+##    (EXSL_DATE_TIME_NS, 'date-format'): DateFormatElement 
 }

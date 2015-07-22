@@ -1,6 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-1 -*-
 
-XPtrException.INTERNAL_ERROR: _('There is an internal bug in 4Suite. '
-	                              'Please make a post to the 4Suite mailing '
-	                              'list to report this error ' %s),
+
+def Test(tester):
+
+    from Ft.Lib.DbUtil import EscapeQuotes
+
+    for i, out in [('hello', 'hello'),
+                   ("he'llo", r"he\'llo"),
+                   ("he'll'o", r"he\'ll\'o"),
+                   ("'hello'", r"\'hello\'"),
+                   ("'", "\\'"),
+                   (r"hhh\\hhhh", r"hhh\\\\hhhh"),
+                   (r"\\", r"\\\\"),
+                   (r"'\\''\\'\\'", r"\'\\\\\'\'\\\\\'\\\\\'"),
+                   (None, r""),
+                   ]:
+        tester.startTest(repr(i))
+        e = EscapeQuotes(i)
+        tester.compare(out, e)
+        tester.testDone()

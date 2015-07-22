@@ -1,16 +1,18 @@
 %TCIDATA{LaTeXparent=0,0,relatorio.tex}
                       
-\chapter{Introdução}\label{CapIntro}
-
+%\chapter*{Introdução}\label{CapIntro}
+\chapter{Introdução}
+\label{CapIntro}
+%\addcontentsline{toc}{chapter}{Introdução}
 Durante o desenvolvimento de um software, a legibilidade do código-fonte é um fator importante porque afeta a compreensão do contexto do código e facilita a comunicação e colaboração entre os membros da  equipe, reduzindo o esforço de manutenção do software que está sendo desenvolvido \cite[págs 156 a 158]{teles2014}.
 
 Dentre as técnicas que podem ser empregadas na promoção da legibilidade do código-fonte podemos citar os comentários, modularização, refatoração e adoção de um estilo de codificação.
 
-O uso adequado de comentários é uma maneira de compensar a incapacidade dos programadores em se expressar na escrita do código-fonte de um software, porque nem sempre é possível extrair o significado de determinada expressão de forma imediata e direta  \cite{robert2008}. O Código \ref{compy} ilustra uma situação onde a compreensão da operação pode não ser imediata.
+O uso adequado de comentários é uma maneira de compensar a incapacidade dos programadores em se expressar na escrita do código-fonte de um software, porque nem sempre é possível extrair o significado de determinada expressão de forma imediata e direta  \citep{robert2008}. O Código \ref{compy} ilustra uma situação onde a compreensão da operação pode não ser imediata.
 
 \lstinputlisting[language=Python, caption=Exemplo de comentário, label=compy]{cods/comentario.py}
 
-À medida que os problemas computacionais vão se tornando maiores e complexos, podemos simplificar a solução dividindo o programa em partes menores, chamadas de módulos, que podem ser definidos como conjuntos de instruções da linguagem que realizam uma tarefa em particular. A divisão de programas em módulos surgiu no final da década de 1960,  seguindo o princípio do paradigma da divisão e conquista, proposto por Descartes \cite{rene2015}.
+À medida que os problemas computacionais vão se tornando maiores e complexos, podemos simplificar a solução dividindo o programa em partes menores, chamadas de módulos, que podem ser definidos como conjuntos de instruções da linguagem que realizam uma tarefa em particular. A divisão de programas em módulos surgiu no final da década de 1960,  seguindo o princípio do paradigma da divisão e conquista, proposto por \cite{rene2015}.
 
 O principal objetivo da modularização é permitir o gerenciamento da complexidade no desenvolvimento de programas, trazendo consigo algumas vantagens como a legibilidade, que torna os trechos de código mais simples, a manutenibilidade, que favorece a detecção e correção de erros, e a produtividade, que facilita a reutilização do software \cite[pág. 175]{harry2011}.  O Código \ref{modpy} ilustra um exemplo de modularização através do uso de funções.
 
@@ -18,9 +20,9 @@ O principal objetivo da modularização é permitir o gerenciamento da complexidade
 
 Segundo \cite{fowler2004}, a refatoração fornece técnicas para limpar código de uma maneira eficiente e controlada, que não altera o comportamento observável de um software, evitando a deterioração tão comum durante o ciclo de vida de um código. Os benefícios obtidos através desta técnica são a evolução do projeto do software, tornando-o mais fácil de entender e a melhora no entendimento do código, o que facilita a manutenção e evita a inclusão de defeitos. Os Códigos \ref{antesref} e \ref{depoisref} ilustram um código antes e após a refatoração, respectivamente.
 
-\lstinputlisting[language=Java, caption=Método antes da refatoração, label=antesref]{cods/antesref.java}
+\lstinputlisting[language=Python, caption=Método antes da refatoração, label=antesref]{cods/antesref.py}
 
-\lstinputlisting[language=Java, caption=Método depois da refatoração, label=depoisref]{cods/depoisref.java}
+\lstinputlisting[language=Python, caption=Método depois da refatoração, label=depoisref]{cods/depoisref.py}
 
 De acordo com \cite{kernighanPlauger1978}, um dos precursores do assunto, estilo de programação é um conjunto de regras ou orientações utilizados ao escrever o código-fonte de um programa de computador. Um estilo de programação ajuda programadores a ler e compreender o código-fonte em conformidade com o estilo e a evitar a introdução de erros. 
 
@@ -28,35 +30,40 @@ Segundo \cite{oracle2015}, convenções (ou estilos) de código reduzem em 80\% os 
 
 Um estilo de codificação descreve como um problema de software está delineado e
 como sua solução foi decomposta. Softwares não podem ser inteiramente implementados na
-mente de um único desenvolvedor, logo um guia de estilo de codificação propicia a divisão de um projeto em partes gerenciáveis, com o paradigma de design usado para expressar a intenção do código-fonte \cite{pete2006}.
+mente de um único desenvolvedor, logo um guia de estilo de codificação propicia a divisão de um projeto em partes gerenciáveis, com o paradigma de design usado para expressar a intenção do código-fonte \citep{pete2006}.
 
-Se analisarmos o código de diferentes desenvolvedores, existe a possibilidade de existir diferenças dentre os estilos utilizados no momento de escrever e formatar um código-fonte em uma determinada linguagem. Por exemplo, ao declarar uma função ou método, um desenvolvedor pode utilizar chaves (\lq\{\rq\ e \lq\}\rq) em linhas separadas ou abrir a chave na mesma linha da declaração \cite{teles2014}. A Tabela \ref{table:diff2Program} ilustram dois código com diferentes estilos de codificação.
+Se analisarmos o código de diferentes desenvolvedores, existe a possibilidade de existir diferenças dentre os estilos utilizados no momento de escrever e formatar um código-fonte em uma determinada linguagem. Por exemplo, ao declarar uma função ou método, um desenvolvedor pode utilizar chaves (\lq\{\rq\ e \lq\}\rq) em linhas separadas ou abrir a chave na mesma linha da declaração \citep{teles2014}. A Tabela \ref{table:diff2Program} ilustram dois código com diferentes estilos de codificação.
 
-\begin{table}[ht]
+\begin{table}[!ht]
 	\caption{Diferenças de estilo entre dois programadores}
 	\label{table:diff2Program}
-	\begin{center}
-	
+	\centering
+	\begin{footnotesize}	
 	\begin{tabularx}{0.6\textwidth}{lX}
 	\toprule
 		\hspace{12 mm}\textbf{Programador 1}  & \hspace {12 mm}\textbf{Programador 2} \\
 	\midrule
-	\\
-	\hspace {4 mm} if (i \textgreater= 0) \{ & \hspace{6 mm}if (i \textgreater= 0) \\ 
-	\hspace{12 mm} faça alguma coisa & \hspace{6 mm}\{ \\
-	\hspace {4 mm} \} & \hspace{16 mm} faça alguma coisa
-	\\ & \hspace {6 mm}\}\\ \\ \bottomrule
+		\hspace {10 mm} def my\_function() & \hspace{11 mm}def myFunction(): \\ 
+        \bottomrule
 	\end{tabularx}
-	\end{center}
+	\end{footnotesize}	
 \end{table}
 
 Estas diferenças de estilos são comuns entre os desenvolvedores de uma equipe ou projeto colaborativo, dificultando a compreensão e legibilidade do código fonte. Este tipo de dificuldade pode ser mitigada se for adotado um estilo de codificação uniforme para  todos os membros da equipe. Desta forma, qualquer novo integrante poderá ler e assimilar o entendimento das funcionalidades com velocidade, sem a distração decorrente de múltiplos estilos distintos e divergentes nos diferentes arquivos do projeto.
 
 De acordo com \cite{kernighanPlauger1978}, definir um estilo é uma questão subjetiva. No entanto, existem vários elementos entre os diferentes estilos de programação. As questões geralmente consideradas como parte do estilo de programação incluem: o layout do código fonte, incluindo o recuo; o uso do espaço em branco ao redor de operadores e palavras-chaves; a capitalização de nomes de variáveis, métodos, classes e constantes; o estilo e a grafia de identificadores definidos pelo usuário, tais como funções e nomes das variáveis; e o uso e estilo dos comentários.
 
-Entretanto adotar um estilo de codificação não é uma tarefa simples. De acordo com o artigo da revista Smashing Magazine \cite{magazine2015},  o estilo de codificação é de natureza pessoal, o que constitui um desafio para a equipe. Muitas vezes, procurando evitar argumentos longos, as equipes adiam a criação ou adoção de guias de estilo, sob o pretexto de não querer \lq\lq desencorajar a inovação e capacidade de expressão\rq\rq. Alguns programadores entendem o estabelecimento de guias de estilo como uma forma de forçar uma equalização de todos os desenvolvedores, enquanto que outros se rebelam quando submetidos à guias de estilo, acreditando que eles não poderão fazer o seu trabalho corretamente.
+Entretanto adotar um estilo de codificação não é uma tarefa simples. De acordo com o artigo da revista Smashing Magazine \citep{magazine2015},  o estilo de codificação é de natureza pessoal, o que constitui um desafio para a equipe. Muitas vezes, procurando evitar argumentos longos, as equipes adiam a criação ou adoção de guias de estilo, sob o pretexto de não querer \lq\lq desencorajar a inovação e capacidade de expressão\rq\rq. Alguns programadores entendem o estabelecimento de guias de estilo como uma forma de forçar uma equalização de todos os desenvolvedores, enquanto que outros se rebelam quando submetidos à guias de estilo, acreditando que eles não poderão fazer o seu trabalho corretamente.
 
-O objetivo deste estudo é verificar se houve a adesão, e em qual escala, ao estilo proposto no Python Enhancement Proposal 8 (PEP8) por parte da comunidade de software livre que utiliza a linguagem Python. Para a validação desta hipótese foi desenvolvido um ambiente para a avaliação dos códigos-fontes de aproximadamente sessenta e dois mil projetos de código livre (disponíveis no Python Package Index -- PyPI, o repositório oficial de pacotes de terceiros mantido pela Python Software Foundation\footnote{https://pypi.python.org/pypi}) e extração das violações das orientações descritas no PEP8. Os resultados desta análise foram então tabulados e analisados, de forma a se determinar o nível da adesão desta amostra em relação ao estilo já citado.
+\section{MOTIVAÇÃO}
+
+É crescente número de projetos e desenvolvedores que iniciam a codificação de programas para computadores, sem ao menos se quer ter conhecimento de um estilo de codificação apropriado para a linguagem definida para seu trabalho, isto se deve ao fato de que é extremamente pessoal a maneira como é escrito um código-fonte, o que ocasiona no desencorajamento de novos e experiêntes desenvolvedores a seguir um estilo de codificação, pois não acreditam que isto vá trazer algum benefício.
+
+\section{OBJETIVO}
+Verificar o nível de adesão de projetos de código livre Python ao estilo de codificação PEP8.
+
+\section{OBJETIVO ESPECÍFICO}
+O objetivo deste estudo é verificar se houve a adesão, e em qual escala, ao estilo proposto no Python Enhancement Proposal 8 (PEP8) por parte da comunidade de software livre que utiliza a linguagem Python. Para a validação desta hipótese foi desenvolvido um ambiente para a avaliação dos códigos-fontes de aproximadamente sessenta e dois mil projetos de código livre (disponíveis no Python Package Index -- PyPI, o repositório oficial de pacotes de terceiros mantido pela Python Software Foundation\footnote{\url{https://pypi.python.org/pypi}}) e extração das violações das orientações descritas no PEP8. Os resultados desta análise foram então tabulados e analisados, de forma a se determinar o nível da adesão desta amostra em relação ao estilo já citado.
 
 No Capítulo 2 temos a fundamentação teórica do trabalho, com o histórico dos estilos de codificação. No Capítulo 3 é apresentada a metodologia, apresentando as ferramentas e tecnologias utilizadas neste trabalho. No Capítulo 4 são apresentado os resultados obtidos com a execução de scripts desenvolvidos para este estudo. Por fim, será apresentada a conclusão, onde é feita a interpretação geral dos resultados deste estudo e dadas sugestões acerca de uma melhor adoção do estilo PEP8 por parte da comunidade Python.
 

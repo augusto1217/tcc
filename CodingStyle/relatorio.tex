@@ -1,19 +1,17 @@
 % Classe default, de acordo com o modelo:
-\documentclass[11pt,a4paper,openright,titlepage,oneside]{book}
-
-% Classe alternativa, apropriada para impressão frente-verso. Inclui páginas em branco
-% de forma que capítulos sempre tenham início na página à direita:
-% \documentclass[11pt,a4paper,openright,titlepage]{book}
+%\documentclass[11pt,a4paper,openright,titlepage,oneside]{book}
+\documentclass[12pt,a4paper,openright,titlepage,portuguese,english,oneside]{book}
 
 % Pacotes
 \usepackage[T1]{fontenc}
-\usepackage[brazilian]{babel}
 \usepackage{epsfig}
+\usepackage[portuguese]{babel}
 \usepackage{subfigure}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage[thmmarks,amsmath]{ntheorem}%\usepackage{amsthm}
+\usepackage[thmmarks,amsmath]{ntheorem}
+%\usepackage{amsthm}
 \usepackage{boxedminipage}
 \usepackage{geometry}
 \usepackage{theorem}
@@ -34,24 +32,62 @@
 \usepackage{booktabs}
 \usepackage[multiple]{footmisc}
 \usepackage[final]{pdfpages}
+\usepackage[round]{natbib}
+%Pacote para uso de letras cursivas
+\usepackage[mathcal]{euscript}
+%Pacote para inclusão de algoritmos
+\usepackage[vlined,boxed,linesnumbered,slide,portuguese]{algorithm2e}
+\usepackage{bbm}
+\usepackage{soul}
+%\usepackage[active]{srcltx}
+%Pacote para poder utilizar frações do tipo a/b, em que a e b estão na mesma linha
+\usepackage{nicefrac}
+%Pacote que possibilita escrever sobre e sob símbolos e variáveis
+\usepackage{accents}
+%Pacote para símbolos gerais, como graus celsius, etc
+\usepackage{gensymb}
+%Pacote que possibilita cancelar elementos de uma equação.
+\usepackage{cancel}
+%Pacote que possibilita ao Latex colocar os labels nas figuras. 
+%\usepackage{psfrag}
+\usepackage{listings} % para importação de códigos fonte
+\usepackage{inconsolata}
+\usepackage{longtable}
+\usepackage{textcomp}
+%%%%%%%%%%%%% Redefinições dos parâmetros do ambiente de algoritmos %%%%%%%%%%%%%%%%%%%%%%%%
 
-% Setup
-\lstset{numbers=left,
-stepnumber=1,
-firstnumber=1,
-numberstyle=\tiny,
-extendedchars=true,
-breaklines=true,
-frame=tb,
-tabsize=2,
-basicstyle=\footnotesize\ttfamily,
-stringstyle=\ttfamily,
-showstringspaces=false
+
+%%%%%%%%%%%%%%%%%%%%%%%%%  Definição de comandos auxiliares %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\alterar}{\textcolor{red}{ALTERAR: } \textcolor{red}}
+
+\newcommand{\X}{\textbullet}
+
+\renewcommand{\lstlistingname}{Código Fonte} % definição visual dos códigos fonte
+\lstset{
+ extendedchars=\true, % permite acentos
+ inputencoding=latin1, % usa Latin1 nos códigos fonte
+ commentstyle=\it, % deixa os comentários em itálico
+ stringstyle=\bf, % não lembro o que faz, mas está funcionando
+ belowcaptionskip=5pt, % não lembro o que faz, mas está funcionando
+ numbers=left, % coloca a numeração na esquerda
+ stepnumber=1, % passos da numeração
+ firstnumber=1, % primeira linha
+ numberstyle=\tiny, % tamanho da fonte da numeração
+ extendedchars=true,
+ breaklines=true, % permitir quebra de linha
+ frame=tb, % borda em cima e em baixo
+ basicstyle=\footnotesize\ttfamily,
+ stringstyle=\ttfamily, % não lembro o que faz, mas está funcionando
+ showstringspaces=false, % não mostrar os espaços
+ mathescape, % não lembro o que faz, mas está funcionando
+ tabsize=3, % tamanho da tabulação
+ extendedchars=true
+ language=Python,upquote=true
 }
 
-% Escolher um dos seguintes formatos:
+
 %\usepackage{ft1unb} % segue padrão de fonte Times
-\usepackage{ft1unb} % segue padrão de fontes do Latex
+\usepackage{ft3unb} % segue padrão de fontes do Latex
 
 \makeindex
  
@@ -84,15 +120,15 @@ showstringspaces=false
 % Desta forma o autor define como quer que o título seja dividio em várias linhas. 
 % O exemplo abaixo é para um título que ocupa três linhas. Observe que mesmo com a linha
 % 4 não sendo utilizada, o comando \titulolinhaiv é chamado.
-\titulolinhai{ADOÇÃO DE UM ESTILO DE CODIFICAÇÃO EM PROJETO}
-\titulolinhaii{DE CÓDIGO LIVRE: UM ESTUDO DE CASO DO ESTILO}
-\titulolinhaiii{PEP8 DA LINGUAGEM PYTHON}
+\titulolinhai{ADOÇÃO DE UM ESTILO DE CODIFICAÇÃO EM PROJETO }
+\titulolinhaii{DE CÓDIGO LIVRE: UM ESTUDO DE CASO DO ESTILO }
+\titulolinhaiii{PEP8 DA LINGUAGEM PYTHON }
 \titulolinhaiv{}
 
 % Os nomes dos autores são definidos pelos comandos \autori (autor 1) e \autorii (autor 2).
 % Para trabalhos com apenas um autor, deve-se usar \autorii{} para que não apareça 
 % um nome para segundo autor.
-\autori{Osandi Augusto da Silva Mariano}
+\autori{Osandí Augusto da Silva Mariano}
 \autorii{Nome do Autor 2}
 \autorii{} % descomente esta linha se não houver segundo autor.
 \autoriii{Nome do Autor 3}
@@ -106,9 +142,9 @@ showstringspaces=false
 % Os nomes definidos pelos comandos abaixo aparecem na ordem de i a v.
 \membrodabancai{Prof. Dr. Edson Alves da Costa Júnior, FGA/UnB}
 \membrodabancaifuncao{Orientador}
-\membrodabancaii{Prof. Dr. Edna Dias Canedo, ENE/UnB}
+\membrodabancaii{Prof\textordfeminine. Dra. Edna Dias Canedo, ENE/UnB}
 \membrodabancaiifuncao{Examinador interno}
-\membrodabancaiii{Prof. Dr. Fábio Macedo Mendes, FGA/UnB}
+\membrodabancaiii{Prof. Dr. Fábio Macêdo Mendes, FGA/UnB}
 \membrodabancaiiifuncao{Examinador externo}
 \membrodabancaiv{}
 \membrodabancaivfuncao{}
@@ -116,12 +152,32 @@ showstringspaces=false
 \membrodabancavfuncao{}
 
 % data de defesa: mês e ano.
+\dia{15}
 \mes{Julho}
 \ano{2015}
 
 % Comandos para criar a capa e a página de assinaturas.
 \capaprincipal
 \capaassinaturas
+
+%%%%%%%%%%%%%%%%% FICHA CATALOGRÁFICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Colocar o nome do autor como vai aparecer no catálogo. Último sobrenome primeiro, depois o nome e sobrenomes intermediários. Ex.: Borges, Geovany Araújo
+\autorcatalogo{Mariano, Osandí Augusto}
+%Colocar o nome abreviado. Último sobrenome primeiro, depois as iniciais do nome e sobrenomes intermediários. Ex.: Borges, G.A.
+\autorabreviadocatalogo{Mariano, O.A.}
+%Número de páginas da dissertação.
+\numeropaginascatalogo{111p.}
+\palavraschavecatalogoi{PEP8}
+\palavraschavecatalogoii{ESTILO DE CODIFICAÇÃO}
+%\palavraschavecatalogoiii{}
+%\palavraschavecatalogoiv{}
+
+%Número da publicação (fornecido pelo departamento após a defesa)
+\publicacao{PPGENE.DM-123/12}
+
+% Comando para criar a ficha catalográfica
+\fichacatalografica
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dedicatória 
@@ -147,6 +203,11 @@ showstringspaces=false
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Texto de agradecimentos do primeiro autor
 \agradecimentosautori{Ao meu amigo e orientador Edson Alves, que contribuiu para o amadurecimento dos meus conhecimentos que me levaram a execução e conclusão desta monografia.}
+
+%Se os agradecimentos forem muito extensos e necessitarem de mais de uma página, o comando \agradecimentos
+%não vai quebrar a página automaticamente. Um jeito de contornar o problema é colocando o conteúdo
+%da segunda página no comando de continuação abaixo.
+\agradecimentosautorcont{ }
 
 % Texto de agradecimentos do segundo autor. Caso não tenha um segundo autor, este texto não 
 % será mostrado
@@ -178,6 +239,7 @@ showstringspaces=false
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\include{simbolos}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Corpo principal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,7 +257,8 @@ showstringspaces=false
 % Referências bibliográficas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\bibliographystyle{abnt-num} % use este estilo para ABNT numérico
-\bibliographystyle{abnt-alf} % use este estilo para ABNT alfa-numérico
+%\bibliographystyle{abnt-alf} % use este estilo para ABNT alfa-numérico
+\bibliographystyle{teste}
 \renewcommand{\bibname}{REFERÊNCIAS BIBLIOGRÁFICAS}
 \addcontentsline{toc}{chapter}{REFERÊNCIAS BIBLIOGRÁFICAS}
 \bibliography{relatorio}
@@ -218,11 +281,12 @@ showstringspaces=false
 % Descomentar linhas abaixo na versão final
 
 \include{anexo_pep8_regras}
+\label{anexoA}
 \refstepcounter{noAnexo}
 
-%\chapter[PEP8]{PEP8}
-%\label{anexoB}
-%\includepdf[pages=-,landscape=true,fitpaper=true,offset=0.1in 0.1in]{PEP8.pdf}
+\chapter[PEP8]{PEP8}
+\label{anexoB}
+\includepdf[pages=-,landscape=true,fitpaper=true,offset=0.1in 0.1in]{PEP8.pdf}
 
 \end{document}
 

@@ -12,8 +12,9 @@ int main ()
     int n, num, factor = 2, cont = 0;
     printf("Enter the number to be factored : ");
     scanf ("%d", &n);
-    while ( n != 1 ) {
-        while (n%factor  == 0) { // count how many times
+    while (n != 1) {
+	// count how many times
+        while (n % factor == 0) { 
             cont++;
             n = n / factor;
         }

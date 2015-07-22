@@ -5,23 +5,22 @@
 % Resumo opcional. Comentar se não usar.
 %\resumodocapitulo{Resumo opcional.}
 
-\section{Introdu\c{c}\~{a}o}
-
 Neste capítulo será apresentado o histórico dos estilos de codificação, que tiverem origem com a notação húngara, nos anos 70, passando pelos estilos mais prominentes, como os estilos Gnu/C, Java e Python. Em seguida, será apresentado o estilo PEP8 da linguagem Python, que será objeto deste estudo. Por fim, é descrito brevemente o conceito de ambientes integrados de desenvolvimento -- IDEs.
 
 \section{Histórico dos estilos de codificação}
 
 \subsection{Notação Húngara}
 
-A notação húngara, hoje chamada Apps húngaro, foi inventada por Charles Simonyi, um programador que trabalhou na Xerox PARC entre1972 e 1981, e que mais tarde se tornou arquiteto-chefe da Microsoft \cite{notacao2015}.
+A notação húngara, hoje chamada Apps húngaro, foi inventada por Charles Simonyi, um programador que trabalhou na Xerox PARC entre1972 e 1981, e que mais tarde se tornou arquiteto-chefe da Microsoft \citep{notacao2015}.
  
-A notação é uma referência para os estilos de codificação existentes, pois foi a partir dela que teve início o processo de definir um determinado estilo de codificação a ser seguido dentro de um projeto. A notação húngara utiliza prefixos para indicar o tipo de informação que está sendo  armazenada, fazendo com que desenvolvedores decorem nomes de identificadores baseados na informação semântica que eles armazenam \cite{notacao2015}.  Esses prefixos são letras minúsculas associadas ao conteúdo ou tipo da variável ou identificador. A Tabela \ref{tab2} lista os indicadores mais utilizados na notação húngara.
+A notação é uma referência para os estilos de codificação existentes, pois foi a partir dela que teve início o processo de definir um determinado estilo de codificação a ser seguido dentro de um projeto. A notação húngara utiliza prefixos para indicar o tipo de informação que está sendo  armazenada, fazendo com que desenvolvedores decorem nomes de identificadores baseados na informação semântica que eles armazenam \citep{notacao2015}.  Esses prefixos são letras minúsculas associadas ao conteúdo ou tipo da variável ou identificador. A Tabela \ref{tab2} lista os indicadores mais utilizados na notação húngara.
 
-\begin{table}[ht]
+
+\begin{table}[!ht]
         \caption{Indicadores da notação húngara}
         \label{tab2}
         \centering
-
+	\begin{footnotesize}
         \begin{tabularx}{0.7\textwidth}{>{\ttfamily}lX}
         \toprule
         	\textbf{Nome} & \textbf{Descrição} \\
@@ -52,16 +51,19 @@ A notação é uma referência para os estilos de codificação existentes, pois foi a
 		dw & Inteiro longo não sinalizado (dword 32 bits) \\	
 		pX & Ponteiro para X \\ \bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
-Um bom desenvolvedor geralmente deve considerar os identificadores como valores mnemônicos que facilitem a lembrança do significado do nome da variável criada pelo programador; que sejam sugestivos, facilitando a leitura dos demais desenvolvedores; e que sejam simples de identificar, de modo que o desenvolvedor não perca tempo pensando para que ou em qual contexto aquela variável será utilizada \cite{notacao2015}. 
+
+Um bom desenvolvedor geralmente deve considerar os identificadores como valores mnemônicos que facilitem a lembrança do significado do nome da variável criada pelo programador; que sejam sugestivos, facilitando a leitura dos demais desenvolvedores; e que sejam simples de identificar, de modo que o desenvolvedor não perca tempo pensando para que ou em qual contexto aquela variável será utilizada \citep{notacao2015}. 
 
 A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notação húngara e seus respectivos significados e tipos.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Variáveis utilizando notação húngara}
         \label{tabVarNtHun}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.7\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Nome} & \textbf{Descrição} \\
@@ -105,32 +107,33 @@ A Tabela \ref{tabVarNtHun} exemplifica várias tipos de identificadores em notaçã
 		c\_wheels & membros estáticos de uma função \\ 
 	\bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
-O sistema húngaro foi adotado como padrão de programação do Windows, e se espalhou amplamente por meio de livros como \cite{charles2002}, a bíblia para aprender programação do Windows . Rapidamente a notação húngara se tornou o estilo de codificação dominante utilizado em códigos escritos em linguagem C \cite{notacao2015}.
+O sistema húngaro foi adotado como padrão de programação do Windows, e se espalhou amplamente por meio de livros como \citep{charles2002}, a bíblia para aprender programação do Windows . Rapidamente a notação húngara se tornou o estilo de codificação dominante utilizado em códigos escritos em linguagem C \citep{notacao2015}.
 
-Mas, por algum motivo não divulgado ao público, com a primeira versão da plataforma .NET, a Microsoft começou a abandonar o uso da notação húngara. A equipe de projetos do Excel e Word ficaram aliviados em não ter que usar uma convenção de nomenclatura estranha, já que nos dias atuais a verificação de declaração dos tipos de variáveis é feita pelo compilador e há o recurso de autocompletar o código digitado que sugere um conjunto de opções ao programador, a depender do contexto \cite{notacao2015}.
+Mas, por algum motivo não divulgado ao público, com a primeira versão da plataforma .NET, a Microsoft começou a abandonar o uso da notação húngara. A equipe de projetos do Excel e Word ficaram aliviados em não ter que usar uma convenção de nomenclatura estranha, já que nos dias atuais a verificação de declaração dos tipos de variáveis é feita pelo compilador e há o recurso de autocompletar o código digitado que sugere um conjunto de opções ao programador, a depender do contexto \citep{notacao2015}.
 
 \subsection{GNU/C}
 
 O estilo de codificação GNU/C foi proposto e definido por Richard Stallman e outros voluntários do projeto GNU em meados de 1992, pois Stallman acreditava que a adoção de um padrão tornaria os programas e componentes GNU limpos, consistentes e de fácil manutenção.
 
-Para que um novo desenvolvedor possa participar de algum projeto ou criar algo para a comunidade do software livre GNU, é exigido apenas que ele se atente ao  documento oficial de estilos\footnote{http://www.gnu.org/prep/standards/}.  É de suma importância que se utilize a versão atualizada, para que não seja escrito um código formatado sobre regras que possam ter sido revogadas ou substituídas.
+Para que um novo desenvolvedor possa participar de algum projeto ou criar algo para a comunidade do software livre GNU, é exigido apenas que ele se atente ao  documento oficial de estilos\footnote{\url{http://www.gnu.org/prep/standards/}}.  É de suma importância que se utilize a versão atualizada, para que não seja escrito um código formatado sobre regras que possam ter sido revogadas ou substituídas.
 
-Também é possível que o desenvolvedor faça uma contribuição para o documento que descreve o estilo de codificação GNU/C. Caso ele detecte alguma inconsistência ou uma possível evolução em um determinado conteúdo, basta enviar um email para bug-standards@gnu.org com a descrição de suas contribuições \cite{stallman2015}.
+Também é possível que o desenvolvedor faça uma contribuição para o documento que descreve o estilo de codificação GNU/C. Caso ele detecte alguma inconsistência ou uma possível evolução em um determinado conteúdo, basta enviar um email para bug-standards@gnu.org com a descrição de suas contribuições \citep{stallman2015}.
 
 O estilo GNU proposto para a linguagem C possui características próprias no que se refere à formatação, comentários, convenção de nomes, tabulações, espaços e indentações, dentre outros.
 
 \subsubsection{Formatação}
 
-O estilo de codificação Gnu/C utiliza 79 caracteres para o comprimento das linhas. Segundo Stallman, esta caraterística facilita a leitura do código nos mais diversos ambientes e editores.
+O estilo de codificação Gnu/C utiliza 79 caracteres para o comprimento das linhas. Segundo \cite{stallman2015}, esta caraterística facilita a leitura do código nos mais diversos ambientes e editores.
 O estilo também recomenda a utilização de chaves \lq\lq \{ \}\rq\rq\ para o bloco da função em linha posterior à da declaração da função e ao final do bloco. O Código \ref{formatGnuC} exemplifica a formatação mencionada.
 
 \lstinputlisting[language=C, caption=Formatação GNU/C, label=formatGnuC]{cods/formatgnu.c}
 
 \subsubsection{Comentário}
 
-Stallman diz que todo programa deve começar com um comentário no topo do código-fonte contendo a função \lq principal\rq\ do programa. Este comentário deve informar o nome do arquivo e apresentar uma ou duas linhas a respeito do objetivo geral do programa. As estruturas e as funções devem trazer comentários com a descrição sobre sua funcionalidade, quais os tipos de argumentos pode receber e o seu tipo de retorno, quando houver.
+\cite{stallman2015} diz que todo programa deve começar com um comentário no topo do código-fonte contendo a função \lq principal\rq\ do programa. Este comentário deve informar o nome do arquivo e apresentar uma ou duas linhas a respeito do objetivo geral do programa. As estruturas e as funções devem trazer comentários com a descrição sobre sua funcionalidade, quais os tipos de argumentos pode receber e o seu tipo de retorno, quando houver.
 
 É  recomendado que os comentários sejam escritos em inglês. A justificativa é que o inglês é o idioma comum para quase todos os desenvolvedores, tornando possível a um grande número de pessoas entenderem o que foi definido naquela função.
 
@@ -148,7 +151,7 @@ O Código \ref{varGnuC}, exemplifica uma variável cujo identificador segue o padr
 
 \subsubsection{Indentação}
 
-Segundo \cite{kernelorg2002}, a idéia por trás da indentação é definir claramente onde um bloco de controle começa e onde ele termina. A indentação, em geral, utiliza 8 caracteres, mas existem editores que utilizam apenas 4, ou até mesmo 2 caracteres. Porém, de acordo com \cite{kernelorg2002}, a definição do tamanho de uma indentação é um problema semelhante ao da definição de uma aproximação para o valor da constante $\pi$.
+Segundo \cite{kernelorg2002}, a idéia por trás da indentação é definir claramente onde um bloco de controle começa e onde ele termina. A indentação, em geral, utiliza 8 caracteres, mas existem editores que utilizam apenas 4, ou até mesmo 2 caracteres. Porém, a definição do tamanho de uma indentação é um problema semelhante ao da definição de uma aproximação para o valor da constante $\pi$.
 
 Apesar de algumas pessoas argumentarem que a utilização de 8 caracteres faz com que o código fonte fique muito deslocado à direita, o que como consequência faz com que seja difícil a leitura em uma tela de 80 caracteres, é desaconselhável a utilização de mais de 3 níveis de indentação em um mesmo bloco.
 
@@ -170,7 +173,7 @@ Após ter sua solicitação de padronização negada pelos orgãos ISO/IEC e ECMA a em
  
 A abertura do JCP permitiu que empresas concorrentes da Sun se tornassem participantes ativas da evolução da Tecnologia Java. Diferentemente da maioria dos processos de padronização existentes, é possível o envolvimento de pessoas físicas sem custos financeiros. Isso fez do JCP um ponto de atração para a discussão e evolução da tecnologia Java.
  
-Em 13 de novembro de 2006 foi lançada a maior parte do Java como Software Livre sob os termos da GNU (GPL). Em 8 de maio de 2007 o processo de adoção da nova licença foi finalizado, tornando praticamente todo o código Java como software de código aberto, exceto uma pequena porção da qual a Sun não possui copyright \cite{javamagazine2013}.
+Em 13 de novembro de 2006 foi lançada a maior parte do Java como Software Livre sob os termos da GNU (GPL). Em 8 de maio de 2007 o processo de adoção da nova licença foi finalizado, tornando praticamente todo o código Java como software de código aberto, exceto uma pequena porção da qual a Sun não possui copyright \citep{javamagazine2013}.
 
 De acordo com \cite{javamagazinecj2013}, a linguagem Java, em sua criação, teve como base a linguagem C++, que por sua vez teve como base a linguagem C. Com isto a linguagem possui algumas características semelhantes às encontradas em C/C++, dentre elas os tipos de comentários, estruturas de seleção e repetição. Naturalmente há outras características que são únicas do Java, como comentários para documentação e convenção de nomenclatura, dentre outras.
 
@@ -190,7 +193,7 @@ De acordo com \cite{oracle2015}, todos os códigos-fontes devem começar com um co
 
 O Código \ref{comentjava} exemplifica o estilo de comentário Java para início de uma classe.
 
-\lstinputlisting[language=Java, caption=Comentário Java ( \cite{oracle2015} com adaptações), label=comentjava]{cods/coment.java}
+\lstinputlisting[language=Java, caption=Comentário Java. \citep{oracle2015}\, com adaptações, label=comentjava]{cods/coment.java}
 
 O Código \ref{comentumalinhajava} exemplifica comentários de linha única.
 
@@ -200,12 +203,12 @@ De acordo com \cite{javadocj2013}, a ferramenta JavaDoc fornece uma linguagem es
 
 Seu funcionamento  é baseado no uso de marcação de documentos  com doclets, gerando arquivos nos formatos HTML -- \textit{HyperText Markup Language}, SGML -- \textit{Standard Generalized Markup Language}, XML -- \textit{EXtensible Markup Language} ou RTF -- \textit{Rich Text Format}. Tais marcações são feitas através de comentários, contendo tags especiais que especificam quais informações serão inseridas, com objetivo de manter uma massa de conhecimento reutilizável em qualquer projeto que faça uso da classe em questão.
 
-A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu respectivo significado.
-
-\begin{table}[ht]
+A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu respectivo significado, e o Código \ref{utiltagsjava}, exemplifica a utilização de comentário no padrão javaDoc.
+\begin{table}[!ht]
         \caption{Tags JavaDoc.}
         \label{tabtagsJavaDoc}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Tag} & \textbf{Significado} \\
@@ -226,9 +229,9 @@ A Tabela \ref{tabtagsJavaDoc}, exibe algumas tags utilizadas pelo javaDoc e seu 
 	
 	\bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
-O Código \ref{utiltagsjava}, exemplifica a utilização de comentário no padrão javaDoc.
 
 \lstinputlisting[language=Java, caption=Utilizando tags JavaDoc, label=utiltagsjava]{cods/utiltags.java}
 
@@ -238,15 +241,16 @@ De acordo com \cite{convencoesjava2013}, as convenções de nomes em Java tem como
 
 A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utilizados em Java.
 
-\begin{table}[ht!]
-        \caption{Tipos de Identificadores Java (\cite{convencoesjava2013}, com adaptações).}
+\begin{table}[!ht]
+        \caption{Tipos de Identificadores Java (\citep{convencoesjava2013}, com adaptações).}
         \label{tabtpidentJava}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.99\textwidth}{lXX}
         \toprule
                 \textbf{Tipo de Identificador} & \textbf{Regras Para Nomes} & \textbf{Exemplos} \\
         \midrule
-		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes de domínio de nível superior, tal como 			especificado na norma \cite{iso3166-2015}. Componentes subseqüentes do nome do pacote, varia de acordo com a organização da convenções de nomenclatura. & 
+		Pacotes & O prefixo do nome do pacote deve ser único, deve sempre ser escrito em letras minúsculas em ASCII e deve ser um dos nomes de domínio de nível superior, tal como 			especificado na norma \citep{iso3166-2015}. Componentes subseqüentes do nome do pacote, varia de acordo com a organização da convenções de nomenclatura. & 
 		com.sun.eng com.apple.quicktime.v2 edu.cmu.cs.bovik.cheese \\
 	\rowcolor[gray]{0.8}
 		Classes & Os nomes de classe devem ser substantivos, em maiúsculas e minúsculas, com a primeira letra de cada palavra em maiúscula. & class Raster; class ImageSprite; \\
@@ -267,6 +271,7 @@ A Tabela \ref{tabtpidentJava} exemplifica alguns tipos de identificadores, utili
 		palavras separadas por sublinhados ("\_"). & static final int MIN\_WIDTH = 4; static final int MAX\_WIDTH = 999; \\ 
        \bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
 \subsubsection{Indentação}
@@ -292,26 +297,27 @@ Uma linha em branco deve ser sempre utilizada:
 \item entre seções lógicas dentro de um método, para melhorar a legibilidade.
 \end{enumerate}
 
-As linguagens Java e C possuem outros tipos estruturas comuns entre si, as quais podem ser consultadas no guia de estilo das linguagem citadas\footnote{http://www.gnu.org/prep/standards/}\footnote{http://www.oracle.com/technetwork/java/codeconvtoc-136057.html}.
+As linguagens Java e C possuem outros tipos estruturas comuns entre si, as quais podem ser consultadas no guia de estilo das linguagem citadas\footnote{\url{http://www.gnu.org/prep/standards/}}\footnote{\url{http://www.oracle.com/technetwork/java/codeconvtoc-136057.html}}.
 
 \subsection{Python}
 
-De acordo com \cite{histpython1990}, a linguagem Python foi criada no início de 1990 por Guido van Rossum no instituto de pesquisa \textit{Stichting Mathematisch Centrum} -- CWI\footnote{http://www.cwi.nl}, localizado na Holanda. Esta linguagem é considerada uma sucessora da linguagem ABC.
+De acordo com \cite{histpython1990}, a linguagem Python foi criada no início de 1990 por Guido van Rossum no instituto de pesquisa \textit{Stichting Mathematisch Centrum} -- CWI\footnote{\url{http://www.cwi.nl}}, localizado na Holanda. Esta linguagem é considerada uma sucessora da linguagem ABC.
 
 Segundo \cite{guido2011}, Python é uma  linguagem de programação fácil de aprender, poderosa, e que possui eficientes estruturas de dados de alto nível e suporte à programação orientada a objetos. Sua sintaxe é elegante e possui tipagem dinâmica a qual, juntamente com a sua natureza interpretada, torna a linguagem ideal para o desenvolvimento de scripts e eficaz para desenvolvimento de aplicações em diversas áreas, em múltiplas plataformas.
 
-As ferramentas e a documentação da linguagem Python são softwares de código aberto com uma licença compatível com a \textit{General Public License} (GPL), porém menos restritiva, permitindo que o Python seja inclusive incorporado em produtos proprietários. A especificação da linguagem é mantida pela \textit{Python Software Foundation} (PSF). Além de ser utilizada como linguagem principal no desenvolvimento de sistemas, o Python também é muito utilizado como linguagem script em vários softwares, permitindo automatizar tarefas e adicionar novas funcionalidades em softwares desenvolvidos primariamente em outras linguagens \cite{guido2011}.
+As ferramentas e a documentação da linguagem Python são softwares de código aberto com uma licença compatível com a \textit{General Public License} (GPL), porém menos restritiva, permitindo que o Python seja inclusive incorporado em produtos proprietários. A especificação da linguagem é mantida pela \textit{Python Software Foundation} (PSF). Além de ser utilizada como linguagem principal no desenvolvimento de sistemas, o Python também é muito utilizado como linguagem script em vários softwares, permitindo automatizar tarefas e adicionar novas funcionalidades em softwares desenvolvidos primariamente em outras linguagens \citep{guido2011}.
 
-A implementação oficial do Python é mantida pela PSF e escrita em C e, por isso, é também conhecida como CPython\footnote{http://www.python.org/download/}. Para a plataforma Windows, basta executar o instalador. Para outras plataformas, como em distribuições Linux, geralmente o Python já faz parte da distribuição; porém em alguns casos pode ser necessário compilar e instalar o interpretador a partir dos arquivos fonte.
+A implementação oficial do Python é mantida pela PSF e escrita em C e, por isso, é também conhecida como CPython\footnote{\url{http://www.python.org/download/}}. Para a plataforma Windows, basta executar o instalador. Para outras plataformas, como em distribuições Linux, geralmente o Python já faz parte da distribuição; porém em alguns casos pode ser necessário compilar e instalar o interpretador a partir dos arquivos fonte.
 
-Existem também implementações de Python para .NET (IronPython)\footnote{http://ironpython.net/}, JVM (Jython)\footnote{http://www.jython.org/} e em Python (PyPy)\footnote{http://pypy.org/} \cite{guido2011}.
+Existem também implementações de Python para .NET (IronPython)\footnote{\url{http://ironpython.net/}}, JVM (Jython)\footnote{\url{http://www.jython.org/}} e em Python (PyPy)\footnote{\url{http://pypy.org/}} \citep{guido2011}.
 
-Todas as versões da linguagem Python são \textit{open source}\footnote{http://opensource.org}. A maioria das versões de Python são compatíveis com a licença GPL; a Tabela \ref{versoesPython} resume as principais características de cada versão.
+Todas as versões da linguagem Python são \textit{open source}\footnote{\url{http://opensource.org}}. A maioria das versões de Python são compatíveis com a licença GPL; a Tabela \ref{versoesPython} resume as principais características de cada versão.
 
-\begin{table}[ht]
-        \caption{Versões Python (\cite{histpython1990}, com adaptações).}
+\begin{table}[!ht]
+        \caption{Versões Python (\citep{histpython1990}, com adaptações).}
         \label{versoesPython}
         \centering
+        \begin{footnotesize}
         \begin{tabularx}{0.99\textwidth}{lXXXX}
         \toprule
                 \textbf{Versão} & \textbf{Evolução de} & \textbf{Ano} & \textbf{Proprietário} & \textbf{Compatibilidade GPL} \\
@@ -334,6 +340,7 @@ Todas as versões da linguagem Python são \textit{open source}\footnote{http://op
 		2.2 e acima & 2.1.3 & 2001- atualmente & PSF & sim \\
 	\bottomrule
         \end{tabularx}
+        \end{footnotesize}
 
 \end{table}
 
@@ -341,10 +348,11 @@ Todas as versões da linguagem Python são \textit{open source}\footnote{http://op
 
 Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio guia de estilo, que por sua vez possui um conjunto de convenções, por vezes arbitrário, sobre como escrever código para o projeto. A título de exemplo, a Tabela \ref{guiagoogle} contém os endereços de diretrizes de estilo utilizado em projetos da Google.
 
-\begin{table}[ht]
+\begin{table}[!ht]
         \caption{Guias de estilo google.}
         \label{guiagoogle}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.99\textwidth}{lX}
         \toprule
                 \textbf{Guia de Estilo} & \textbf{Endereço eletrônico} \\
@@ -366,19 +374,20 @@ Segundo \cite{googlestyle}, todo grande projeto de código aberto tem seu próprio
 		Vimscript Style Guide & http://google-styleguide.googlecode.com/svn/trunk/vimscriptguide.xml \\ 
 	\bottomrule
         \end{tabularx}        
+	\end{footnotesize}
 \end{table}
 
 
 \section{PEP8}
 \label{pep8}
 
-De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 \textit{Python Enhancement Proposal 8} propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{https://www.python.org/dev/peps/pep-0007} \cite{pep8-2001}.
+De autoria de Guido van Rossum,  Barry Warsaw, Nick Coghlan (sendo Guido o autor da própria linguagem Python), o PEP8 \textit{Python Enhancement Proposal 8} propõe um estilo de codificação para a linguagem Python, com regras e orientações que destinam-se a melhorar a legibilidade do código e torná-lo coerente em todo o amplo espectro de códigos-fontes escritos nesta linguagem. Este guia de estilo foi criado em 2001 a partir da versão 2.0.1 do Python (ver Tabela \ref{tabtpidentJava}), sendo uma evolução da convenção denominada PEP257\footnote{\url{https://www.python.org/dev/peps/pep-0007}} \citep{pep8-2001}.
 
 Assim como os estilos de codificação C e Java, o guia de estilo para Python também possui suas características e particularidades, como formatação, comentários, convenção de nomenclaturas, dentre outras.
 
 \subsection{Codificação de caracteres}
 
-Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII -- \textit{American Standard Code for Information Interchange} -- ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 -- \textit{8-bit Unicode Transformation Format} \footnote{http://www.python.org/dev/peps/pep-3120}.
+Códigos-fontes escritos em Python deve sempre utilizar codificação ASCII -- \textit{American Standard Code for Information Interchange} -- ou ISO-8859-1, que é uma codificação de caracteres do alfabeto latino. Para as versões Python 2.7 admite UTF-8,para facilitar a transição para versões superiores, já para o Python 3.0 ou superiores é preferível a utilização da codificação UTF-8 -- \textit{8-bit Unicode Transformation Format} \footnote{\url{http://www.python.org/dev/peps/pep-3120}}.
 
 \subsection{Formatação}
 
@@ -417,7 +426,7 @@ O Código \ref{comentonelinepy}, exemplifica um comentário de uma linha.
 
 \subsection{DocStrings}
 
-O manual \cite{pep257-2001} descreve como escrever um comentário em formato docstring, o qual consiste em uma cadeia de caracteres que ocorre como a primeira declaração em um módulo, função, classe ou definição de método. 
+\cite{pep257-2001} descrevem como escrever um comentário em formato docstring, o qual consiste em uma cadeia de caracteres que ocorre como a primeira declaração em um módulo, função, classe ou definição de método. 
 
 O Código \ref{docstringpy} exemplifica um comentário em formato docstrings.
 
@@ -455,7 +464,7 @@ Outra recomendação relativa ao uso de espaços em branco é sempre colocar espaços
 \subsection {Convenção de nomes}
 
 Segundo \cite{pep8-2001} as convenções de nome da biblioteca padrão da linguagem Python são confusas,
- e inconsistentes. No entanto, são recomendadas as seguintes convenções para a construção de nomes e identificadores, numeradas por ordem de prioridade:
+ e inconsistentes. No entanto, são recomendadas as seguintes convenções para a construção de nomes e identificadores:
 
 \begin{enumerate}
 \item uma letra minúscula
@@ -475,22 +484,24 @@ Uma vez que nomes de módulos são mapeados para nomes de arquivos, e alguns siste
 
 Em relação aos métodos e classes, utilize sempre o identificador \lq\lq\texttt{self}\rq\rq\ como primeiro argumento de métodos de instância e usar \lq\lq\texttt{cls}\rq\rq\ como primeiro argumento para métodos de classe. 
 
-O guia de estilos proposto para a linguagem Python no item citado na Seção \ref{pep8} é extenso, e pode ser consultado em \cite{pep8-2001} e no Anexo \ref{anexoB}.
+O guia de estilos proposto para a linguagem Python no item citado na Seção \ref{pep8} é extenso, e pode ser consultado em \citep{pep8-2001} e no Anexo \ref{anexoB}.
 
 \section {IDE -- \textit{Integrated Development Environments}}
 
 Segundo \cite{learningjava2013},  uma maneira intuitiva e fácil de adotar um estilo de codificação é utilizar uma ferramenta de formatação de código que faça parte ou funcione conjuntamente a um IDE. 
 
-IDEs \textit{Integrated Development Environment} são pacotes de software que integram várias ferramentas de desenvolvimento em um ambiente consistente, com o objetivo de aumentar a produtividade do desenvolvedor. Geralmente, IDEs incluem recursos como \textit{syntax highlight} (código fonte colorizado conforme a sintaxe da linguagem), navegadores de código, shell integrado e code completion (o editor apresenta, durante a digitação, formas possíveis de completar o texto que ele consegue identificar) \cite{guido2011}.
+IDEs \textit{Integrated Development Environment} são pacotes de software que integram várias ferramentas de desenvolvimento em um ambiente consistente, com o objetivo de aumentar a produtividade do desenvolvedor. Geralmente, IDEs incluem recursos como \textit{syntax highlight} (código fonte colorizado conforme a sintaxe da linguagem), navegadores de código, shell integrado e code completion (o editor apresenta, durante a digitação, formas possíveis de completar o texto que ele consegue identificar) \citep{guido2011}.
 
 Entre as IDEs que suportam Python, encontram-se: 
 
 \begin{itemize}
-\item PyScripter5\footnote{https://code.google.com/p/pyscripter/wiki/FAQ};
-\item SPE6 (Stani's Python Editor)\footnote{http://sourceforge.net/p/spe/wiki/Home/};
-\item Eric7\footnote{http://eric-ide.python-projects.org/};
+\item Idle\footnote{\url{https://docs.python.org/2/library/idle.html}}
+\item PyCharm\footnote{\url{https://www.jetbrains.com/pycharm/}}
+\item PyScripter5\footnote{\url{https://code.google.com/p/pyscripter/wiki/FAQ}};
+\item SPE6 (Stani's Python Editor)\footnote{\url{http://sourceforge.net/p/spe/wiki/Home/}};
+\item Eric7\footnote{\url{http://eric-ide.python-projects.org/}};
 \item PyDev8 (plug-in para a IDE Eclipse). 
 \end{itemize}
 
-O IDE Eclipse é mantido por uma comunidade cujos projetos estão focados na construção de uma plataforma de desenvolvimento aberta composta por frameworks extensíveis e ferramenta para a construção, implementação e gerenciamento de software em todo o ciclo de vida. 
-\cite{eclipse2015}
+O IDE Eclipse é mantido por uma comunidade cujos projetos estão focados na construção de uma plataforma de desenvolvimento aberta composta por frameworks extensíveis e ferramenta para a construção, implementação e gerenciamento de software em todo o ciclo de vida
+\citep{eclipse2015}.

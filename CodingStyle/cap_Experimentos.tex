@@ -5,48 +5,49 @@ Neste capítlulo são descritas as metodologias e ferramentas utilizadas para o de
 
 \section{Ferramentas}
 
-Nesta seção são descritas as versões, releases e ferramentas utilizadas no desenvolvimento deste estudo, tais como os sistemas operacionais Windows 8 e Linux Mint 17, o IDE Eclipse, o plugin PyDev e editor de texto Vim.
+Nesta seção são descritas as versões, releases e ferramentas utilizadas no desenvolvimento deste estudo, tais como os sistemas operacionais Windows 8 e Linux Mint 17, o IDE Eclipse, o plugin PyDev, Flake 8, Autopep8 e editor de texto Vim.
 
 \subsection{Sistema Operacional Windows}
 
-Windows 8 é o mais novo membro da família Windows, projetado para ser utilizado em  dispositivos móveis ou computadores pessoais, com uma interface totalmente nova e adaptada para dispositivos sensíveis ao toque \cite{intowindows8-2012}. Neste trabalho foi utilizado o Windows 8.1, versão 6.3.9600, 64 bits, ilustrado na Figura \ref{win8}.
+Windows 8 é o mais novo membro da família Windows, projetado para ser utilizado em  dispositivos móveis ou computadores pessoais, com uma interface totalmente nova e adaptada para dispositivos sensíveis ao toque \citep{intowindows8-2012}. Neste trabalho foi utilizado o Windows 8.1, versão 6.3.9600, 64 bits, ilustrado na Figura \ref{win8}.
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.3]{figs/win8.png}
+\includegraphics[scale=0.32]{figs/win8.png}
 \caption{Windows 8 \label{win8}}
 \end{figure}
 
 \subsection{Sistema Operacional Linux}
 \label{linux_mint}
-O Linux Mint é  uma distribuição livre de custos e de código aberto, voltado para a comunidade. Baseado em Debian e Ubuntu, é a mais popular distribuição Linux e o terceiro sistema operacional mais utilizado em computadores pessoais, atrás somente de Microsoft Windows e Mac OSX da Apple \cite{linuxmint_2015}. A versão utilizada  neste trabalho foi Linux Mint 17, 64 bits,  ilustrado na Figura \ref{mint}.
+O Linux Mint é  uma distribuição livre de custos e de código aberto, projetado para ser confortável e fácil de usar, mas também poderoso e configurável sendo voltado para a comunidade de software livre. Baseado em Debian e Ubuntu, é a mais popular distribuição Linux e o terceiro sistema operacional mais utilizado em computadores pessoais, atrás somente de Microsoft Windows e Mac OSX da Apple \citep{linuxmint_2015}. A versão utilizada  neste trabalho foi Linux Mint 17, 64 bits,  ilustrado na Figura \ref{mint}.
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.35]{figs/mint.png}
+\includegraphics[scale=0.38]{figs/mint.png}
 \caption{Linux Mint 17 \label{mint}}
 \end{figure}
 
 \subsection{IDE's -- Eclipse}
 
 O Eclipse é o IDE utilizado neste projeto, por ser de fácil aprendizagem e possuir um núcleo extremamente adaptável às necessidades do projeto. A versão utilizada  neste trabalho é 
-Eclipse Luna Release (4.4.0), build id: 20140612-0600\footnote{http://bit.ly/1EPcAGg}\footnote{http://bit.ly/1KY7Zqh}.
+Eclipse Luna Release (4.4.0), build id: 20140612-0600\footnote{\url{http://bit.ly/1EPcAGg}}\footnote{\url{http://bit.ly/1KY7Zqh}}.
 
 A tela principal do Eclipse pode ser vista na Figura  \ref{eclipse}.
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=140mm]{figs/eclipse.png}
+\includegraphics[scale=0.38]{figs/eclipse.png}
 \caption{IDE Eclipse \label{eclipse}}
 \end{figure}
 
+
 \subsection{IDE's -- PyDev}
 
-PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython \cite{pydev_2015}. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0\footnote{http://pydev.org/updates}.
+PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Python, Jython e IronPython \citep{pydev_2015}. A Figura \ref{pydev} ilustra o IDE Eclipse com o plugin PyDev. A versão utilizada é 3.9.0\footnote{\url{http://pydev.org/updates}}.
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=140mm]{figs/pydev.png}
+\includegraphics[scale=0.38]{figs/pydev.png}
 \caption{IDE Eclipse com plugin PyDev \label{pydev}}
 \end{figure}
 
@@ -54,11 +55,11 @@ PyDev é um plugin do IDE Eclipse, que pode ser usado  para desenvolvimento em Py
 
 Segundo \cite{learning-vim-2008}, a sigla VIM significa \lq\lq vi melhorado\rq\rq. O VIM é um editor de texto que foi escrito e é mantido por Bram Moolenaar. Atualmente, Vim é talvez o clone do vi mais amplamente utilizados, e existe um domínio da Internet\footnote{http://vim.org} dedicado a ele. A versão atual é  a 7.1. Irrestrito por normas ou comitês, o Vim continua a crescer em termos de funcionalidade. Uma comunidade inteira cresceu em torno dele. Coletivamente,  os membros da comunidade decidem os novos recursos a serem adicionados e as funcionalidades existentes a serem modificadas através da nomeação e votação para sugestões durante os ciclos de desenvolvimento.
 
-Vim é um editor modal no sentido de que as teclas do teclado têm diferentes funções em cada modo de operação; possui suporte a expressões regulares em buscas, com várias extensões à sintaxe padrão de expressões regulares, mapeamento de qualquer tecla do teclado e corretor ortográfico a partir da versão 7.0; funciona tanto no console/terminal quanto em ambiente gráfico (que neste caso utiliza o aplicativo gVim); é absolutamente programável, via interfaces com interpretadores (Perl, Python, Ruby) ou via seu próprio interpretador; contém vários temas de cores e tem licença GPL \cite{vim_2015}.
+Vim é um editor modal no sentido de que as teclas do teclado têm diferentes funções em cada modo de operação; possui suporte a expressões regulares em buscas, com várias extensões à sintaxe padrão de expressões regulares, mapeamento de qualquer tecla do teclado e corretor ortográfico a partir da versão 7.0; funciona tanto no console/terminal quanto em ambiente gráfico (que neste caso utiliza o aplicativo gVim); é absolutamente programável, via interfaces com interpretadores (Perl, Python, Ruby) ou via seu próprio interpretador; contém vários temas de cores e tem licença GPL \citep{vim_2015}.
 
 A tela do editor modo texto Vim pode ser vista na Figura \ref{vim}
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=140mm]{figs/vim.png}
 \caption{Editor Vim em modo texto \label{vim}}
@@ -68,14 +69,15 @@ A versão utilizada neste trabalho é a 7.4 que pode ser obtida através do reposit
 
 \subsection{PEP8 \textit{Tools}}
 
-É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 (Anexo \ref{anexoB}). Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. \cite{peptools_2015}
+É uma ferramenta de verificação de código-fonte em linguagem Python que valida as convenções propostas pelo estilo PEP8 (Anexo \ref{anexoB}). Tem como característica  principal a arquitetura de plugins, que podem ser incorporados  à ferramentas como interpretadores de comando e IDEs. \citep{peptools_2015}
 
 Sua instalação, atualização e desinstalação podem ser realizadas através dos comandos descritos na Tabela \ref{instpep8}.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Instalação e desinstalação pep8.}
         \label{instpep8}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
                 \$ pip install pep8 \\
@@ -83,15 +85,16 @@ Sua instalação, atualização e desinstalação podem ser realizadas através dos com
                 \$ pip uninstall pep8 \\
         \bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
 A ajuda rápida está disponível através da linha de comando \lq\lq\texttt{pep8 -h}\rq\rq, que tem como resposta as opções listadas na Tabela \ref{helpPep8}.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Pep8 Ajuda.}
         \label{helpPep8}
         \centering
-        \begin{small}
+        \begin{footnotesize}
         \begin{tabularx}{0.99\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Opções} & \textbf{Descrição} \\
@@ -125,15 +128,16 @@ A ajuda rápida está disponível através da linha de comando \lq\lq\texttt{pep8 -h
 		--benchmark & Mede a velocidade de processamento. \\
 	\bottomrule
         \end{tabularx}
-        \end{small}
+        \end{footnotesize}
 \end{table}
 
 A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros da Tabela \ref{helpPep8}.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Estatísticas referentes à execução do pep8.}
         \label{statistpep8}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
         \textbf{\$ pep8 --statistics -qq Python-2.5/Lib} \\
@@ -148,6 +152,7 @@ A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros 
 	3615\hspace{3mm} E501 linha muito longa (82 characters) \\
 	\bottomrule
 	\end{tabularx}
+	\end{footnotesize}
 \end{table}
 
 O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é \lq\lq\texttt{/etc/config/arquivo}\rq\rq, quando o sistema operacional é Linux; caso seja Windows, o caminho é \lq\lq\texttt{\%userprofile\%/pep8}\rq\rq.
@@ -161,27 +166,30 @@ O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a
 \subsection{Flake 8}
 \label{flake_8}
 
-É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python \cite{flake-8_2015}. A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
+É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python \citep{flake-8_2015}. A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
  
 A sua instalação pode ser realizada através da linha de comando exemplificado na Tabela \ref{instflak8}
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Instalação Flake8.}
         \label{instflak8}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
          \$ pip install flake8 \\
 	\bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
 Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um determinado projeto, e com seus respectivos resultados, na qual apresenta a estrutura de uma letra do alfabeto, seguida  de um número e uma mensagem descrevendo a violação ao estilo descrito na seção \ref{pep8} detectada.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Sintaxe de uso do Flake8.}
         \label{sintxflak8}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
         \midrule
 		\textbf{\$ flake8 coolproject} \\
@@ -191,22 +199,143 @@ Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um 
 		coolproject/mod.py:1028:1: F841 local variable 'errors' is assigned to but never use \\
         \bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
+
+\subsection{Autopep8}
+\label{autopep8}
+
+Uma ferramenta que formata automaticamente o código Python em conformidade com o guia de estilo PEP 8. O utilitário pep8 é utilizado para determinar quais partes do código precisa ser formatado. A ferramenta é capaz de corrigir a maioria dos problemas de formatação que podem ser relatados por pep8.
+
+A sua instalação se da de acordo com a sintaxe descrita na Tabela \ref{sintxautopep8}
+
+\begin{table}[!ht]
+        \caption{Sintaxe de instalação da ferramenta Autopep8.}
+        \label{sintxautopep8}
+        \centering
+        \begin{footnotesize}
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
+        \midrule
+        	\textbf{\$} pip install --upgrade autopep8 \\
+	\bottomrule
+        \end{tabularx}
+        \end{footnotesize}
+\end{table}
+
+A utilização desta ferramenta é exemplificada na Tabela \ref{exautopep8}
+
+\begin{table}[!ht]
+        \caption{Sintaxe de utilização da ferramenta Autopep8.}
+        \label{exautopep8}
+        \centering
+        \begin{footnotesize}
+        \begin{tabularx}{0.9\textwidth}{>{\ttfamily}X}
+        \midrule
+                \textbf{\$} autopep8 --in-place --aggressive --aggressive <filename> \\
+        \bottomrule
+        \end{tabularx}
+        \end{footnotesize}
+\end{table}
+
+Na Tabela \ref{fixautoPep8}, é exibido os códigos de erros que esta ferramenta é capaz de corrigir, seguindo o estilo descrito na seção \ref{pep8}. Para mais informações sobre a 
+ferramenta segue o endereço eletrônico \footnote{\url{https://pypi.python.org/pypi/autopep8/}}
+\newpage
+
+\begin{table}[!ht]
+        \caption{Códigos de erros que são corrigidos com a ferramenta autopep8.}
+        \label{fixautoPep8}
+        \centering
+        \begin{footnotesize}
+        \begin{tabularx}{0.89\textwidth}{>{\ttfamily}lX}
+        \toprule
+                \textbf{Cód.} & \textbf{Descrição} \\
+        \midrule
+		E101 & Corrige a indentação de todas as linhas. \\
+	\rowcolor[gray]{0.8}
+		E121 & Corrige indentação que são múltiplos de quatro. \\
+		E122 & Adiciona indentação ausente. \\
+	\rowcolor[gray]{0.8}
+		E123 & Alinha chaves abertas que coincidem com as chaves fechadas. \\
+		E124 & Alinha chaves abertas que coincidem visualmente indentadas. \\
+	\rowcolor[gray]{0.8}
+		E125 & Corrige a indentação para distinguir linha a partir da próxima linha lógica. \\
+		E126 & Corrige indentação pendente. \\
+	\rowcolor[gray]{0.8}
+		E127 & Corrige não indentado visualmente. \\
+		E128 & Corrige não indentado visualmente. \\
+	\rowcolor[gray]{0.8}
+		E20  & Remover espaços em branco estranhos. \\
+		E211 & Remover espaços em branco estranhos. \\
+	\rowcolor[gray]{0.8}
+		E22  & Corrige espaços em branco estranhos ao redor de palavras chaves. \\
+		E224 & Remove extraneous whitespace around operator. \\
+	\rowcolor[gray]{0.8}
+		E226 & Corrige a falta de espaço em branco ao redor de operadores matemáticos. \\
+		E227 & Corrige a falta de espaço em branco ao redor de operadores \textit{bitwise/shift}. \\
+	\rowcolor[gray]{0.8}
+		E228 & Corrige a falta de espaço em branco ao redor do operador módulo. \\
+		E231 & Adiciona espaços em branco. \\
+	\rowcolor[gray]{0.8}
+		E241 & Corrige espaços em branco estranho ao redor de palavras chaves. \\
+		E242 & Remove espaços em branco estranhos ao redor de operadores. \\
+	\rowcolor[gray]{0.8}
+		E251 & Remove espaços em branco ao redor de parâmetro \lq=\rq. \\
+		E26  & Corrige espaçamento após comentários com uma única linha. \\
+	\rowcolor[gray]{0.8}
+		E265 & Corrige espaçamento após bloco de comentário. \\
+		E27  & Corrige espaços em branco estranho ao redor de palavras chaves. \\
+	\rowcolor[gray]{0.8}
+		E301 & Adicionar linha em branco que está em falta. \\
+		E302 & Adicionar 2 linhas em branco que está em falta. \\
+	\rowcolor[gray]{0.8}
+		E303 & Remove linhas em branco extra. \\
+		E304 & Remove linhas em branco seguida de funcões. \\
+	\rowcolor[gray]{0.8}
+		E309 & Adiciona linha em branco após declaração de classe. \\
+		E401 & Coloca as importações em linhas separadas. \\
+	\rowcolor[gray]{0.8}
+		E501 & Tenta fazer com que a quantidade de caracteres seja igual ao tamanho máximo permitido. \\
+		E502 & Remove \textit{escape} para nova linha. \\
+	\rowcolor[gray]{0.8}
+		E701 & Coloque instrução composta separada por dois pontos em linhas separadas. \\
+		E70  & Coloque instrução composta separados por ponto e vírgula em linhas separadas. \\
+	\rowcolor[gray]{0.8}
+		E711 & Corrigir comparação com Nenhum. \\
+		E712 & Corrigir comparação com verdadeiro e falso. \\
+	\rowcolor[gray]{0.8}
+		E721 & Usa \textit{"isinstance()"} em vez de comparar diretamente os tipos. \\
+		W291 & Remove espaço em branco a direita. \\
+	\rowcolor[gray]{0.8}
+		W293 & Remove espaço em branco a direita em linha em branco. \\
+		W391 & Remove linha em branco a direita. \\
+	\rowcolor[gray]{0.8}
+		W601 & Usa \textit{\lq\lq in\rq\rq} em vez de \textit{\lq\lq hasi\_key()\rq\rq}. \\
+		W602 & Corrigir forma obsoleta de elevar exceção. \\
+	\rowcolor[gray]{0.8}
+		W603 & Usa \lq\lq !=\rq\rq em vez de  \lq\lq <>\rq\rq \\
+		W604 & Usa \lq\lq repr()\rq\rq em vez de \textit{backticks}. \\
+	\rowcolor[gray]{0.8}
+		W690 & Corrigir vários código obsoleto (via lib2to3). \\
+        \bottomrule
+        \end{tabularx}
+        \end{footnotesize}
+\end{table}
+
 
 \section{Linguagens de Programação}
 
 \subsection{Java}
 
-A linguagem de programação Java foi utilizada para criar o algorítimo que captura arquivos compactados e o armazenamento localmente para a realização da validação deste trabalho.
-A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 \textit{Java SE Development Kit} release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{http://bit.ly/1mTJaPC}.
+A linguagem de programação Java foi utilizada para criar o algorítimo que captura arquivos compactados e os armazena localmente para a realização da validação deste trabalho.
+A versão utilizada para o desenvolvimento dos procedimentos escritos em java é JDK 7 \textit{Java SE Development Kit} release 1.7.0\_75, e pode ser obtido no endereço eletrônico \footnote{\url{http://bit.ly/1mTJaPC}}.
 
 \subsection{Python}
 
-A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o sítio oficial da linguagem, na aba de downloads\footnote{https://www.python.org/downloads/}.
+A versão utilizada neste trabalho é a 2.7.9, release 10-12-2014, esta versão faz parte da instalação padrão do sistema operacional citado na seção \ref{linux_mint}, caso deseje executar uma instalação de outra versão superior a utilizada neste estudo, é necessário acessar o sítio oficial da linguagem, na aba de downloads\footnote{\url{https://www.python.org/downloads/}}.
 
 \section{Extrator de métricas}
 
-Neste capítulo detalharemos os procedimentos efetuados para verificar se os projetos contidos  no repositório de software livre PyPI \cite{pypi_2015} escritos em  Python estão aderentes ao padrão descrito na seção \ref{pep8}, e qual o nível de adoção de cada projeto.
+Neste capítulo detalharemos os procedimentos efetuados para verificar se os projetos contidos  no repositório de software livre PyPI \citep{pypi_2015} escritos em  Python estão aderentes ao padrão descrito na seção \ref{pep8}, e qual o nível de adoção de cada projeto.
 
 \subsection{Rotinas e Scripts}
 
@@ -214,7 +343,7 @@ O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo 
 
 \subsection{Rotinas Java}
 
-A primeira etapa consiste na leitura de uma página web do endereço eletrônico\footnote{https://pypi.python.org/pypi?:action=index} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
+A primeira etapa consiste na leitura de uma página web do endereço eletrônico\footnote{\url{https://pypi.python.org/pypi?:action=index}} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
 
 O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura dos endereços eletrônicos dos arquivos compactados a serem salvos localmente. 
 
@@ -222,10 +351,11 @@ O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura 
 
 O resultado do procedimento acima, gerou um arquivo texto denominado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Links obtidos pelo Código \ref{obtLinksPac} .}
         \label{linksobt}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
                 https://pypi.python.org/pypi/02exercicio/1.0.0\\
@@ -242,6 +372,7 @@ O resultado do procedimento acima, gerou um arquivo texto denominado \texttt{wri
 		...... \\
 	\bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
 Na segunda etapa foi escrito outro procedimento, também em linguagem Java, o qual recebe como parâmetro os endereços obtido na etapa anterior e a partir de cada endereço é executada uma análise baseada em padrões da construção da página para encontrar o endereço eletrônico que endereçava para o arquivo compactado. Assim que a rotina encontrava o endereço eletrônico que foi informado como parâmetro, dava-se início a transferência e o armazenamento do arquivo em um diretório local.
@@ -254,17 +385,17 @@ O Código \ref{downFile2} apresenta o método utilizado para realizar a transferên
 
 \lstinputlisting[language=Java, caption=Obter arquivos compactados., label=downFile2]{cods/UrlContent2.java}
 
-As etapas anteriores foram adotadas a linguagem de programação Java \cite{java_2015} por se tratar de uma linguagem que possui maior desempenho e menor consumo de processamento segundo o comparativo descrito em \cite{BencJavaPython}, neste endereço é exibido um comparativo entre as linguagens Java e Python.
+As etapas anteriores foram adotadas a linguagem de programação Java \cite{java_2015} pelo fato de que no início deste trabalho ainda não possuia conhecimento adequado para criar os algoritmos necessários para a obteção dos links e arquivos do repositório do PyPI.
 
-Para a criação e execução dos procedimentos acima mencionados foram encontrados alguns obstáculos a serem superados. A primeira dificuldade foi a de compreender a estrutura do site na qual está localizado o repositório com os arquivos compactados para o download, pois o domínio \cite{pypi_2015} além de conter vários endereços (o que torna a página pesada e extensa de se carregar e navegar), os mesmos não direcionavam ao arquivo desejado e sim a uma nova página que continha uma outra página com uma determinada estrutura que também necessitava de análise para criar rotinas para a localização do arquivo para que pudesse ser salvo no disco rígido.
+Para a criação e execução dos procedimentos acima mencionados foram encontrados alguns obstáculos a serem superados. A primeira dificuldade foi a de compreender a estrutura do site na qual está localizado o repositório com os arquivos compactados para o download, pois o domínio \citep{pypi_2015} além de conter vários endereços (o que torna a página pesada e extensa de se carregar e navegar), os mesmos não direcionavam ao arquivo desejado e sim a uma nova página que continha uma outra página com uma determinada estrutura que também necessitava de análise para criar rotinas para a localização do arquivo para que pudesse ser salvo no disco rígido.
  
-A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \cite{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração média de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A Tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
+A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \citep{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração total de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A Tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Exceções na transferência de arquivos.}
         \label{exctransarq}
         \centering
-	\begin{small}
+	\begin{footnotesize}
         \begin{tabularx}{0.99\textwidth}{>{\ttfamily}X}
         \midrule
         	00:12:25,713 ERROR UrlContent:237 - http://aha-gae.googlecode.com/files \\
@@ -288,7 +419,7 @@ A outra dificuldade foi o tempo necessário para a execução e conclusão do proces
 		19:19:06,759 ERROR UrlContent:237 - Connection timed out: connect \\
 	\bottomrule
         \end{tabularx}
-	\end{small}
+	\end{footnotesize}
 \end{table}
 
 \subsection{Scripts Python}
@@ -296,7 +427,7 @@ A outra dificuldade foi o tempo necessário para a execução e conclusão do proces
 
 Para o desenvolvimento do script responsável pela análise e coleta das métricas proposta na seção \ref{pep8}, utilizamos a linguagem Python e o sistema operacional Linux, também é aplicada a técnica de desenvolvimento chamada programação em par.
  
-A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador piloto implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca \cite[pg. 38-42]{pairprogram_2002}.
+A programação em par é uma das práticas primárias da metodologia XP. Como o nome sugere, é uma prática de programação que envolve dois programadores em um mesmo computador trabalhando de forma colaborativa. Um programador piloto implementa o código controlando o teclado e o mouse. Outro programador observa o piloto e é responsável por revisar o código ao mesmo tempo, prevenindo e identificando erros lógicos e sintáticos no código. Ambos os programadores podem atuar nos dois papéis e decidir a freqüência da troca \citep[pg. 38-42]{pairprogram_2002}.
  
 Tal prática foi adotada pelo fato de que o código produzido, é visto por pelo menos duas pessoas, diminuindo a possibilidade de erros, com isto possuí menor manutenibilidade, aumenta a velocidade de desenvolvimento e há o compartilhamento de conhecimento.
 
@@ -317,15 +448,16 @@ O script foi desenvolvido em duas partes contendo as seguintes funcionalidades:
 	\item Após a extração do arquivo, executar o flake8, ferramenta citada no item \ref{flake_8}, tendo como parâmetros as regras mais relevantes. 
 	Esta ferramenta analisa, linha a linha, cada arquivo dentro de cada projeto.
 	\item Ao término da análise o script move o arquivo compactado para um outro diretório (denominado \lq\lq arquivos-orig\rq\rq), onde contém sub diretórios refentes a sua extensão 
-	(por exemplo, \lq\lq \texttt{/arquivos-orig/zip}\rq\rq, \lq\lq \texttt{/arquivos-orig/tar.gz}\rq\rq, \lq\lq \texttt{/arquivos-orig/tgz} \rq\rq etc..).
+	(por exemplo os seguintes caminhos, \lq\lq \texttt{/arquivos-orig/zip}\rq\rq, \lq\lq \texttt{/arquivos-orig/tar.gz}\rq\rq, \lq\lq \texttt{/arquivos-orig/tgz} \rq\rq etc..).
 \end{itemize}
 
 Os procedimentos executados anteriormente deu origem a um arquivo texto denominado resultado-flake8.txt e tem sua estrutura exemplificada a Tabela \ref{exemScriptPep8} 
 
-\begin{table}[ht!]
+\begin{table}[!ht]
         \caption{Exemplo do resultado da execução do script com regras \ref{pep8}}
         \label{exemScriptPep8}
         \centering
+	\begin{footnotesize}
         \begin{tabularx}{0.95\textwidth}{>{\ttfamily}X}
         \midrule
 		ArangoPy-0.0.9.tar.gz \\ %[]
@@ -342,6 +474,7 @@ Os procedimentos executados anteriormente deu origem a um arquivo texto denomina
 		4 \hspace{10mm}      F821 undefined name 'QueryFilterStatement' \\ 
 	\bottomrule
         \end{tabularx}
+	\end{footnotesize}
 \end{table}
 
 Um terceiro script é criado utilizando a linguagem python, com a finalidade de quantificar os resultados obtidos, este script é exibido no Código \ref{scriptRules}.

@@ -5,6 +5,7 @@ Funcionalidade para extração de arquivos e execução
 das métricas do PEP8
 @author: augusto
 '''
+
 import fnmatch
 import glob
 import os
@@ -18,16 +19,16 @@ class Extract:
     def __init__(self, path):
         self.path = path
 
-    def getFiles(self, extension):
+    def get_files(self, extension):
         path = self.path + extension
         files = glob.glob(path)
         return files
 
-    def extractFiles(self, f, destdir):
+    def extract_files(self, f, destdir):
         try:
             tar = tarfile.open(f)
             tar.extractall(destdir)
-        tar.close()
+	    tar.close()
         except tarfile.ReadError:
             z = zipfile.ZipFile(f)
             z.extractall(destdir)
@@ -40,13 +41,14 @@ class Extract:
             for filename in fnmatch.filter(filenames, '*.py'):
                 matches.append(os.path.join(dirpath, filename))
 
-        self.cleanVariaveis(dirnames)
+        self.clean_variaveis(dirnames)
         return matches
 
-    def logProject(self, f, pys):
+    def log_project(self, f, pys):
         print '[{}]'.format(os.path.basename(f))
         print '{} modules'.format(len(pys))
         sys.stdout.flush()
 
-    def cleanVariaveis(self, var):
+    def clean_variaveis(self, var):
         self.var = None
+
