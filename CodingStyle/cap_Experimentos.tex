@@ -157,6 +157,8 @@ A Tabela \ref{statistpep8} contem um exemplo de utilização de um dos parâmetros 
 
 O comportamento  da ferramenta pode ser configurado a partir do caminho do arquivo que, dependendo da versão, pode ter o nome de tox.ini, setup.cfg ou ter a extensão .pep8.  O caminho deste arquivo é \lq\lq\texttt{/etc/config/arquivo}\rq\rq, quando o sistema operacional é Linux; caso seja Windows, o caminho é \lq\lq\texttt{\%userprofile\%/pep8}\rq\rq.
 
+\newpage
+
 O Código \ref{configPep8} contém um modelo de configuração encontrada ao abrir o arquivo de comportamento.
 
 \lstinputlisting[language=Bash, caption=Arquivo de configuração., label=configPep8]{cods/confPep8.sh}
@@ -166,8 +168,8 @@ O Anexo A exibe a lista atual de códigos de erros e de alertas,  que podem vir a
 \subsection{Flake 8}
 \label{flake_8}
 
-É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python \citep{flake-8_2015}. A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux,
- 
+É uma ferramenta que permite a verificação de erros de sintaxe, estilo de codificação e padrões em códigos escritos em linguagem Python \citep{flake-8_2015}. A versão utilizada é a 2.2.3 release 25-08-2014, versão baseada em Linux.
+
 A sua instalação pode ser realizada através da linha de comando exemplificado na Tabela \ref{instflak8}
 
 \begin{table}[!ht]
@@ -205,7 +207,7 @@ Na Tabela \ref{sintxflak8} é exemplificada a sintaxe de uso da ferramenta em um 
 \subsection{Autopep8}
 \label{autopep8}
 
-Uma ferramenta que formata automaticamente o código Python em conformidade com o guia de estilo PEP 8. O utilitário pep8 é utilizado para determinar quais partes do código precisa ser formatado. A ferramenta é capaz de corrigir a maioria dos problemas de formatação que podem ser relatados por pep8.
+Uma ferramenta que formata automaticamente o código Python em conformidade com o guia de estilo PEP 8. A ferramenta é capaz de corrigir a maioria dos problemas de formatação que podem ser relatados por pep8. 
 
 A sua instalação se da de acordo com a sintaxe descrita na Tabela \ref{sintxautopep8}
 
@@ -237,16 +239,15 @@ A utilização desta ferramenta é exemplificada na Tabela \ref{exautopep8}
         \end{footnotesize}
 \end{table}
 
-Na Tabela \ref{fixautoPep8}, é exibido os códigos de erros que esta ferramenta é capaz de corrigir, seguindo o estilo descrito na seção \ref{pep8}. Para mais informações sobre a 
+Na Tabela \ref{fixautoPep8}, são exibidos os códigos de erros que esta ferramenta é capaz de corrigir, seguindo o estilo descrito na seção \ref{pep8}. Para mais informações sobre a 
 ferramenta segue o endereço eletrônico \footnote{\url{https://pypi.python.org/pypi/autopep8/}}
-\newpage
 
 \begin{table}[!ht]
         \caption{Códigos de erros que são corrigidos com a ferramenta autopep8.}
         \label{fixautoPep8}
         \centering
         \begin{footnotesize}
-        \begin{tabularx}{0.89\textwidth}{>{\ttfamily}lX}
+        \begin{tabularx}{0.8\textwidth}{>{\ttfamily}lX}
         \toprule
                 \textbf{Cód.} & \textbf{Descrição} \\
         \midrule
@@ -264,10 +265,7 @@ ferramenta segue o endereço eletrônico \footnote{\url{https://pypi.python.org/py
 		E127 & Corrige não indentado visualmente. \\
 		E128 & Corrige não indentado visualmente. \\
 	\rowcolor[gray]{0.8}
-		E20  & Remover espaços em branco estranhos. \\
 		E211 & Remover espaços em branco estranhos. \\
-	\rowcolor[gray]{0.8}
-		E22  & Corrige espaços em branco estranhos ao redor de palavras chaves. \\
 		E224 & Remove extraneous whitespace around operator. \\
 	\rowcolor[gray]{0.8}
 		E226 & Corrige a falta de espaço em branco ao redor de operadores matemáticos. \\
@@ -283,22 +281,19 @@ ferramenta segue o endereço eletrônico \footnote{\url{https://pypi.python.org/py
 		E26  & Corrige espaçamento após comentários com uma única linha. \\
 	\rowcolor[gray]{0.8}
 		E265 & Corrige espaçamento após bloco de comentário. \\
-		E27  & Corrige espaços em branco estranho ao redor de palavras chaves. \\
-	\rowcolor[gray]{0.8}
 		E301 & Adicionar linha em branco que está em falta. \\
+	\rowcolor[gray]{0.8}
 		E302 & Adicionar 2 linhas em branco que está em falta. \\
-	\rowcolor[gray]{0.8}
 		E303 & Remove linhas em branco extra. \\
+	\rowcolor[gray]{0.8}
 		E304 & Remove linhas em branco seguida de funcões. \\
-	\rowcolor[gray]{0.8}
 		E309 & Adiciona linha em branco após declaração de classe. \\
+	\rowcolor[gray]{0.8}
 		E401 & Coloca as importações em linhas separadas. \\
-	\rowcolor[gray]{0.8}
 		E501 & Tenta fazer com que a quantidade de caracteres seja igual ao tamanho máximo permitido. \\
-		E502 & Remove \textit{escape} para nova linha. \\
 	\rowcolor[gray]{0.8}
+		E502 & Remove \textit{escape} para nova linha. \\
 		E701 & Coloque instrução composta separada por dois pontos em linhas separadas. \\
-		E70  & Coloque instrução composta separados por ponto e vírgula em linhas separadas. \\
 	\rowcolor[gray]{0.8}
 		E711 & Corrigir comparação com Nenhum. \\
 		E712 & Corrigir comparação com verdadeiro e falso. \\
@@ -321,7 +316,6 @@ ferramenta segue o endereço eletrônico \footnote{\url{https://pypi.python.org/py
         \end{footnotesize}
 \end{table}
 
-
 \section{Linguagens de Programação}
 
 \subsection{Java}
@@ -343,11 +337,13 @@ O desenvolvimento dos scripts se deu pela necessidade de automatizar o processo 
 
 \subsection{Rotinas Java}
 
-A primeira etapa consiste na leitura de uma página web do endereço eletrônico\footnote{\url{https://pypi.python.org/pypi?:action=index}} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java.
+A primeira etapa consiste na leitura de uma página web do endereço eletrônico\footnote{\url{https://pypi.python.org/pypi?:action=index}} para a obtenção dos endereçamentos dos arquivos compactados. Para a execução desta tarefa foi desenvolvido um procedimento escrito em Java. 
+
+\newpage
 
 O Código \ref{obtLinksPac} apresenta o método utilizado para realizar a captura dos endereços eletrônicos dos arquivos compactados a serem salvos localmente. 
 
-\lstinputlisting[language=Java, caption=Código para obter endereços dos pacotes., label=obtLinksPac]{cods/ObterLinkPacotes_new.java}
+\lstinputlisting[language=Java, caption=Código para obter endereços dos pacotes., label=obtLinksPac]{cods/ObterLinkPacotesNew.java}
 
 O resultado do procedimento acima, gerou um arquivo texto denominado \texttt{write.txt}, contendo 63.313.00 mil linhas. A Tabela \ref{linksobt}, exemplifica um trecho do arquivo de texto que foi criado.
 
@@ -381,6 +377,7 @@ O Código \ref{downFile}, apresenta a rotina de análise da estrutura das páginas 
 
 \lstinputlisting[language=Java, caption=Obter link dos arquivos compactados., label=downFile]{cods/UrlContent.java}
 
+\newpage
 O Código \ref{downFile2} apresenta o método utilizado para realizar a transferência e o armazenamento dos arquivos compactados. 
 
 \lstinputlisting[language=Java, caption=Obter arquivos compactados., label=downFile2]{cods/UrlContent2.java}
@@ -389,7 +386,9 @@ As etapas anteriores foram adotadas a linguagem de programação Java \cite{java_2
 
 Para a criação e execução dos procedimentos acima mencionados foram encontrados alguns obstáculos a serem superados. A primeira dificuldade foi a de compreender a estrutura do site na qual está localizado o repositório com os arquivos compactados para o download, pois o domínio \citep{pypi_2015} além de conter vários endereços (o que torna a página pesada e extensa de se carregar e navegar), os mesmos não direcionavam ao arquivo desejado e sim a uma nova página que continha uma outra página com uma determinada estrutura que também necessitava de análise para criar rotinas para a localização do arquivo para que pudesse ser salvo no disco rígido.
  
-A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \citep{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração total de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. A Tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
+A outra dificuldade foi o tempo necessário para a execução e conclusão do processo de aquisição dos pacotes \citep{pypi_2015} , pois a cada período de execução dos algoritmos o tempo de resposta para a obtenção dos arquivos aumentava. Isto foi consequência do mecanismo de defesa utilizado pelo endereço eletrônico que continha os arquivos compactados, de modo que todo o processo  teve a duração total de 4 dias para finalizar sua execução. A execução do script não aconteceu ininterruptamente pois houveram interrupções e intervenções manuais quando ocorria erros ou tratamento de exceção para os arquivos não encontrados ou endereços eletrônicos inexistentes. 
+
+A Tabela \ref{exctransarq}, exemplifica os tipos de exceções encontradas na transferência dos arquivos.
 
 \begin{table}[!ht]
         \caption{Exceções na transferência de arquivos.}
@@ -400,22 +399,17 @@ A outra dificuldade foi o tempo necessário para a execução e conclusão do proces
         \midrule
         	00:12:25,713 ERROR UrlContent:237 - http://aha-gae.googlecode.com/files \\
 		/project.zip\%20rel=nofollow \\
-		00:14:12,920 ERROR UrlContent:237 - Software caused connection abort: recv failed 
-		00:16:54,874 ERROR UrlContent:237 - Server returned HTTP response code: 403 for \\
-		URL: http://jamwt.com/downloads/apricot/apricot-0.2.tar.gz \\
+		00:14:12,920 ERROR UrlContent:237 - Software caused connection  \\
+		abort: recv failed \\
+		00:16:54,874 ERROR UrlContent:237 - Server returned HTTP response \\
+		code: 403 for URL: http://jamwt.com/downloads/apricot/apricot-0.2.tar.gz \\
 		00:17:03,524 ERROR UrlContent:237 - https://bitbucket.org/ganymed/ \\
 		araldo/downloads/araldo-redis-latest.tar.gz \\
 		00:17:04,618 ERROR UrlContent:237 - https://bitbucket.org/ganymed/ \\
 		araldo/downloads/araldo-websocket-latest.tar.gz \\
-		00:17:52,369 ERROR UrlContent:237 - http://programmer-art.org/media/ \\ 
-		releases/arista-transcoder/arista-0.9.7.tar.gz \\
 		00:18:31,121 ERROR UrlContent:237 - Server returned HTTP response code: \\
 		400 for URL: http://sourceforge.net/project/downloading.php \\
-		00:18:43,788 ERROR UrlContent:237 - https://code.google.com/p/pyswim/ \\
-		downloads/detail \\
 		00:20:07,981 ERROR UrlContent:237 - Unexpected end of file from server \\
-		00:20:53,183 ERROR UrlContent:237 - http://www.wayforward.net/avdata/ \\
-		avdata-0.1.0.tar.gz \\
 		19:19:06,759 ERROR UrlContent:237 - Connection timed out: connect \\
 	\bottomrule
         \end{tabularx}

@@ -1,6 +1,6 @@
 % Classe default, de acordo com o modelo:
 %\documentclass[11pt,a4paper,openright,titlepage,oneside]{book}
-\documentclass[12pt,a4paper,openright,titlepage,portuguese,english,oneside]{book}
+\documentclass[11pt,a4paper,openright,titlepage,portuguese,english,oneside]{book}
 
 % Pacotes
 \usepackage[T1]{fontenc}
@@ -68,7 +68,7 @@
  inputencoding=latin1, % usa Latin1 nos códigos fonte
  commentstyle=\it, % deixa os comentários em itálico
  stringstyle=\bf, % não lembro o que faz, mas está funcionando
- belowcaptionskip=5pt, % não lembro o que faz, mas está funcionando
+ belowcaptionskip=4pt, % não lembro o que faz, mas está funcionando
  numbers=left, % coloca a numeração na esquerda
  stepnumber=1, % passos da numeração
  firstnumber=1, % primeira linha
@@ -111,7 +111,7 @@
 % Capa e contra-capa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Grau pretendido e o tipo de monografia. Alguns exemplos seguem abaixo. Se o seu for algum deles, descomente-o. Em geral, o grau e o tipo de monografia associado estão na mesma linha.
-\grau{Especialista em Gestão da Informação} \tipodemonografia{MONOGRAFIA DE ESPECIALIZAÇÃO}
+\grau{ESPECIALISTA EM GESTÃO DE TECNOLOGIA DA INFORMAÇÃO} \tipodemonografia{MONOGRAFIA DE ESPECIALIZAÇÃO}
 %\grau{Mestre em Engenharia Elétrica} \tipodemonografia{DISSERTAÇÃO DE MESTRADO}
 %\grau{Engenheiro Eletricista} \tipodemonografia{TRABALHO DE GRADUAÇÃO}
 
@@ -158,22 +158,26 @@
 
 % Comandos para criar a capa e a página de assinaturas.
 \capaprincipal
+
+% contra capa
+\folhatitulo
+
 \capaassinaturas
 
 %%%%%%%%%%%%%%%%% FICHA CATALOGRÁFICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Colocar o nome do autor como vai aparecer no catálogo. Último sobrenome primeiro, depois o nome e sobrenomes intermediários. Ex.: Borges, Geovany Araújo
 \autorcatalogo{Mariano, Osandí Augusto}
 %Colocar o nome abreviado. Último sobrenome primeiro, depois as iniciais do nome e sobrenomes intermediários. Ex.: Borges, G.A.
-\autorabreviadocatalogo{Mariano, O.A.}
+\autorabreviadocatalogo{Mariano, Osandí.Augusto.}
 %Número de páginas da dissertação.
-\numeropaginascatalogo{111p.}
+\numeropaginascatalogo{109p.}
 \palavraschavecatalogoi{PEP8}
 \palavraschavecatalogoii{ESTILO DE CODIFICAÇÃO}
 %\palavraschavecatalogoiii{}
 %\palavraschavecatalogoiv{}
 
 %Número da publicação (fornecido pelo departamento após a defesa)
-\publicacao{PPGENE.DM-123/12}
+\publicacao{UnBLabRedes.MFE.044/2015}
 
 % Comando para criar a ficha catalográfica
 \fichacatalografica
@@ -244,7 +248,8 @@
 % Corpo principal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
-\setcounter{page}{1} \pagenumbering{arabic} \pagestyle{plain}
+\setcounter{page}{1} 
+\pagenumbering{arabic} \pagestyle{plain}
 
 % Arquivos de entrada
 \include{cap_Introducao}
@@ -284,7 +289,7 @@
 \label{anexoA}
 \refstepcounter{noAnexo}
 
-\chapter[PEP8]{PEP8}
+\chapter[GUIA DE ESTILO PEP8]{PEP8}
 \label{anexoB}
 \includepdf[pages=-,landscape=true,fitpaper=true,offset=0.1in 0.1in]{PEP8.pdf}
 

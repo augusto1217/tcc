@@ -14,7 +14,9 @@ O uso adequado de comentários é uma maneira de compensar a incapacidade dos prog
 
 À medida que os problemas computacionais vão se tornando maiores e complexos, podemos simplificar a solução dividindo o programa em partes menores, chamadas de módulos, que podem ser definidos como conjuntos de instruções da linguagem que realizam uma tarefa em particular. A divisão de programas em módulos surgiu no final da década de 1960,  seguindo o princípio do paradigma da divisão e conquista, proposto por \cite{rene2015}.
 
-O principal objetivo da modularização é permitir o gerenciamento da complexidade no desenvolvimento de programas, trazendo consigo algumas vantagens como a legibilidade, que torna os trechos de código mais simples, a manutenibilidade, que favorece a detecção e correção de erros, e a produtividade, que facilita a reutilização do software \cite[pág. 175]{harry2011}.  O Código \ref{modpy} ilustra um exemplo de modularização através do uso de funções.
+O principal objetivo da modularização é permitir o gerenciamento da complexidade no desenvolvimento de programas, trazendo consigo algumas vantagens como a legibilidade, que torna os trechos de código mais simples, a manutenibilidade, que favorece a detecção e correção de erros, e a produtividade, que facilita a reutilização do software \cite[pág. 175]{harry2011}.  
+
+O Código \ref{modpy} ilustra um exemplo de modularização através do uso de funções.
 
 \lstinputlisting[language=Python, caption=Exemplo de modularização, label=modpy]{cods/modularizacao.py}
 
@@ -49,6 +51,8 @@ Se analisarmos o código de diferentes desenvolvedores, existe a possibilidade de
 	\end{footnotesize}	
 \end{table}
 
+\newpage
+
 Estas diferenças de estilos são comuns entre os desenvolvedores de uma equipe ou projeto colaborativo, dificultando a compreensão e legibilidade do código fonte. Este tipo de dificuldade pode ser mitigada se for adotado um estilo de codificação uniforme para  todos os membros da equipe. Desta forma, qualquer novo integrante poderá ler e assimilar o entendimento das funcionalidades com velocidade, sem a distração decorrente de múltiplos estilos distintos e divergentes nos diferentes arquivos do projeto.
 
 De acordo com \cite{kernighanPlauger1978}, definir um estilo é uma questão subjetiva. No entanto, existem vários elementos entre os diferentes estilos de programação. As questões geralmente consideradas como parte do estilo de programação incluem: o layout do código fonte, incluindo o recuo; o uso do espaço em branco ao redor de operadores e palavras-chaves; a capitalização de nomes de variáveis, métodos, classes e constantes; o estilo e a grafia de identificadores definidos pelo usuário, tais como funções e nomes das variáveis; e o uso e estilo dos comentários.
@@ -65,5 +69,6 @@ Verificar o nível de adesão de projetos de código livre Python ao estilo de codi
 \section{OBJETIVO ESPECÍFICO}
 O objetivo deste estudo é verificar se houve a adesão, e em qual escala, ao estilo proposto no Python Enhancement Proposal 8 (PEP8) por parte da comunidade de software livre que utiliza a linguagem Python. Para a validação desta hipótese foi desenvolvido um ambiente para a avaliação dos códigos-fontes de aproximadamente sessenta e dois mil projetos de código livre (disponíveis no Python Package Index -- PyPI, o repositório oficial de pacotes de terceiros mantido pela Python Software Foundation\footnote{\url{https://pypi.python.org/pypi}}) e extração das violações das orientações descritas no PEP8. Os resultados desta análise foram então tabulados e analisados, de forma a se determinar o nível da adesão desta amostra em relação ao estilo já citado.
 
-No Capítulo 2 temos a fundamentação teórica do trabalho, com o histórico dos estilos de codificação. No Capítulo 3 é apresentada a metodologia, apresentando as ferramentas e tecnologias utilizadas neste trabalho. No Capítulo 4 são apresentado os resultados obtidos com a execução de scripts desenvolvidos para este estudo. Por fim, será apresentada a conclusão, onde é feita a interpretação geral dos resultados deste estudo e dadas sugestões acerca de uma melhor adoção do estilo PEP8 por parte da comunidade Python.
+\section{ORGANIZAÇÃO DO TRABALHO}
+O trabalho está organizado de forma a demonstrar um estudo de caso voltado para a descorberta do nível de adoção do guia de estilo citado na seção \ref{pep8}, em projetos de código livre escritos na linguagem Python. O Capítulo 2 temos a fundamentação teórica do trabalho, com o histórico dos estilos de codificação. No Capítulo 3 é apresentada a metodologia, apresentando as ferramentas e tecnologias utilizadas neste trabalho. No Capítulo 4 são apresentados os resultados obtidos com a execução de scripts desenvolvidos para este estudo. Por fim, será apresentada a conclusão, onde é feita a interpretação geral dos resultados deste estudo e dadas sugestões acerca de uma melhor adoção do estilo PEP8 por parte da comunidade Python.
 
